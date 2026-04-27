@@ -1,0 +1,76 @@
+##############################
+# macOS
+##############################
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+
+##############################
+# Python / Conda
+##############################
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Conda environments
+.env/
+.venv/
+env/
+venv/
+FURG/
+
+# Conda specific
+conda-meta/
+
+##############################
+# Jupyter
+##############################
+.ipynb_checkpoints
+
+##############################
+# Quarto
+##############################
+# Output directories
+_site/
+.quarto/
+.quarto-cache/
+
+# Rendered outputs (opcional — veja nota abaixo)
+*.html
+*.pdf
+
+##############################
+# Data (opcional — ajuste conforme uso)
+##############################
+data/raw/
+data/processed/
+*.csv
+*.xlsx
+
+##############################
+# Logs
+##############################
+*.log
+
+##############################
+# VS Code / IDEs
+##############################
+.vscode/
+.idea/
+
+##############################
+# Misc
+##############################
+*.swp
+*~
