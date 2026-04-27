@@ -45,6 +45,8 @@ conda-meta/
 _site/
 .quarto/
 .quarto-cache/
+*_files/
+*.quarto_ipynb*
 
 # Rendered outputs (opcional — veja nota abaixo)
 *.html
