@@ -105,6 +105,12 @@ diaX/
 - Todas as fontes de todos os plots devem ser Arial
 - Em matplotlib, definir explicitamente:
   `plt.rcParams["font.family"] = "Arial"`
+- Quando possível, os plots devem tentar usar as cores base da FURG:
+  - vermelho: RGB `(163, 18, 41)` / `#A31229`
+  - laranja: RGB `(199, 120, 36)` / `#C77824`
+  - amarelo: RGB `(229, 173, 42)` / `#E5AD2A`
+- As cores podem ser adaptadas conforme a ocasião, especialmente para legibilidade,
+  contraste, acessibilidade ou clareza analítica
 - Gráficos devem ser legíveis em tela projetada
 - Evitar paletas confusas, excesso de séries e rótulos pequenos
 
