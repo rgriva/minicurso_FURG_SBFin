@@ -13,13 +13,13 @@ Estrutura:
 
 Cada dia contém:
 - Slides (Quarto + RevealJS)
-- Scripts de demonstração (Python, quando aplicável)
+- Materiais de demonstração em `demo/`, quando aplicável
 
 ---
 
 ## Ambiente de Execução
 
-Todo o código deve ser executado no environment conda chamado:
+Quando houver código auxiliar, ele deve ser executado no environment conda chamado:
 
 FURG
 
@@ -31,7 +31,7 @@ Não criar ambientes novos.
 
 ---
 
-## Diretrizes Gerais de Implementação
+## Diretrizes Gerais
 
 ### 1. Simplicidade
 
@@ -41,9 +41,9 @@ Não criar ambientes novos.
 
 ---
 
-### 2. Linguagem e Bibliotecas
+### 2. Código Auxiliar
 
-- Usar Python
+- Usar Python quando houver código auxiliar
 - Priorizar:
   - pandas
   - matplotlib
@@ -58,7 +58,7 @@ Não criar ambientes novos.
 
 ### 3. Confiabilidade
 
-- Todo código deve rodar sem erros
+- Todo código auxiliar deve rodar sem erros
 - Evitar dependências externas frágeis
 - Evitar APIs que exigem autenticação
 
@@ -79,7 +79,7 @@ Estrutura esperada:
 diaX/
   slides.qmd
   demo/
-    script.py
+    materiais_de_apoio
     outputs/ (opcional)
 
 ---
@@ -90,17 +90,31 @@ diaX/
 - Usar bullet points
 - Evitar blocos longos de texto
 - Código deve ser simples e legível
+- Usar RevealJS explicitamente via Quarto
+- Explorar funcionalidades do RevealJS de forma intencional e sóbria:
+  - fragments
+  - incremental lists
+  - columns
+  - callouts
+  - speaker notes, quando úteis
+- Evitar efeitos espalhafatosos, transições chamativas ou excesso de animações
+- Priorizar uma apresentação sóbria, clara e profissional
+
+### 6.1 Plots e Gráficos
+
+- Todas as fontes de todos os plots devem ser Arial
+- Em matplotlib, definir explicitamente:
+  `plt.rcParams["font.family"] = "Arial"`
+- Gráficos devem ser legíveis em tela projetada
+- Evitar paletas confusas, excesso de séries e rótulos pequenos
 
 ---
 
-### 7. Scripts de Demonstração
+### 7. Materiais de Demonstração
 
-- Devem rodar via terminal:
-  python script.py
-
-- Devem:
-  - produzir output visível (gráficos, tabelas, prints)
-  - não depender de input interativo
+- As pastas `demo/` devem conter material de apoio para as demonstrações
+- Não assumir a existência de scripts executáveis para os demos
+- Quando houver código auxiliar, ele deve ser simples, curto e não interativo
 
 ---
 
@@ -114,7 +128,7 @@ diaX/
 
 ### 9. Performance
 
-- Tempo de execução deve ser curto (<5 segundos)
+- Quando houver código auxiliar, o tempo de execução deve ser curto (<5 segundos)
 - Evitar datasets grandes
 
 ---
@@ -128,11 +142,6 @@ Não introduzir:
 
 ---
 
-## Objetivo
+## Objetivo Geral
 
-Gerar código que seja:
-
-- Simples
-- Confiável
-- Executável em tempo real
-- Adequado para demonstrações ao vivo
+Gerar materiais simples, confiáveis e adequados para demonstrações ao vivo.

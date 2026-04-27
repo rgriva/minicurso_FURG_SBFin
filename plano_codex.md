@@ -5,14 +5,23 @@
 2026_FURG/
   dia1/
     slides.qmd
+    demo/
   dia2/
     slides.qmd
+    demo/
   dia3/
     slides.qmd
     demo/
-      data_analysis.py
-      sentiment_analysis.py
-      corporate_valuation.py
+      materiais_dados_financeiros
+      materiais_sentimento
+      materiais_valuation
+
+---
+
+## Diretrizes
+
+- Seguir as regras permanentes em `AGENTS.md`
+- Este arquivo define apenas o roteiro de conteúdo e implementação
 
 ---
 
@@ -24,6 +33,10 @@ Mostrar aplicações práticas de IA em:
 - dados financeiros
 - texto
 - decisões
+
+Observação:
+- os histogramas dos participantes serão preparados depois
+- não incluir scripts de histogramas neste momento
 
 ---
 
@@ -113,7 +126,7 @@ Fluxo padrão:
 
 #### 4. Terminal (breve)
 
-- rodar script python
+- noções básicas de terminal
 - navegar pastas
 
 ---
@@ -129,20 +142,25 @@ Fluxo padrão:
 
 ### Objetivo
 
-Executar 3 exemplos completos usando agents
+Conduzir 3 exemplos completos usando agents, com material de apoio nas pastas `demo/`.
+
+Observação:
+- não haverá scripts prontos para os demos
+- os materiais devem orientar a execução ao vivo pelos agents
 
 ---
 
 ## DEMO 1 — Análise de Dados (Setor)
 
-Arquivo:
-data_analysis.py
+Material:
+demo/materiais_dados_financeiros
 
 ### Função
 
 - baixar dados de múltiplas empresas de um setor
 - calcular retornos
 - plotar gráfico comparativo
+- demonstrar o fluxo com apoio de agents, sem script pronto
 
 ### Inputs
 
@@ -157,12 +175,13 @@ data_analysis.py
 
 ## DEMO 2 — Sentimento (Política Monetária Brasil)
 
-Arquivo:
-sentiment_analysis.py
+Material:
+demo/materiais_sentimento
 
 ### Função
 
 - analisar texto (ata do COPOM ou similar)
+- demonstrar o fluxo com apoio de agents, sem script pronto
 
 ### Outputs
 
@@ -174,8 +193,8 @@ sentiment_analysis.py
 
 ## DEMO 3 — Valuation (Projeto Agro)
 
-Arquivo:
-corporate_valuation.py
+Material:
+demo/materiais_valuation
 
 ### Problema
 
@@ -210,27 +229,19 @@ Decidir entre plantar soja ou milho
 
 ---
 
-## Regras para os Scripts
+## Regras para os Materiais de Apoio
 
-- devem rodar com:
-  python script.py
-
-- devem:
-  - imprimir resultados
-  - gerar gráficos (quando aplicável)
+As pastas `demo/` devem conter apenas materiais de apoio, como:
+- dados pequenos
+- textos-base
+- instruções curtas
+- resultados esperados
+- prompts ou roteiros de execução
 
 ---
 
 ## Prioridades
 
-1. código funcionando
-2. outputs claros
+1. material claro
+2. outputs esperados bem definidos
 3. simplicidade
-
----
-
-## Evitar
-
-- bibliotecas complexas
-- código longo
-- dependências externas frágeis
