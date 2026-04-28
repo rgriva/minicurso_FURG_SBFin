@@ -1,0 +1,839 @@
+---
+title: "IA Aplicada a Finanças"
+subtitle: "FURG - Escola SBFin"
+author: "Raul Riva"
+date: 2026-05-01
+date-format: "[Maio], YYYY"
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    transition: fade
+    width: 1280
+    height: 720
+    margin: 0.08
+    include-in-header:
+      text: |
+        <style>
+        .reveal a {
+          color: #A31229;
+        }
+
+        .reveal a:hover,
+        .reveal a:focus {
+          color: #5F0A18;
+        }
+
+        .reveal .concept-map {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+          gap: 0.75rem;
+          margin-top: 1.2rem;
+        }
+
+        .reveal .concept-card {
+          border-top: 6px solid #A31229;
+          background: #f7f7f7;
+          padding: 0.9rem;
+          min-height: 205px;
+        }
+
+        .reveal .concept-card strong {
+          color: #A31229;
+          display: block;
+          font-size: 1.05em;
+          margin-bottom: 0.45rem;
+        }
+
+        .reveal .timeline {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+          gap: 0.45rem;
+          align-items: stretch;
+          margin-top: 1.1rem;
+        }
+
+        .reveal .timeline-item {
+          border-left: 5px solid #C77824;
+          background: #f8f8f8;
+          padding: 0.75rem 0.6rem;
+          min-height: 150px;
+        }
+
+        .reveal .timeline-item strong {
+          color: #A31229;
+          display: block;
+          font-size: 0.85em;
+          margin-bottom: 0.35rem;
+        }
+
+        .reveal .product-table {
+          font-size: 0.6em;
+        }
+
+        .reveal .product-table td,
+        .reveal .product-table th {
+          padding: 0.38rem 0.5rem;
+          vertical-align: top;
+        }
+
+        .reveal .workflow-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+          gap: 0.8rem;
+          margin-top: 1rem;
+        }
+
+        .reveal .workflow-card {
+          background: #f7f7f7;
+          border-left: 6px solid #A31229;
+          padding: 0.85rem;
+          min-height: 170px;
+        }
+
+        .reveal .workflow-card strong {
+          color: #A31229;
+        }
+        </style>
+execute:
+  echo: false
+  warning: false
+  message: false
+jupyter: python3
+---
+
+```{python}
+#| label: setup
+#| include: false
+
+from pathlib import Path
+from textwrap import wrap
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+plt.rcParams["font.family"] = "Arial"
+plt.rcParams["figure.dpi"] = 140
+
+CORES_FURG = ["#A31229", "#C77824", "#E5AD2A"]
+VERMELHO_FURG = CORES_FURG[0]
+COR_CONTORNO = "#5F0A18"
+
+
+def localizar_planilha():
+    bases = [Path.cwd(), Path.cwd().parent]
+
+    for base in bases:
+        arquivos = sorted(base.glob("*.xlsx"))
+        if arquivos:
+            return arquivos[0]
+
+    raise FileNotFoundError("Planilha Excel não encontrada na pasta do projeto.")
+
+
+planilha = localizar_planilha()
+df = pd.read_excel(planilha)
+
+
+def serie_limpa(coluna):
+    return (
+        df[coluna]
+        .fillna("Não informado")
+        .astype(str)
+        .str.strip()
+        .replace({"": "Não informado", "-": "Não informado"})
+    )
+
+
+def normalizar_curso(valor):
+    texto = str(valor).strip()
+    texto_min = texto.lower()
+
+    if texto_min in {"", "-", "não informado"}:
+        return "Não informado"
+    if "cont" in texto_min:
+        return "Ciências Contábeis"
+    if "comput" in texto_min or "sistemas" in texto_min:
+        return "Computação e Sistemas"
+    if "econ" in texto_min or "economia" in texto_min:
+        return "Ciências Econômicas"
+    if "admin" in texto_min:
+        return "Administração"
+    if "modelagem" in texto_min:
+        return "Modelagem Computacional"
+
+    return texto
+
+
+def quebrar_rotulos(rotulos, largura=20):
+    return ["\n".join(wrap(str(rotulo), largura)) for rotulo in rotulos]
+
+
+def plotar_histograma(coluna, ordem=None, normalizador=None):
+    dados = serie_limpa(coluna)
+
+    if normalizador is not None:
+        dados = dados.map(normalizador)
+
+    contagens = dados.value_counts()
+
+    if ordem is not None:
+        contagens = contagens.reindex(ordem).dropna()
+
+    fig, ax = plt.subplots(figsize=(9.5, 3.9))
+    barras = ax.bar(
+        range(len(contagens)),
+        contagens.values,
+        color=VERMELHO_FURG,
+        edgecolor=COR_CONTORNO,
+        linewidth=0.8,
+        zorder=3,
+    )
+
+    ax.set_ylabel("Participantes", fontsize=14)
+    ax.set_xticks(range(len(contagens)))
+    ax.set_xticklabels(quebrar_rotulos(contagens.index), fontsize=12)
+    ax.tick_params(axis="y", labelsize=12)
+    ax.set_axisbelow(True)
+    ax.grid(axis="y", alpha=0.25, zorder=0)
+    ax.spines["top"].set_visible(False)
+    ax.spines["right"].set_visible(False)
+
+    limite_superior = max(contagens.values) + 2
+    ax.set_ylim(0, limite_superior)
+
+    for barra in barras:
+        altura = barra.get_height()
+        ax.text(
+            barra.get_x() + barra.get_width() / 2,
+            altura + 0.2,
+            str(int(altura)),
+            ha="center",
+            va="bottom",
+            fontsize=15,
+        )
+
+    plt.tight_layout(pad=0.8)
+    plt.show()
+```
+
+# Intro
+
+## Quem sou eu
+
+- Graduação e Mestrado em Economia na FGV EPGE
+- Doutorado em Finanças na Northwestern University
+- Pesquisa em Finanças, Econometria, e métodos de Aprendizado de Máquina
+- Contato: [rgriva.github.io](https://rgriva.github.io) | [@rgriva no GitHub](https://github.com/rgriva)
+
+![](QR_code.png){fig-align="center" width="18%"}
+
+---
+
+## Quem são vocês?
+
+- Majoritariamente estudantes de graduação
+- Diversos cursos representados
+- Interesses diversos em Finanças e AI
+
+---
+
+## Grau de ensino
+
+```{python}
+#| fig-width: 8.8
+#| fig-height: 3.9
+#| out-width: "80%"
+#| fig-align: center
+
+plotar_histograma(
+    "Grau de ensino:",
+    ordem=["Ensino Médio", "Graduação", "Especialização", "Mestrado", "Doutorado"],
+)
+```
+
+---
+
+## Curso
+
+```{python}
+#| fig-width: 8.8
+#| fig-height: 3.9
+#| out-width: "80%"
+#| fig-align: center
+
+plotar_histograma(
+    "Qual curso de graduação ou pós-graduação você está cursando?",
+    normalizador=normalizar_curso,
+)
+```
+
+---
+
+## Conforto com programação
+
+```{python}
+#| fig-width: 8.8
+#| fig-height: 3.9
+#| out-width: "80%"
+#| fig-align: center
+
+plotar_histograma(
+    "Como você se sente em relação a técnicas de programação?",
+    ordem=[
+        "Pouco confortável",
+        "Medianamente confortável",
+        "Muito confortável",
+        "Não informado",
+    ],
+)
+```
+
+---
+
+## Percepção sobre IA
+
+```{python}
+#| fig-width: 8.8
+#| fig-height: 3.9
+#| out-width: "80%"
+#| fig-align: center
+
+plotar_histograma(
+    "Como você se sente em relação ao uso de técnicas de Inteligência Artificial (IA)?",
+    ordem=[
+        "Pouco confortável",
+        "Medianamente confortável",
+        "Muito confortável",
+        "Não informado",
+    ],
+)
+```
+
+---
+
+## Plano de Voo
+
+- **Dia 1:** como IA pode ser útil em Finanças e Economia?
+- **Dia 2:** ferramentas de IA, workflows, escrevendo código com agentes, ...
+- **Dia 3:** três exemplos ao vivo
+
+. . .
+
+Material do minicurso: [https://github.com/rgriva/minicurso_FURG_SBFin](https://github.com/rgriva/minicurso_FURG_SBFin)
+
+![](github_repo_QR.png){fig-align="center" width="18%"}
+
+# IA, LLMs, Machine Learning?...
+
+## Primeiro mapa mental
+
+:::: {.concept-map}
+
+::: {.concept-card}
+**IA**
+
+Objetivo amplo: máquinas executando tarefas que associamos a inteligência.
+:::
+
+::: {.concept-card}
+**Machine Learning**
+
+Método: aprender padrões a partir de dados, em vez de programar todas as regras.
+:::
+
+::: {.concept-card}
+**Deep Learning**
+
+Família de ML baseada em redes neurais profundas e muitos dados.
+:::
+
+::: {.concept-card}
+**LLMs**
+
+Modelos de linguagem em larga escala: texto, código e interação em linguagem natural.
+:::
+
+::::
+
+---
+
+## Uma separação útil
+
+- **IA:** a ambição
+- **Machine Learning:** uma forma de construir sistemas de IA
+- **LLM:** um tipo específico de modelo, treinado com linguagem
+- **ChatGPT, Claude, Gemini, Copilot:** produtos em cima de modelos
+
+. . .
+
+::: {.callout-note title="Nota"}
+Na prática, a confusão vem porque usamos "IA" para falar de tudo isso ao mesmo tempo.
+:::
+
+---
+
+## Perspectiva histórica
+
+:::: {.timeline}
+
+::: {.timeline-item}
+**1950**
+
+Turing pergunta se máquinas podem "pensar"
+:::
+
+::: {.timeline-item}
+**1956**
+
+Dartmouth populariza o termo inteligência artificial
+:::
+
+::: {.timeline-item}
+**1980s**
+
+Sistemas especialistas baseados em regras
+:::
+
+::: {.timeline-item}
+**1990s**
+
+ML estatístico cresce com dados e computação
+:::
+
+::: {.timeline-item}
+**2012**
+
+Deep learning avança em visão computacional
+:::
+
+::: {.timeline-item}
+**2017**
+
+Transformers mudam NLP e modelos generativos
+:::
+
+::: {.timeline-item}
+**2022+**
+
+LLMs chegam ao público via chat
+:::
+
+::::
+
+::: {.notes}
+O ponto é mostrar continuidade: LLMs são uma etapa importante, não o começo da IA.
+:::
+
+---
+
+## O que Machine Learning aprende?
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**Dados estruturados**
+
+- preços
+- balanços
+- cadastros
+- séries temporais
+- ratings
+:::
+
+::: {.column width="50%"}
+**Dados não estruturados**
+
+- textos
+- imagens
+- áudio
+- PDFs
+- páginas web
+:::
+
+::::
+
+. . .
+
+O modelo aprende uma relação aproximada entre **inputs** e **outputs**.
+
+---
+
+## Exemplo simples de ML
+
+**Pergunta:** quais clientes têm maior risco de inadimplência?
+
+. . .
+
+**Dados históricos**
+
+- renda
+- histórico de pagamento
+- idade da conta
+- valor da dívida
+
+. . .
+
+**Saída**
+
+- probabilidade de atraso
+- ranking de risco
+- alerta para revisão humana
+
+---
+
+## LLMs: o truque conceitual
+
+- Treinados em grandes coleções de texto e código
+- Aprendem padrões de linguagem, contexto e instruções
+- Produzem uma continuação plausível para o que foi pedido
+- Podem usar ferramentas: busca, arquivos, planilhas, código, APIs
+
+. . .
+
+::: {.callout-important title="Atenção"}
+Eles não "sabem" do mesmo modo que uma pessoa sabe. A validação continua sendo parte do trabalho.
+:::
+
+---
+
+## O que mudou com LLMs?
+
+- **Interface:** conversar em linguagem natural
+- **Escopo:** texto, código, imagens, dados e documentos
+- **Velocidade:** primeiro rascunho em segundos
+- **Acesso:** ferramentas que não exigem programar do zero
+
+. . .
+
+**Resultado:** mais gente consegue usar computação para pensar, escrever e analisar.
+
+---
+
+## Modelo, produto, interface
+
+:::: {.workflow-grid}
+
+::: {.workflow-card}
+**Modelo**
+
+A tecnologia treinada: entende padrões e gera respostas.
+:::
+
+::: {.workflow-card}
+**Produto**
+
+A experiência pronta: chat, app, copiloto, agente.
+:::
+
+::: {.workflow-card}
+**Integração**
+
+Arquivos, planilhas, navegador, IDE, banco de dados, API.
+:::
+
+::::
+
+. . .
+
+O produto certo depende menos do "modelo famoso" e mais do **trabalho que você quer fazer**.
+
+---
+
+## Produtos: diferenças práticas
+
+::: {.product-table}
+| Produto | Uso típico | Integração forte | Cuidado |
+|---|---|---|---|
+| [ChatGPT](https://chatgpt.com/overview/) | Assistente geral, escrita, dados, código | arquivos, imagens, apps, agente, API | conferir fontes e cálculos |
+| [Claude](https://claude.com/product/overview) | análise longa, escrita, código | documentos, artifacts, Claude Code, conectores | validar números e premissas |
+| [Gemini](https://blog.google/products/gemini/) | assistente multimodal e ecossistema Google | Google apps, Android, Workspace | separar conveniência de precisão |
+| [Microsoft Copilot](https://www.microsoft.com/en-us/microsoft-copilot/organizations) | produtividade corporativa | Word, Excel, PowerPoint, Teams, Windows | permissões e dados sensíveis |
+| [GitHub Copilot](https://github.com/features/copilot) | programação | IDE, GitHub, terminal, agentes | revisar e testar como código de terceiros |
+| [Perplexity](https://docs.perplexity.ai/docs/getting-started/overview) / [NotebookLM](https://notebooklm.google/) | pesquisa e documentos | web com fontes; arquivos próprios | citação não garante verdade |
+:::
+
+---
+
+## Como escolher?
+
+- **Texto longo ou documentos:** contexto e síntese
+- **Código:** integração com editor e terminal
+- **Planilhas e trabalho corporativo:** proximidade dos arquivos
+- **Pesquisa:** fontes rastreáveis
+- **Dados sensíveis:** política institucional antes da ferramenta
+
+. . .
+
+Não existe "melhor IA". Existe ferramenta mais adequada para uma tarefa.
+
+# Como a IA pode te ajudar?
+
+## Regra prática
+
+IA ajuda mais quando a tarefa tem:
+
+- muito texto, dado ou repetição
+- custo alto de começar do zero
+- espaço para revisar e corrigir
+- critérios claros de qualidade
+
+. . .
+
+IA ajuda menos quando não há como validar a resposta.
+
+---
+
+## Organizar informação
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**Entradas**
+
+- PDF longo
+- notícia
+- relatório
+- ata
+- planilha bagunçada
+:::
+
+::: {.column width="50%"}
+**Saídas úteis**
+
+- resumo
+- tópicos principais
+- tabela
+- classificação
+- checklist
+:::
+
+::::
+
+---
+
+## Criar primeiros rascunhos
+
+- relatório curto
+- email profissional
+- roteiro de apresentação
+- documentação de código
+- explicação para público não técnico
+
+. . .
+
+O ganho não é "ter o texto final".  
+É sair da página em branco.
+
+---
+
+## Acelerar análise de dados
+
+Um bom uso para aulas e trabalho:
+
+1. descrever o problema
+2. pedir um plano simples
+3. gerar código Python curto
+4. executar
+5. corrigir erros
+6. interpretar o resultado
+
+---
+
+## Pesquisar com fontes
+
+- pedir termos de busca melhores
+- comparar explicações alternativas
+- sintetizar vários documentos
+- extrair pontos de discordância
+- montar perguntas para investigação
+
+. . .
+
+::: {.callout-tip title="Dica"}
+Peça sempre fontes, mas leia pelo menos as fontes mais importantes.
+:::
+
+---
+
+## Automatizar pequenas tarefas
+
+:::: {.workflow-grid}
+
+::: {.workflow-card}
+**Limpar**
+
+renomear colunas, tratar datas, padronizar categorias
+:::
+
+::: {.workflow-card}
+**Calcular**
+
+retornos, médias, percentuais, cenários simples
+:::
+
+::: {.workflow-card}
+**Visualizar**
+
+gráficos legíveis para relatório ou apresentação
+:::
+
+::::
+
+---
+
+## Apoiar decisões
+
+- estruturar cenários
+- listar hipóteses
+- fazer análise de sensibilidade
+- identificar riscos
+- transformar uma decisão vaga em tabela comparável
+
+. . .
+
+**Importante:** a IA organiza a decisão; ela não assume a responsabilidade.
+
+---
+
+## Cuidado essencial
+
+::: {.callout-warning title="Cuidado"}
+Use IA como assistente de análise, não como autoridade final.
+:::
+
+- respostas podem parecer certas e estar erradas
+- números precisam ser recalculados
+- fontes precisam ser abertas
+- código precisa rodar
+- decisões importantes precisam de julgamento humano
+
+# Como a IA pode te ajudar no mundo de Finanças?
+
+## Tradução para Finanças
+
+::: {.product-table}
+| Capacidade geral | Em Finanças vira... |
+|---|---|
+| resumir texto | notícia, ata do COPOM, relatório de resultados |
+| extrair dados | tabela em PDF, fato relevante, release de companhia |
+| gerar código | baixar preços, calcular retornos, plotar séries |
+| classificar | sentimento, risco, prioridade de revisão |
+| simular cenários | valuation, orçamento, projeto de investimento |
+:::
+
+---
+
+## Exemplo 1: dados financeiros
+
+**Pergunta:** como um ativo se comportou em relação a outro?
+
+- baixar preços
+- calcular retornos
+- medir volatilidade
+- olhar drawdowns
+- comparar em gráfico
+
+. . .
+
+Ferramentas simples: `Python`, `pandas`, `matplotlib`, `yfinance`.
+
+---
+
+## Exemplo 2: texto financeiro
+
+**Pergunta:** qual é a mensagem principal de um documento?
+
+- notícia de mercado
+- ata do COPOM
+- relatório de resultados
+- fato relevante
+- comentário de analista
+
+. . .
+
+Saídas úteis: resumo, tópicos, riscos, tom e sentimento.
+
+---
+
+## Exemplo 3: decisão corporativa
+
+**Pergunta:** vale a pena tocar este projeto?
+
+- investimento inicial
+- receita esperada
+- custos
+- horizonte de análise
+- cenários otimista, base e pessimista
+
+. . .
+
+Saída: tabela simples para discutir decisão econômica.
+
+---
+
+## Outros usos em Finanças
+
+:::: {.workflow-grid}
+
+::: {.workflow-card}
+**Risco**
+
+alertas, revisão de exposição, explicação de variações
+:::
+
+::: {.workflow-card}
+**Crédito**
+
+triagem, documentação, justificativas e monitoramento
+:::
+
+::: {.workflow-card}
+**Operações**
+
+conciliação, relatórios, checagens e automações pequenas
+:::
+
+::::
+
+---
+
+## Contexto financeiro exige cuidado extra
+
+- dados mudam rápido
+- pequenas diferenças numéricas importam
+- há regulação e confidencialidade
+- modelos podem errar de forma convincente
+- decisões têm custo real
+
+. . .
+
+::: {.callout-important title="Atenção"}
+Em Finanças, IA boa é IA com trilha de validação.
+:::
+
+---
+
+## Os três exemplos-base
+
+Vamos preparar o terreno para:
+
+1. **Dados financeiros:** preços, retornos e gráficos
+2. **Sentimento:** notícia, ata ou relatório
+3. **Finanças corporativas:** avaliação de projeto com cenários
+
+. . .
+
+Esses são os exemplos do roteiro em `plano_codex.md`.
+
+---
+
+## Ponte para os próximos dias
+
+- **Hoje:** entender possibilidades e limites
+- **Dia 2:** ferramentas, prompts e workflow com agentes
+- **Dia 3:** exemplos ao vivo, com dados e documentos
+
+. . .
+
+Objetivo final: usar IA para acelerar trabalho real sem abandonar validação.
