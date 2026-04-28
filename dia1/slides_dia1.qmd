@@ -262,18 +262,47 @@ Modelos de linguagem em larga escala: texto, código e interação em linguagem 
 
 ---
 
-## Uma separação útil
+## Produtos comerciais de IA
 
-- **IA:** a ambição
-- **Machine Learning:** uma forma de construir sistemas de IA
-- **LLM:** um tipo específico de modelo, treinado com linguagem
-- **ChatGPT, Claude, Gemini, Copilot:** produtos em cima de modelos
+:::: {.product-bridge}
 
-. . .
+::: {.llm-source}
+**LLMs**
 
-::: {.callout-note title="Nota"}
-Na prática, a confusão vem porque usamos "IA" para falar de tudo isso ao mesmo tempo.
+Modelos treinados para linguagem, código e interação em contexto.
 :::
+
+::: {.product-arrow}
+→
+:::
+
+:::: {.product-cloud}
+
+::: {.product-chip}
+**ChatGPT**
+<span>**OpenAI:** assistente geral, arquivos, dados, imagens, código e agentes.</span>
+:::
+
+::: {.product-chip}
+**Claude**
+<span>**Anthropic:** alternativa próxima ao ChatGPT, forte em documentos, escrita e código.</span>
+:::
+
+::: {.product-chip}
+**Gemini**
+<span>**Google:** busca, Android, Workspace e uso multimodal.</span>
+:::
+
+::: {.product-chip}
+**Copilot**
+<span>**Microsoft e GitHub:** Office, Teams, IDEs e escolha entre modelos.</span>
+:::
+
+::::
+
+::::
+
+Eles são **produtos**, não apenas modelos!
 
 ---
 
@@ -281,46 +310,74 @@ Na prática, a confusão vem porque usamos "IA" para falar de tudo isso ao mesmo
 
 :::: {.timeline}
 
-::: {.timeline-item}
+::: {.timeline-event .above}
+::: {.timeline-label}
 **1950**
 
 Turing pergunta se máquinas podem "pensar"
 :::
+::: {.timeline-marker}
+:::
+:::
 
-::: {.timeline-item}
+::: {.timeline-event .below}
+::: {.timeline-marker}
+:::
+::: {.timeline-label}
 **1956**
 
 Dartmouth populariza o termo inteligência artificial
 :::
+:::
 
-::: {.timeline-item}
+::: {.timeline-event .above}
+::: {.timeline-label}
 **1980s**
 
 Sistemas especialistas baseados em regras
 :::
+::: {.timeline-marker}
+:::
+:::
 
-::: {.timeline-item}
+::: {.timeline-event .below}
+::: {.timeline-marker}
+:::
+::: {.timeline-label}
 **1990s**
 
 ML estatístico cresce com dados e computação
 :::
+:::
 
-::: {.timeline-item}
+::: {.timeline-event .above}
+::: {.timeline-label}
 **2012**
 
 Deep learning avança em visão computacional
 :::
+::: {.timeline-marker}
+:::
+:::
 
-::: {.timeline-item}
+::: {.timeline-event .below}
+::: {.timeline-marker}
+:::
+::: {.timeline-label}
 **2017**
 
 Transformers mudam NLP e modelos generativos
 :::
+:::
 
-::: {.timeline-item}
+::: {.timeline-event .above}
+::: {.timeline-label}
 **2022+**
 
 LLMs chegam ao público via chat
+:::
+::: {.timeline-marker}
+:::
 :::
 
 ::::
@@ -447,14 +504,14 @@ O produto certo depende menos do "modelo famoso" e mais do **trabalho que você 
 ## Produtos: diferenças práticas
 
 ::: {.product-table}
-| Produto | Uso típico | Integração forte | Cuidado |
-|---|---|---|---|
-| [ChatGPT](https://chatgpt.com/overview/) | Assistente geral, escrita, dados, código | arquivos, imagens, apps, agente, API | conferir fontes e cálculos |
-| [Claude](https://claude.com/product/overview) | análise longa, escrita, código | documentos, artifacts, Claude Code, conectores | validar números e premissas |
-| [Gemini](https://blog.google/products/gemini/) | assistente multimodal e ecossistema Google | Google apps, Android, Workspace | separar conveniência de precisão |
-| [Microsoft Copilot](https://www.microsoft.com/en-us/microsoft-copilot/organizations) | produtividade corporativa | Word, Excel, PowerPoint, Teams, Windows | permissões e dados sensíveis |
-| [GitHub Copilot](https://github.com/features/copilot) | programação | IDE, GitHub, terminal, agentes | revisar e testar como código de terceiros |
-| [Perplexity](https://docs.perplexity.ai/docs/getting-started/overview) / [NotebookLM](https://notebooklm.google/) | pesquisa e documentos | web com fontes; arquivos próprios | citação não garante verdade |
+| Produto | Uso típico | Integração forte |
+|---|---|---|
+| [ChatGPT](https://chatgpt.com/overview/) | Assistente geral, escrita, dados, código | arquivos, imagens, apps, agente, API |
+| [Claude](https://claude.com/product/overview) | análise longa, escrita, código | documentos, artifacts, Claude Code, conectores |
+| [Gemini](https://blog.google/products/gemini/) | assistente multimodal e ecossistema Google | Google apps, Android, Workspace |
+| [Microsoft Copilot](https://www.microsoft.com/en-us/microsoft-copilot/organizations) | produtividade corporativa | Word, Excel, PowerPoint, Teams, Windows |
+| [GitHub Copilot](https://github.com/features/copilot) | programação | IDE, GitHub, terminal, agentes |
+| [Perplexity](https://docs.perplexity.ai/docs/getting-started/overview) / [NotebookLM](https://notebooklm.google/) | pesquisa e documentos | web com fontes; arquivos próprios |
 :::
 
 ---
