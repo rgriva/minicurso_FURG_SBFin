@@ -49,7 +49,6 @@ _site/
 *.quarto_ipynb*
 
 # Rendered outputs (opcional — veja nota abaixo)
-*.html
 *.pdf
 
 ##############################
@@ -76,3 +75,6 @@ data/processed/
 ##############################
 *.swp
 *~
+
+/.quarto/
+**/*.quarto_ipynb
