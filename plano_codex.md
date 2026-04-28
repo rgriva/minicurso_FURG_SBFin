@@ -1,235 +1,242 @@
 # Plano de Implementação (Codex)
 
-## Estrutura do Projeto
+Este arquivo é o mapa de continuidade do projeto. `AGENTS.md` contém as regras permanentes; este plano registra o estado atual, decisões tomadas e próximos passos.
 
+Última atualização: 2026-04-28.
+
+---
+
+## Leitura Rápida para Futuras Sessões
+
+- Projeto: minicurso de Inteligência Artificial aplicada a Finanças, FURG / Escola SBFin
+- Fonte principal do dia 1: `dia1/slides_dia1.qmd`
+- HTML renderizado do dia 1: `dia1/slides_dia1.html`
+- Estilo global: `styles.css`
+- Configuração Quarto: `_quarto.yml`
+- Ambiente local esperado: conda `FURG`
+- Comando local preferido:
+
+```bash
+conda run -n FURG quarto render dia1/slides_dia1.qmd
+```
+
+Ponto crítico para nuvem:
+- os histogramas do dia 1 dependem da planilha local de respostas na raiz do projeto
+- essa planilha está ignorada por `*.xlsx` no `.gitignore`
+- o deck procura automaticamente o primeiro `.xlsx` no diretório atual ou no diretório pai; não depender do nome literal da planilha, pois acentos podem variar por normalização Unicode no macOS/Dropbox
+- uma sessão em nuvem pode não conseguir renderizar o dia 1 do zero sem esse arquivo
+- solução futura recomendada: salvar dados agregados dos histogramas em arquivo pequeno versionado, ou adaptar o deck para fallback claro quando a planilha estiver ausente
+
+---
+
+## Estrutura Atual
+
+```text
 2026_FURG/
+  AGENTS.md
+  plano_codex.md
+  _quarto.yml
+  styles.css
+  requirements.txt
+  *.xlsx local com respostas dos participantes          # ignorado pelo git
   dia1/
-    slides.qmd
-    demo/
+    QR_code.png
+    github_repo_QR.png
+    slides_dia1.qmd
+    slides_dia1.html
   dia2/
-    slides.qmd
-    demo/
   dia3/
-    slides.qmd
-    demo/
-      materiais_dados_financeiros
-      materiais_sentimento
-      materiais_valuation
+```
+
+Arquivos gerados ou cache que não devem ser editados manualmente:
+- `.quarto/`
+- `dia1/slides_dia1_files/`
+- `*.quarto_ipynb*`
 
 ---
 
-## Diretrizes
+## Estado Atual do Dia 1
 
-- Seguir as regras permanentes em `AGENTS.md`
-- Este arquivo define apenas o roteiro de conteúdo e implementação
+Status: rascunho principal construído.
 
----
+O deck `dia1/slides_dia1.qmd` já contém:
+- título, autor, data e metadados Quarto
+- setup Python com `pandas` e `matplotlib`
+- fontes Arial nos plots
+- paleta FURG nos gráficos e elementos visuais
+- função para localizar a planilha no diretório atual ou no pai
+- limpeza simples das respostas dos participantes
+- normalização de cursos para os histogramas
+- introdução do instrutor e QR code de contato
+- perfil dos participantes:
+  - grau de ensino
+  - curso
+  - conforto com programação
+  - percepção sobre IA
+- plano de voo dos três dias
+- mapa conceitual de IA, ML, Deep Learning e LLMs
+- produtos comerciais de IA
+- perspectiva histórica
+- explicação simples de ML
+- diferença entre modelo, produto e integração
+- usos gerais de IA
+- usos de IA em Finanças
+- três exemplos-base:
+  - dados financeiros
+  - texto financeiro
+  - decisão corporativa
+- ponte para os dias 2 e 3
 
-## DIA 1 — Aplicações em Finanças
-
-### Objetivo
-
-Mostrar aplicações práticas de IA em:
-- dados financeiros
-- texto
-- decisões
-
-Observação:
-- os histogramas dos participantes serão preparados depois
-- não incluir scripts de histogramas neste momento
-
----
-
-### slides.qmd deve conter
-
-#### Bloco 1 — O que IA faz bem
-
-- leitura de texto
-- geração de código
-- análise simples
-
----
-
-#### Bloco 2 — Aplicações
-
-##### 1. Dados financeiros
-
-- baixar preços
-- calcular retornos
-- plotar gráfico
-
----
-
-##### 2. Análise de sentimento
-
-- classificar texto
-- resumir notícia
+`styles.css` já contém estilos para:
+- links e códigos inline em vermelho FURG
+- callouts customizados
+- setas e fluxos visuais
+- cards conceituais
+- tabela de produtos
+- linha do tempo
+- grades de workflow
 
 ---
 
-##### 3. Finanças corporativas (OBRIGATÓRIO)
+## Pendências do Dia 1
 
-**Avaliação de projeto**
-
-Exemplo:
-- investimento inicial
-- receita esperada
-- custos
-
-Output:
-- análise de cenários:
-  - otimista
-  - base
-  - pessimista
+Antes de considerar o dia 1 fechado:
+- renderizar novamente após qualquer mudança substancial
+- revisar visualmente `dia1/slides_dia1.html`
+- decidir se o projeto precisa renderizar integralmente em nuvem sem a planilha local
+- se sim, criar dados agregados versionados para os histogramas ou remover a dependência direta da planilha ignorada
+- adicionar speaker notes apenas onde ajudarem a execução ao vivo
 
 ---
 
-## DIA 2 — Ferramentas
+## Dia 2 -- Ferramentas
 
-### Objetivo
+Status: ainda não construído.
 
-Ensinar uso de ferramentas de IA
+Objetivo:
+- ensinar uso prático de ferramentas de IA para trabalho em Finanças
 
----
+`dia2/slides.qmd` deve cobrir:
+- chatbots e estrutura básica de prompt
+- iteração: pedir, avaliar, corrigir, refinar
+- ferramentas:
+  - ChatGPT
+  - GitHub Copilot
+  - OpenAI Codex
+  - Claude Code
+  - Cursor
+- agentic workflow:
+  1. definir problema
+  2. gerar código
+  3. executar
+  4. corrigir
+  5. iterar
+- terminal, de forma breve:
+  - navegar pastas
+  - rodar scripts
+  - entender mensagens de erro
+- custos:
+  - assinatura mensal
+  - uso por API
+  - cuidado com limites e dados sensíveis
 
-### slides.qmd deve conter
-
-#### 1. Chatbots
-
-- estrutura de prompt
-- iteração
-
----
-
-#### 2. Ferramentas
-
-Cobrir:
-
-- GitHub Copilot
-- OpenAI Codex
-- Claude Code
-- Cursor
-
----
-
-#### 3. Agentic Workflow
-
-Fluxo padrão:
-
-1. definir problema
-2. gerar código
-3. executar
-4. corrigir
-5. iterar
+Direção de estilo:
+- manter o foco em fluxo de trabalho, não em comparação promocional de ferramentas
+- usar exemplos pequenos que possam preparar o dia 3
 
 ---
 
-#### 4. Terminal (breve)
+## Dia 3 -- Demos com Agents
 
-- noções básicas de terminal
-- navegar pastas
+Status: ainda não construído.
 
----
+Objetivo:
+- conduzir três exemplos completos usando agents, com material de apoio nas pastas `demo/`
+- não criar scripts prontos que substituam a demonstração
+- criar materiais curtos que orientem o que o agent deve fazer ao vivo
 
-#### 5. Custos
+Estrutura planejada:
 
-- assinatura mensal
-- API usage
+```text
+dia3/
+  slides.qmd
+  demo/
+    materiais_dados_financeiros/
+    materiais_sentimento/
+    materiais_valuation/
+```
 
----
-
-## DIA 3 — DEMO
-
-### Objetivo
-
-Conduzir 3 exemplos completos usando agents, com material de apoio nas pastas `demo/`.
-
-Observação:
-- não haverá scripts prontos para os demos
-- os materiais devem orientar a execução ao vivo pelos agents
-
----
-
-## DEMO 1 — Análise de Dados (Setor)
+### Demo 1 -- Análise de Dados Financeiros
 
 Material:
-demo/materiais_dados_financeiros
+- `dia3/demo/materiais_dados_financeiros/`
 
-### Função
-
+Função:
 - baixar dados de múltiplas empresas de um setor
 - calcular retornos
 - plotar gráfico comparativo
 - demonstrar o fluxo com apoio de agents, sem script pronto
 
-### Inputs
+Inputs:
+- lista pequena de tickers
 
-- lista de tickers
-
-### Outputs
-
+Outputs esperados:
 - gráfico de preços
 - gráfico de retornos
+- interpretação curta
 
----
+Observações:
+- usar `yfinance` ou equivalente simples
+- tratar falha de download ou retorno vazio
+- manter tempo de execução curto
 
-## DEMO 2 — Sentimento (Política Monetária Brasil)
+### Demo 2 -- Sentimento em Texto Financeiro
 
 Material:
-demo/materiais_sentimento
+- `dia3/demo/materiais_sentimento/`
 
-### Função
+Função:
+- analisar texto, preferencialmente ata do COPOM, notícia de mercado ou trecho de relatório
+- demonstrar resumo, classificação e pontos principais com apoio de agents
 
-- analisar texto (ata do COPOM ou similar)
-- demonstrar o fluxo com apoio de agents, sem script pronto
-
-### Outputs
-
-- classificação de sentimento
+Outputs esperados:
 - resumo curto
-- pontos principais
+- classificação de tom/sentimento
+- principais evidências textuais
+- ressalvas de validação humana
 
----
+Observações:
+- evitar depender de API paga ou autenticada
+- se usar texto externo, salvar trecho curto e versionável como material de apoio
 
-## DEMO 3 — Valuation (Projeto Agro)
+### Demo 3 -- Valuation / Projeto Agro
 
 Material:
-demo/materiais_valuation
+- `dia3/demo/materiais_valuation/`
 
-### Problema
+Problema:
+- decidir entre plantar soja ou milho
 
-Decidir entre plantar soja ou milho
-
----
-
-### Inputs
-
+Inputs:
 - investimento inicial
 - preço esperado
 - custo
 - produtividade
+- cenários otimista, base e pessimista
 
----
-
-### Lógica
-
-- construir 3 cenários:
-  - otimista
-  - base
-  - pessimista
-
-- calcular lucro esperado
-
----
-
-### Outputs
-
-- tabela com cenários
+Outputs esperados:
+- tabela de cenários
+- lucro esperado por cultura
 - recomendação simples
+- lista curta de riscos e hipóteses
+
+Observações:
+- manter a matemática transparente
+- preferir tabela pequena a modelo sofisticado
 
 ---
 
-## Regras para os Materiais de Apoio
+## Regras para Materiais de Apoio
 
 As pastas `demo/` devem conter apenas materiais de apoio, como:
 - dados pequenos
@@ -238,10 +245,19 @@ As pastas `demo/` devem conter apenas materiais de apoio, como:
 - resultados esperados
 - prompts ou roteiros de execução
 
+Não introduzir:
+- datasets grandes
+- pipelines
+- notebooks complexos
+- dependências instáveis
+- APIs com autenticação
+
 ---
 
 ## Prioridades
 
 1. material claro
-2. outputs esperados bem definidos
-3. simplicidade
+2. demonstrações que rodam ao vivo
+3. outputs esperados bem definidos
+4. compatibilidade com execução local no conda `FURG`
+5. consciência explícita das diferenças entre ambiente local e nuvem
