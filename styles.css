@@ -1,0 +1,86 @@
+.reveal a {
+  color: #A31229;
+}
+
+.reveal a:hover,
+.reveal a:focus {
+  color: #5F0A18;
+}
+
+.reveal code:not(pre code) {
+  color: #A31229;
+  background: rgba(163, 18, 41, 0.08);
+  border-radius: 4px;
+  padding: 0.05em 0.22em;
+}
+
+.reveal .concept-map {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.2rem;
+}
+
+.reveal .concept-card {
+  border-top: 6px solid #A31229;
+  background: #f7f7f7;
+  padding: 0.9rem;
+  min-height: 205px;
+}
+
+.reveal .concept-card strong {
+  color: #A31229;
+  display: block;
+  font-size: 1.05em;
+  margin-bottom: 0.45rem;
+}
+
+.reveal .timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.45rem;
+  align-items: stretch;
+  margin-top: 1.1rem;
+}
+
+.reveal .timeline-item {
+  border-left: 5px solid #C77824;
+  background: #f8f8f8;
+  padding: 0.75rem 0.6rem;
+  min-height: 150px;
+}
+
+.reveal .timeline-item strong {
+  color: #A31229;
+  display: block;
+  font-size: 0.85em;
+  margin-bottom: 0.35rem;
+}
+
+.reveal .product-table {
+  font-size: 0.6em;
+}
+
+.reveal .product-table td,
+.reveal .product-table th {
+  padding: 0.38rem 0.5rem;
+  vertical-align: top;
+}
+
+.reveal .workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.reveal .workflow-card {
+  background: #f7f7f7;
+  border-left: 6px solid #A31229;
+  padding: 0.85rem;
+  min-height: 170px;
+}
+
+.reveal .workflow-card strong {
+  color: #A31229;
+}

@@ -1,0 +1,14 @@
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    transition: fade
+    width: 1280
+    height: 720
+    margin: 0.08
+    css: styles.css
+execute:
+  echo: false
+  warning: false
+  message: false
+jupyter: python3
