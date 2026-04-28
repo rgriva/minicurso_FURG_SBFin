@@ -424,22 +424,33 @@ O modelo aprende uma relação aproximada entre **inputs** e **outputs**.
 
 **Pergunta:** quais clientes têm maior risco de inadimplência?
 
-. . .
+:::: {.ml-example-flow}
 
-**Dados históricos**
+::: {.ml-example-card .fragment data-fragment-index="1"}
+**Input: dados históricos**
 
 - renda
 - histórico de pagamento
 - idade da conta
 - valor da dívida
+:::
 
-. . .
+::: {.ml-example-arrow .fragment data-fragment-index="2"}
+:::
 
-**Saída**
+::: {.ml-example-card .fragment data-fragment-index="2"}
+**Output**
 
 - probabilidade de atraso
 - ranking de risco
 - alerta para revisão humana
+:::
+
+::::
+
+. . .
+
+Importante: escopo para discriminação?...
 
 ---
 
@@ -453,25 +464,30 @@ O modelo aprende uma relação aproximada entre **inputs** e **outputs**.
 . . .
 
 ::: {.callout-important title="Atenção"}
-Eles não "sabem" do mesmo modo que uma pessoa sabe. A validação continua sendo parte do trabalho.
+Eles não "sabem" do mesmo modo que uma pessoa sabe. A validação continua sendo parte do *seu* trabalho como humano.
 :::
 
 ---
 
 ## O que mudou com LLMs?
 
-- **Interface:** conversar em linguagem natural
+- **Interface:** conversar em linguagem natural (quase qualquer idioma)
 - **Escopo:** texto, código, imagens, dados e documentos
 - **Velocidade:** primeiro rascunho em segundos
+- **Alinhamento:** *reinforcement learning* ajudou a ajustar respostas ao que humanos preferem
 - **Acesso:** ferramentas que não exigem programar do zero
 
 . . .
 
-**Resultado:** mais gente consegue usar computação para pensar, escrever e analisar.
+::: {.callout-warning title="Cuidado"}
+Implementar ideias ruins também ficou mais fácil.
+:::
 
 ---
 
-## Modelo, produto, interface
+## Modelo, produto, interface {.vcenter-slide}
+
+::::: {.vcenter-body}
 
 :::: {.workflow-grid}
 
@@ -495,18 +511,22 @@ Arquivos, planilhas, navegador, IDE, banco de dados, API.
 
 ::::
 
+:::::
+
 . . .
 
-O produto certo depende menos do "modelo famoso" e mais do **trabalho que você quer fazer**.
+O produto certo depende menos do "modelo famoso" e mais da **tarefa**.
 
 ---
 
 ## Produtos: diferenças práticas
 
+:::: {.vcenter-body .product-table-body}
+
 ::: {.product-table}
 | Produto | Uso típico | Integração forte |
 |---|---|---|
-| [ChatGPT](https://chatgpt.com/overview/) | Assistente geral, escrita, dados, código | arquivos, imagens, apps, agente, API |
+| [ChatGPT](https://chatgpt.com/overview/) | Assistente geral, escrita, dados, código | arquivos, imagens, apps, Codex, API |
 | [Claude](https://claude.com/product/overview) | análise longa, escrita, código | documentos, artifacts, Claude Code, conectores |
 | [Gemini](https://blog.google/products/gemini/) | assistente multimodal e ecossistema Google | Google apps, Android, Workspace |
 | [Microsoft Copilot](https://www.microsoft.com/en-us/microsoft-copilot/organizations) | produtividade corporativa | Word, Excel, PowerPoint, Teams, Windows |
@@ -514,19 +534,13 @@ O produto certo depende menos do "modelo famoso" e mais do **trabalho que você 
 | [Perplexity](https://docs.perplexity.ai/docs/getting-started/overview) / [NotebookLM](https://notebooklm.google/) | pesquisa e documentos | web com fontes; arquivos próprios |
 :::
 
----
-
-## Como escolher?
-
-- **Texto longo ou documentos:** contexto e síntese
-- **Código:** integração com editor e terminal
-- **Planilhas e trabalho corporativo:** proximidade dos arquivos
-- **Pesquisa:** fontes rastreáveis
-- **Dados sensíveis:** política institucional antes da ferramenta
+::::
 
 . . .
 
-Não existe "melhor IA". Existe ferramenta mais adequada para uma tarefa.
+::: {.callout-tip title="Você já imaginava..."}
+Não existe **o melhor modelo**! Tudo depende da sua tarefa.
+:::
 
 # Como a IA pode te ajudar?
 
@@ -534,10 +548,11 @@ Não existe "melhor IA". Existe ferramenta mais adequada para uma tarefa.
 
 IA ajuda mais quando a tarefa tem:
 
-- muito texto, dado ou repetição
-- custo alto de começar do zero
-- espaço para revisar e corrigir
-- critérios claros de qualidade
+- **muito texto, dado ou repetição** <span class="furg-arrow"></span> resumir atas e conjuntos de notícias
+- **custo alto de começar do zero** <span class="furg-arrow"></span> rascunho de um email, ou um relatório
+- **espaço para revisar e corrigir** <span class="furg-arrow"></span> código simples, encontrar erros
+- **critérios claros de qualidade** <span class="furg-arrow"></span> checar fórmulas numa planilha
+- **checar matemática ou lógica** <span class="furg-arrow"></span> resolver uma EDP complicada
 
 . . .
 

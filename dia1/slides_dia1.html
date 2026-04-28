@@ -169,7 +169,7 @@ Raul Riva
 </section>
 <section id="grau-de-ensino" class="slide level2">
 <h2>Grau de ensino</h2>
-<div id="10a4e1e4" class="cell" data-fig-height="3.9" data-fig-width="8.8" data-execution_count="2">
+<div id="9585f8bb" class="cell" data-fig-height="3.9" data-fig-width="8.8" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -181,7 +181,7 @@ Raul Riva
 </section>
 <section id="curso" class="slide level2">
 <h2>Curso</h2>
-<div id="fd303c1d" class="cell" data-fig-height="3.9" data-fig-width="8.8" data-execution_count="3">
+<div id="3d99afc9" class="cell" data-fig-height="3.9" data-fig-width="8.8" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -193,7 +193,7 @@ Raul Riva
 </section>
 <section id="conforto-com-programação" class="slide level2">
 <h2>Conforto com programação</h2>
-<div id="c43a561b" class="cell" data-fig-height="3.9" data-fig-width="8.8" data-execution_count="4">
+<div id="486900db" class="cell" data-fig-height="3.9" data-fig-width="8.8" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -205,7 +205,7 @@ Raul Riva
 </section>
 <section id="percepção-sobre-ia" class="slide level2">
 <h2>Percepção sobre IA</h2>
-<div id="f6c1a499" class="cell" data-fig-height="3.9" data-fig-width="8.8" data-execution_count="5">
+<div id="6f15ad55" class="cell" data-fig-height="3.9" data-fig-width="8.8" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -394,8 +394,9 @@ Raul Riva
 <section id="exemplo-simples-de-ml" class="slide level2">
 <h2>Exemplo simples de ML</h2>
 <p><strong>Pergunta:</strong> quais clientes têm maior risco de inadimplência?</p>
-<div class="fragment">
-<p><strong>Dados históricos</strong></p>
+<div class="ml-example-flow">
+<div class="ml-example-card fragment" data-fragment-index="1">
+<p><strong>Input: dados históricos</strong></p>
 <ul>
 <li>renda</li>
 <li>histórico de pagamento</li>
@@ -403,13 +404,20 @@ Raul Riva
 <li>valor da dívida</li>
 </ul>
 </div>
-<div class="fragment">
-<p><strong>Saída</strong></p>
+<div class="ml-example-arrow fragment" data-fragment-index="2">
+
+</div>
+<div class="ml-example-card fragment" data-fragment-index="2">
+<p><strong>Output</strong></p>
 <ul>
 <li>probabilidade de atraso</li>
 <li>ranking de risco</li>
 <li>alerta para revisão humana</li>
 </ul>
+</div>
+</div>
+<div class="fragment">
+<p>Importante: escopo para discriminação?…</p>
 </div>
 </section>
 <section id="llms-o-truque-conceitual" class="slide level2">
@@ -431,7 +439,7 @@ Raul Riva
 <p><strong>Atenção</strong></p>
 </div>
 <div class="callout-content">
-<p>Eles não “sabem” do mesmo modo que uma pessoa sabe. A validação continua sendo parte do trabalho.</p>
+<p>Eles não “sabem” do mesmo modo que uma pessoa sabe. A validação continua sendo parte do <em>seu</em> trabalho como humano.</p>
 </div>
 </div>
 </div>
@@ -441,17 +449,33 @@ Raul Riva
 <section id="o-que-mudou-com-llms" class="slide level2">
 <h2>O que mudou com LLMs?</h2>
 <ul>
-<li><strong>Interface:</strong> conversar em linguagem natural</li>
+<li><strong>Interface:</strong> conversar em linguagem natural (quase qualquer idioma)</li>
 <li><strong>Escopo:</strong> texto, código, imagens, dados e documentos</li>
 <li><strong>Velocidade:</strong> primeiro rascunho em segundos</li>
+<li><strong>Alinhamento:</strong> <em>reinforcement learning</em> ajudou a ajustar respostas ao que humanos preferem</li>
 <li><strong>Acesso:</strong> ferramentas que não exigem programar do zero</li>
 </ul>
 <div class="fragment">
-<p><strong>Resultado:</strong> mais gente consegue usar computação para pensar, escrever e analisar.</p>
+<div title="Cuidado">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Cuidado</strong></p>
+</div>
+<div class="callout-content">
+<p>Implementar ideias ruins também ficou mais fácil.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
-<section id="modelo-produto-interface" class="slide level2">
+<section id="modelo-produto-interface" class="slide level2 vcenter-slide">
 <h2>Modelo, produto, interface</h2>
+<div class="vcenter-body">
 <div class="workflow-grid">
 <div class="workflow-card">
 <p><strong>Modelo</strong></p>
@@ -466,12 +490,14 @@ Raul Riva
 <p>Arquivos, planilhas, navegador, IDE, banco de dados, API.</p>
 </div>
 </div>
+</div>
 <div class="fragment">
-<p>O produto certo depende menos do “modelo famoso” e mais do <strong>trabalho que você quer fazer</strong>.</p>
+<p>O produto certo depende menos do “modelo famoso” e mais da <strong>tarefa</strong>.</p>
 </div>
 </section>
 <section id="produtos-diferenças-práticas" class="slide level2">
 <h2>Produtos: diferenças práticas</h2>
+<div class="vcenter-body product-table-body">
 <div class="product-table">
 <table class="caption-top">
 <thead>
@@ -485,7 +511,7 @@ Raul Riva
 <tr class="odd">
 <td><a href="https://chatgpt.com/overview/">ChatGPT</a></td>
 <td>Assistente geral, escrita, dados, código</td>
-<td>arquivos, imagens, apps, agente, API</td>
+<td>arquivos, imagens, apps, Codex, API</td>
 </tr>
 <tr class="even">
 <td><a href="https://claude.com/product/overview">Claude</a></td>
@@ -515,18 +541,23 @@ Raul Riva
 </tbody>
 </table>
 </div>
-</section>
-<section id="como-escolher" class="slide level2">
-<h2>Como escolher?</h2>
-<ul>
-<li><strong>Texto longo ou documentos:</strong> contexto e síntese</li>
-<li><strong>Código:</strong> integração com editor e terminal</li>
-<li><strong>Planilhas e trabalho corporativo:</strong> proximidade dos arquivos</li>
-<li><strong>Pesquisa:</strong> fontes rastreáveis</li>
-<li><strong>Dados sensíveis:</strong> política institucional antes da ferramenta</li>
-</ul>
+</div>
 <div class="fragment">
-<p>Não existe “melhor IA”. Existe ferramenta mais adequada para uma tarefa.</p>
+<div title="Você já imaginava...">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Você já imaginava…</strong></p>
+</div>
+<div class="callout-content">
+<p>Não existe <strong>o melhor modelo</strong>! Tudo depende da sua tarefa.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section></section>
 <section>
@@ -538,10 +569,11 @@ Raul Riva
 <h2>Regra prática</h2>
 <p>IA ajuda mais quando a tarefa tem:</p>
 <ul>
-<li>muito texto, dado ou repetição</li>
-<li>custo alto de começar do zero</li>
-<li>espaço para revisar e corrigir</li>
-<li>critérios claros de qualidade</li>
+<li><strong>muito texto, dado ou repetição</strong> <span class="furg-arrow"></span> resumir atas e conjuntos de notícias</li>
+<li><strong>custo alto de começar do zero</strong> <span class="furg-arrow"></span> rascunho de um email, ou um relatório</li>
+<li><strong>espaço para revisar e corrigir</strong> <span class="furg-arrow"></span> código simples, encontrar erros</li>
+<li><strong>critérios claros de qualidade</strong> <span class="furg-arrow"></span> checar fórmulas numa planilha</li>
+<li><strong>checar matemática ou lógica</strong> <span class="furg-arrow"></span> resolver uma EDP complicada</li>
 </ul>
 <div class="fragment">
 <p>IA ajuda menos quando não há como validar a resposta.</p>
