@@ -169,7 +169,7 @@ Raul Riva
 </section>
 <section id="grau-de-ensino" class="slide level2">
 <h2>Grau de ensino</h2>
-<div id="9585f8bb" class="cell" data-fig-height="3.9" data-fig-width="8.8" data-execution_count="2">
+<div id="dece891c" class="cell" data-fig-height="3.9" data-fig-width="8.8" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -181,7 +181,7 @@ Raul Riva
 </section>
 <section id="curso" class="slide level2">
 <h2>Curso</h2>
-<div id="3d99afc9" class="cell" data-fig-height="3.9" data-fig-width="8.8" data-execution_count="3">
+<div id="f3e1fe4c" class="cell" data-fig-height="3.9" data-fig-width="8.8" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -193,7 +193,7 @@ Raul Riva
 </section>
 <section id="conforto-com-programação" class="slide level2">
 <h2>Conforto com programação</h2>
-<div id="486900db" class="cell" data-fig-height="3.9" data-fig-width="8.8" data-execution_count="4">
+<div id="fb1b3bf2" class="cell" data-fig-height="3.9" data-fig-width="8.8" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -205,7 +205,7 @@ Raul Riva
 </section>
 <section id="percepção-sobre-ia" class="slide level2">
 <h2>Percepção sobre IA</h2>
-<div id="6f15ad55" class="cell" data-fig-height="3.9" data-fig-width="8.8" data-execution_count="5">
+<div id="277719a6" class="cell" data-fig-height="3.9" data-fig-width="8.8" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -579,136 +579,170 @@ Raul Riva
 <p>IA ajuda menos quando não há como validar a resposta.</p>
 </div>
 </section>
-<section id="organizar-informação" class="slide level2">
-<h2>Organizar informação</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Entradas</strong></p>
+<section id="prompts-bons-e-ruins" class="slide level2">
+<h2>Prompts bons e ruins</h2>
+<div class="prompt-quality-grid">
+<div class="prompt-quality-card bad">
+<div class="prompt-card-header">
+<div class="prompt-card-icon">
+<p>?</p>
+</div>
+<p><strong>Prompt ruim</strong></p>
+</div>
+<div class="prompt-art bad">
+<div class="prompt-line long">
+
+</div>
+<div class="prompt-line short">
+
+</div>
+<div class="prompt-line medium">
+
+</div>
+</div>
 <ul>
-<li>PDF longo</li>
-<li>notícia</li>
-<li>relatório</li>
-<li>ata</li>
-<li>planilha bagunçada</li>
+<li>tarefa vaga</li>
+<li>pouco contexto</li>
+<li>sem formato de saída</li>
+<li>sem critério de qualidade</li>
+<li>sem pedido de validação</li>
 </ul>
-</div><div class="column" style="width:50%;">
-<p><strong>Saídas úteis</strong></p>
+</div>
+<div class="prompt-quality-arrow">
+<p>→</p>
+</div>
+<div class="prompt-quality-card good">
+<div class="prompt-card-header">
+<div class="prompt-card-icon">
+<p>✓</p>
+</div>
+<p><strong>Prompt bom</strong></p>
+</div>
+<div class="prompt-art good">
+<div class="prompt-section">
+<p>Contexto</p>
+</div>
+<div class="prompt-line long">
+
+</div>
+<div class="prompt-section">
+<p>Formato</p>
+</div>
+<div class="prompt-line medium">
+
+</div>
+<div class="prompt-section">
+<p>Validação</p>
+</div>
+<div class="prompt-line short">
+
+</div>
+<div class="prompt-checks">
+<div class="prompt-check">
+
+</div>
+<div class="prompt-check">
+
+</div>
+<div class="prompt-check">
+
+</div>
+</div>
+</div>
 <ul>
-<li>resumo</li>
-<li>tópicos principais</li>
-<li>tabela</li>
-<li>classificação</li>
-<li>checklist</li>
+<li>tarefa clara</li>
+<li>contexto suficiente</li>
+<li>formato esperado</li>
+<li>limites explícitos</li>
 </ul>
-</div></div>
+</div>
+</div>
 </section>
-<section id="criar-primeiros-rascunhos" class="slide level2">
-<h2>Criar primeiros rascunhos</h2>
+<section id="mesmo-pedido-dois-prompts" class="slide level2 prompt-slide">
+<h2>Mesmo pedido, dois prompts</h2>
+<div class="panel-tabset prompt-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Versão ruim</a></li><li><a href="#tabset-1-2">Versão boa</a></li></ul>
+<div class="tab-content prompt-tabset">
+<div id="tabset-1-1">
+<pre class="text"><code>Os juros subiram. O que acontece com uma empresa endividada?
+
+Faça uma análise para saber se a ação deve cair.</code></pre>
+</div>
+<div id="tabset-1-2">
+<pre class="text"><code>Você é um assistente para uma aula introdutória de IA aplicada a Finanças.
+Use apenas os dados abaixo. Não busque informações externas, não invente ticker
+e não dê recomendação de investimento.
+
+Dados da Companhia Beta:
+- dívida bruta: R$ 1,2 bilhão
+- caixa: R$ 200 milhões
+- 70% da dívida é pós-fixada ao CDI
+- custo do CDI sobe de 11% para 13% ao ano
+- EBITDA anual: R$ 280 milhões
+- lucro antes de impostos atual: R$ 90 milhões
+- ignore impostos, amortizações e mudanças operacionais
+
+Tarefa:
+1. Calcule o aumento anual aproximado da despesa financeira.
+2. Estime o novo lucro antes de impostos.
+3. Calcule dívida líquida / EBITDA.
+4. Separe a resposta em: cálculo, interpretação e limitações.
+5. Diga explicitamente por que esses dados não bastam para prever o preço da ação.</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="prompt-pouco-detalhado-em-ação" class="slide level2">
+<h2>Prompt Pouco Detalhado em Ação</h2>
+
+<img data-src="claude_prompt_curto.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
+<section id="resultado-muito-abrangente" class="slide level2">
+<h2>Resultado: Muito Abrangente</h2>
+
+<img data-src="claude_aula_valuation.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"></section>
+<section id="prompt-bom-em-ação" class="slide level2">
+<h2>Prompt Bom em Ação</h2>
+
+<img data-src="claude_prompt_longo.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
+<section id="resultado-foco-na-tarefa" class="slide level2">
+<h2>Resultado: Foco na Tarefa</h2>
+
+<img data-src="claude_calculo_impacto.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"></section>
+<section id="resultado-foco-até-em-limitações" class="slide level2">
+<h2>Resultado: Foco Até em Limitações</h2>
+
+<img data-src="claude_limitacoes.png" class="quarto-figure quarto-figure-center r-stretch" style="width:99.0%"><div class="fragment">
+<p>Outros exemplos:</p>
 <ul>
-<li>relatório curto</li>
-<li>email profissional</li>
-<li>roteiro de apresentação</li>
-<li>documentação de código</li>
-<li>explicação para público não técnico</li>
+<li><a href="https://chatgpt.com/share/69f23f1a-0a88-83e9-ae67-93e1b8bc3de5">ChatGPT curto</a></li>
+<li><a href="https://chatgpt.com/share/69f23f34-18a4-83e9-8663-1d7980860d43">ChatGPT longo</a></li>
 </ul>
-<div class="fragment">
-<p>O ganho não é “ter o texto final”.<br>
-É sair da página em branco.</p>
 </div>
 </section>
-<section id="acelerar-análise-de-dados" class="slide level2">
-<h2>Acelerar análise de dados</h2>
-<p>Um bom uso para aulas e trabalho:</p>
-<ol type="1">
-<li>descrever o problema</li>
-<li>pedir um plano simples</li>
-<li>gerar código <code>Python</code> curto</li>
-<li>executar</li>
-<li>corrigir erros</li>
-<li>interpretar o resultado</li>
-</ol>
-</section>
-<section id="pesquisar-com-fontes" class="slide level2">
-<h2>Pesquisar com fontes</h2>
+<section id="onde-ia-costuma-ir-mal" class="slide level2 caution-slide">
+<h2>Onde IA costuma ir mal</h2>
 <ul>
-<li>pedir termos de busca melhores</li>
-<li>comparar explicações alternativas</li>
-<li>sintetizar vários documentos</li>
-<li>extrair pontos de discordância</li>
-<li>montar perguntas para investigação</li>
+<li><strong>quando falta informação:</strong> ela tende a preencher lacunas com detalhes plausíveis</li>
+<li><strong>quando a pergunta induz uma resposta:</strong> ela pode concordar para “agradar”</li>
+<li><strong>fontes, citações e eventos recentes:</strong> pode inventar referências ou misturar fatos</li>
+<li><strong>números e cálculos encadeados:</strong> pode errar com muita confiança</li>
+<li><strong>tarefas sem checagem externa:</strong> se ninguém verifica, a mentira verossímil passa</li>
 </ul>
-<div class="fragment">
-<div title="Dica">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Dica</strong></p>
-</div>
-<div class="callout-content">
-<p>Peça sempre fontes, mas leia pelo menos as fontes mais importantes.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="automatizar-pequenas-tarefas" class="slide level2">
-<h2>Automatizar pequenas tarefas</h2>
-<div class="workflow-grid">
-<div class="workflow-card">
-<p><strong>Limpar</strong></p>
-<p>renomear colunas, tratar datas, padronizar categorias</p>
-</div>
-<div class="workflow-card">
-<p><strong>Calcular</strong></p>
-<p>retornos, médias, percentuais, cenários simples</p>
-</div>
-<div class="workflow-card">
-<p><strong>Visualizar</strong></p>
-<p>gráficos legíveis para relatório ou apresentação</p>
-</div>
-</div>
-</section>
-<section id="apoiar-decisões" class="slide level2">
-<h2>Apoiar decisões</h2>
-<ul>
-<li>estruturar cenários</li>
-<li>listar hipóteses</li>
-<li>fazer análise de sensibilidade</li>
-<li>identificar riscos</li>
-<li>transformar uma decisão vaga em tabela comparável</li>
-</ul>
-<div class="fragment">
-<p><strong>Importante:</strong> a IA organiza a decisão; ela não assume a responsabilidade.</p>
-</div>
-</section>
-<section id="cuidado-essencial" class="slide level2">
-<h2>Cuidado essencial</h2>
-<div title="Cuidado">
+<div title="Cuidado central">
 <div class="callout callout-warning callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Cuidado</strong></p>
+<p><strong>Cuidado central</strong></p>
 </div>
 <div class="callout-content">
-<p>Use IA como assistente de análise, não como autoridade final.</p>
+<p>IA é treinada para produzir respostas úteis e convincentes. Às vezes, isso significa <strong>soar</strong> certa mesmo quando está errada.</p>
 </div>
 </div>
 </div>
 </div>
-<ul>
-<li>respostas podem parecer certas e estar erradas</li>
-<li>números precisam ser recalculados</li>
-<li>fontes precisam ser abertas</li>
-<li>código precisa rodar</li>
-<li>decisões importantes precisam de julgamento humano</li>
-</ul>
 </section></section>
 <section>
 <section id="como-a-ia-pode-te-ajudar-no-mundo-de-finanças" class="title-slide slide level1 center">

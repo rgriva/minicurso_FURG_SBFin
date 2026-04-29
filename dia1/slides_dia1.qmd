@@ -560,129 +560,153 @@ IA ajuda menos quando não há como validar a resposta.
 
 ---
 
-## Organizar informação
+## Prompts bons e ruins
 
-:::: {.columns}
+:::: {.prompt-quality-grid}
 
-::: {.column width="50%"}
-**Entradas**
-
-- PDF longo
-- notícia
-- relatório
-- ata
-- planilha bagunçada
+::: {.prompt-quality-card .bad}
+::: {.prompt-card-header}
+::: {.prompt-card-icon}
+?
+:::
+**Prompt ruim**
 :::
 
-::: {.column width="50%"}
-**Saídas úteis**
-
-- resumo
-- tópicos principais
-- tabela
-- classificação
-- checklist
+::: {.prompt-art .bad}
+::: {.prompt-line .long}
+:::
+::: {.prompt-line .short}
+:::
+::: {.prompt-line .medium}
+:::
 :::
 
-::::
-
----
-
-## Criar primeiros rascunhos
-
-- relatório curto
-- email profissional
-- roteiro de apresentação
-- documentação de código
-- explicação para público não técnico
-
-. . .
-
-O ganho não é "ter o texto final".  
-É sair da página em branco.
-
----
-
-## Acelerar análise de dados
-
-Um bom uso para aulas e trabalho:
-
-1. descrever o problema
-2. pedir um plano simples
-3. gerar código `Python` curto
-4. executar
-5. corrigir erros
-6. interpretar o resultado
-
----
-
-## Pesquisar com fontes
-
-- pedir termos de busca melhores
-- comparar explicações alternativas
-- sintetizar vários documentos
-- extrair pontos de discordância
-- montar perguntas para investigação
-
-. . .
-
-::: {.callout-tip title="Dica"}
-Peça sempre fontes, mas leia pelo menos as fontes mais importantes.
+- tarefa vaga
+- pouco contexto
+- sem formato de saída
+- sem critério de qualidade
+- sem pedido de validação
 :::
 
----
-
-## Automatizar pequenas tarefas
-
-:::: {.workflow-grid}
-
-::: {.workflow-card}
-**Limpar**
-
-renomear colunas, tratar datas, padronizar categorias
+::: {.prompt-quality-arrow}
+→
 :::
 
-::: {.workflow-card}
-**Calcular**
-
-retornos, médias, percentuais, cenários simples
+::: {.prompt-quality-card .good}
+::: {.prompt-card-header}
+::: {.prompt-card-icon}
+✓
+:::
+**Prompt bom**
 :::
 
-::: {.workflow-card}
-**Visualizar**
+::: {.prompt-art .good}
+::: {.prompt-section}
+Contexto
+:::
+::: {.prompt-line .long}
+:::
+::: {.prompt-section}
+Formato
+:::
+::: {.prompt-line .medium}
+:::
+::: {.prompt-section}
+Validação
+:::
+::: {.prompt-line .short}
+:::
+::: {.prompt-checks}
+::: {.prompt-check}
+:::
+::: {.prompt-check}
+:::
+::: {.prompt-check}
+:::
+:::
+:::
 
-gráficos legíveis para relatório ou apresentação
+- tarefa clara
+- contexto suficiente
+- formato esperado
+- limites explícitos
 :::
 
 ::::
 
 ---
 
-## Apoiar decisões
+## Mesmo pedido, dois prompts {.prompt-slide}
 
-- estruturar cenários
-- listar hipóteses
-- fazer análise de sensibilidade
-- identificar riscos
-- transformar uma decisão vaga em tabela comparável
+::: {.panel-tabset .prompt-tabset}
+
+### Versão ruim
+
+```{.text code-line-numbers="false"}
+Os juros subiram. O que acontece com uma empresa endividada?
+
+Faça uma análise para saber se a ação deve cair.
+```
+
+### Versão boa
+
+```{.text code-line-numbers="false"}
+Você é um assistente para uma aula introdutória de IA aplicada a Finanças.
+Use apenas os dados abaixo. Não busque informações externas, não invente ticker
+e não dê recomendação de investimento.
+
+Dados da Companhia Beta:
+- dívida bruta: R$ 1,2 bilhão
+- caixa: R$ 200 milhões
+- 70% da dívida é pós-fixada ao CDI
+- custo do CDI sobe de 11% para 13% ao ano
+- EBITDA anual: R$ 280 milhões
+- lucro antes de impostos atual: R$ 90 milhões
+- ignore impostos, amortizações e mudanças operacionais
+
+Tarefa:
+1. Calcule o aumento anual aproximado da despesa financeira.
+2. Estime o novo lucro antes de impostos.
+3. Calcule dívida líquida / EBITDA.
+4. Separe a resposta em: cálculo, interpretação e limitações.
+5. Diga explicitamente por que esses dados não bastam para prever o preço da ação.
+```
+
+:::
+
+## Prompt Pouco Detalhado em Ação
+![](claude_prompt_curto.png){fig-align="center" width="80%"}
+
+## Resultado: Muito Abrangente
+![](claude_aula_valuation.png){fig-align="center" width="90%"}
+
+## Prompt Bom em Ação
+![](claude_prompt_longo.png){fig-align="center" width="80%"}
+
+## Resultado: Foco na Tarefa
+![](claude_calculo_impacto.png){fig-align="center" width="90%"}
+
+## Resultado: Foco Até em Limitações
+![](claude_limitacoes.png){fig-align="center" width="99%"}
 
 . . .
 
-**Importante:** a IA organiza a decisão; ela não assume a responsabilidade.
+Outros exemplos:
 
----
+- [ChatGPT curto](https://chatgpt.com/share/69f23f1a-0a88-83e9-ae67-93e1b8bc3de5) 
+- [ChatGPT longo](https://chatgpt.com/share/69f23f34-18a4-83e9-8663-1d7980860d43)
 
-## Cuidado essencial
+## Onde IA costuma ir mal {.caution-slide}
 
-::: {.callout-warning title="Cuidado"}
-Use IA como assistente de análise, não como autoridade final.
+- **quando falta informação:** ela tende a preencher lacunas com detalhes plausíveis
+- **quando a pergunta induz uma resposta:** ela pode concordar para "agradar"
+- **fontes, citações e eventos recentes:** pode inventar referências ou misturar fatos
+- **números e cálculos encadeados:** pode errar com muita confiança
+- **tarefas sem checagem externa:** se ninguém verifica, a mentira verossímil passa
+
+::: {.callout-warning title="Cuidado central"}
+IA é treinada para produzir respostas úteis e convincentes. Às vezes, isso significa **soar** certa mesmo quando está errada.
 :::
-
-- respostas podem parecer certas e estar erradas
-- números precisam ser recalculados
-- fontes precisam ser abertas
-- código precisa rodar
-- decisões importantes precisam de julgamento humano
 
 # Como a IA pode te ajudar no mundo de Finanças?
 
