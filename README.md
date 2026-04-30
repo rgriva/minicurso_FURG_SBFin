@@ -31,8 +31,11 @@ maio de 2026.
 Arquivos gerados automaticamente — **não editar manualmente**:
 
 - `.quarto/`
-- `dia1/slides_dia1_files/`
 - `*.quarto_ipynb*`
+
+Exceção de publicação:
+
+- `dia1/slides_dia1_files/` é gerado pelo Quarto, mas precisa ficar versionado porque `dia1/slides_dia1.html` depende desses assets no GitHub Pages.
 
 ---
 
@@ -75,6 +78,35 @@ conda run -n FURG quarto render dia1/slides_dia1.qmd
 conda run -n FURG quarto render dia2/slides.qmd
 conda run -n FURG quarto render dia3/slides.qmd
 ```
+
+## Publicação no GitHub Pages
+
+O repositório está preparado para ser publicado como Project Page:
+
+- Página inicial: <https://rgriva.github.io/minicurso_FURG_SBFin/>
+- Slides do Dia 1: <https://rgriva.github.io/minicurso_FURG_SBFin/dia1/slides_dia1.html>
+- Dashboard do Exemplo 1: <https://rgriva.github.io/minicurso_FURG_SBFin/dia1/dashboard_acoes_brasil.html>
+
+Configuração recomendada no GitHub:
+
+1. Acesse `Settings > Pages` no repositório.
+2. Em `Build and deployment`, selecione `Deploy from a branch`.
+3. Use branch `main` e pasta `/(root)`.
+4. Salve a configuração.
+
+Notas:
+
+- O arquivo `.nojekyll` instrui o GitHub Pages a servir os HTMLs estáticos diretamente, sem processamento adicional por Jekyll.
+- O arquivo `index.html` na raiz redireciona para `dia1/slides_dia1.html`.
+- A pasta `dia1/slides_dia1_files/` deve ser commitada junto com `dia1/slides_dia1.html`, pois contém JavaScript, CSS, fontes e figuras usados pelo deck renderizado.
+- O dashboard `dia1/dashboard_acoes_brasil.html` é autocontido e pesa cerca de 8,4 MB. Ele está dentro dos limites do GitHub Pages, mas pode demorar um pouco para carregar em redes lentas.
+- Para testar localmente antes de publicar:
+
+```bash
+python3 -m http.server 8000
+```
+
+Depois abra <http://localhost:8000/>.
 
 ---
 
