@@ -3,36 +3,343 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="refresh" content="0; url=dia1/slides_dia1.html">
     <title>IA Aplicada a Finan&ccedil;as - FURG</title>
-    <link rel="canonical" href="dia1/slides_dia1.html">
     <style>
+      :root {
+        --furg-red: #a31229;
+        --furg-orange: #c77824;
+        --furg-yellow: #e5ad2a;
+        --ink: #242424;
+        --muted: #626262;
+        --line: #dedede;
+        --paper: #ffffff;
+        --soft: #f6f4f1;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
       body {
         margin: 0;
         min-height: 100vh;
-        display: grid;
-        place-items: center;
         font-family: Arial, sans-serif;
-        background: #f7f7f7;
-        color: #222;
-      }
-
-      main {
-        max-width: 36rem;
-        padding: 2rem;
-        text-align: center;
+        background:
+          linear-gradient(180deg, rgba(163, 18, 41, 0.08), rgba(255, 255, 255, 0) 18rem),
+          var(--soft);
+        color: var(--ink);
       }
 
       a {
-        color: #a31229;
+        color: inherit;
+      }
+
+      .page {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 40px 0 56px;
+      }
+
+      header {
+        display: grid;
+        gap: 20px;
+        padding: 24px 0 34px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        color: var(--muted);
+        font-size: 0.94rem;
+      }
+
+      .brand strong {
+        color: var(--furg-red);
+      }
+
+      h1 {
+        max-width: 860px;
+        margin: 0;
+        font-size: clamp(2.2rem, 6vw, 5.2rem);
+        line-height: 0.98;
+        font-weight: 760;
+        letter-spacing: 0;
+      }
+
+      .subtitle {
+        max-width: 720px;
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.15rem;
+        line-height: 1.5;
+      }
+
+      .accent {
+        width: 168px;
+        height: 8px;
+        display: grid;
+        grid-template-columns: 2fr 1.4fr 1fr;
+      }
+
+      .accent span:nth-child(1) {
+        background: var(--furg-red);
+      }
+
+      .accent span:nth-child(2) {
+        background: var(--furg-orange);
+      }
+
+      .accent span:nth-child(3) {
+        background: var(--furg-yellow);
+      }
+
+      main {
+        display: grid;
+        gap: 24px;
+        padding-top: 30px;
+      }
+
+      .section-title {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 1.15rem;
+        line-height: 1.2;
+      }
+
+      .repo-link {
+        color: var(--furg-red);
+        font-size: 0.95rem;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 4px;
+      }
+
+      .days {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .day {
+        min-height: 260px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 28px;
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--paper);
+        box-shadow: 0 12px 28px rgba(36, 36, 36, 0.06);
+      }
+
+      .day.available {
+        border-color: rgba(163, 18, 41, 0.28);
+      }
+
+      .day-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .status {
+        padding: 6px 9px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: #fbfbfb;
+        color: var(--muted);
+        font-size: 0.78rem;
+        line-height: 1;
+        white-space: nowrap;
+      }
+
+      .available .status {
+        border-color: rgba(163, 18, 41, 0.28);
+        background: rgba(163, 18, 41, 0.08);
+        color: var(--furg-red);
+      }
+
+      .day h3 {
+        margin: 0 0 12px;
+        font-size: 1.55rem;
+        line-height: 1.15;
+      }
+
+      .day p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.45;
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 42px;
+        align-items: center;
+        justify-content: center;
+        padding: 0 16px;
+        border-radius: 6px;
+        background: var(--furg-red);
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .button:hover,
+      .button:focus-visible {
+        background: #7f0e20;
+      }
+
+      .path {
+        min-width: 0;
+        color: var(--muted);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 0.82rem;
+        overflow-wrap: anywhere;
+      }
+
+      footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 34px;
+        padding-top: 22px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.94rem;
+      }
+
+      footer a {
+        color: var(--furg-red);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 4px;
+      }
+
+      @media (max-width: 860px) {
+        .days {
+          grid-template-columns: 1fr;
+        }
+
+        .day {
+          min-height: 0;
+        }
+
+        .section-title,
+        .brand,
+        .actions {
+          align-items: flex-start;
+          flex-direction: column;
+        }
       }
     </style>
   </head>
   <body>
-    <main>
-      <h1>IA Aplicada a Finan&ccedil;as - FURG</h1>
-      <p>Redirecionando para os slides do Dia 1.</p>
-      <p><a href="dia1/slides_dia1.html">Abrir apresenta&ccedil;&atilde;o</a></p>
-    </main>
+    <div class="page">
+      <header>
+        <div class="brand">
+          <span><strong>FURG</strong> &middot; Escola SBFin</span>
+          <span>Minicurso &middot; Maio de 2026</span>
+        </div>
+        <div class="accent" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <h1>IA Aplicada a Finan&ccedil;as</h1>
+        <p class="subtitle">
+          Materiais do minicurso sobre intelig&ecirc;ncia artificial aplicada a dados,
+          texto financeiro e decis&otilde;es corporativas.
+        </p>
+      </header>
+
+      <main>
+        <div class="section-title">
+          <h2>Apresenta&ccedil;&otilde;es</h2>
+          <a class="repo-link" href="https://github.com/rgriva/minicurso_FURG_SBFin">Reposit&oacute;rio no GitHub</a>
+        </div>
+
+        <section class="days" aria-label="Links para as apresenta&ccedil;&otilde;es">
+          <article class="day available">
+            <div>
+              <div class="day-meta">
+                <span>Dia 1</span>
+                <span class="status">dispon&iacute;vel</span>
+              </div>
+              <h3>Fundamentos</h3>
+              <p>
+                Conceitos centrais, usos de IA em Finan&ccedil;as e exemplos iniciais com
+                dados, texto e decis&atilde;o corporativa.
+              </p>
+            </div>
+            <div class="actions">
+              <a class="button" href="dia1/slides_dia1.html">Abrir slides</a>
+              <span class="path">dia1/slides_dia1.html</span>
+            </div>
+          </article>
+
+          <article class="day">
+            <div>
+              <div class="day-meta">
+                <span>Dia 2</span>
+                <span class="status">em breve</span>
+              </div>
+              <h3>Ferramentas</h3>
+              <p>
+                Chatbots, prompting, fluxos agentic, terminal b&aacute;sico, custos,
+                limites e cuidados com dados sens&iacute;veis.
+              </p>
+            </div>
+            <div class="actions">
+              <span class="status">a construir</span>
+              <span class="path">dia2/slides.html</span>
+            </div>
+          </article>
+
+          <article class="day">
+            <div>
+              <div class="day-meta">
+                <span>Dia 3</span>
+                <span class="status">em breve</span>
+              </div>
+              <h3>Demos com agents</h3>
+              <p>
+                Demonstra&ccedil;&otilde;es ao vivo com dados financeiros, sentimento em texto
+                financeiro e valuation aplicado.
+              </p>
+            </div>
+            <div class="actions">
+              <span class="status">a construir</span>
+              <span class="path">dia3/slides.html</span>
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <footer>
+        <span>Raul Riva</span>
+        <a href="https://rgriva.github.io">rgriva.github.io</a>
+      </footer>
+    </div>
   </body>
 </html>
