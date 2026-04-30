@@ -1,5 +1,5 @@
 ---
-title: "IA Aplicada a Finanças"
+title: "IA Aplicada a Finanças: Módulo 1"
 subtitle: "FURG - Escola SBFin"
 author: "Raul Riva"
 date: 2026-05-01
@@ -726,17 +726,241 @@ IA é treinada para produzir respostas úteis e convincentes. Às vezes, isso si
 
 ## Exemplo 1: dados financeiros
 
-**Pergunta:** como um ativo se comportou em relação a outro?
+**Pergunta:** como grandes ações brasileiras se comportaram nos últimos anos?
 
-- baixar preços
-- calcular retornos
-- medir volatilidade
-- olhar drawdowns
-- comparar em gráfico
+- baixar preços diários
+- calcular retornos e momentos
+- comparar volatilidade
+- olhar correlações no tempo
+- montar um dashboard
 
 . . .
 
-Ferramentas simples: `Python`, `pandas`, `matplotlib`, `yfinance`.
+Fluxo em duas etapas:
+
+1. pedir código para baixar os dados e salvar um CSV
+2. depois anexar o CSV e pedir o dashboard HTML
+
+---
+
+## Prompt 1: baixar dados {.smaller}
+
+::: {.scrollable-prompt}
+```{.markdown code-line-numbers="true"}
+Você é um assistente de programação para uma aula introdutória de IA aplicada a Finanças.
+
+Objetivo:
+Escreva um script Python simples que baixe 20 anos de preços diários de 5 grandes ações brasileiras e do índice da bolsa brasileira, salvando os dados em CSV.
+
+Ativos:
+- PETR4.SA
+- VALE3.SA
+- ITUB4.SA
+- ABEV3.SA
+- WEGE3.SA
+
+Benchmark:
+- ^BVSP, usando o rótulo IBOV no CSV
+
+Requisitos:
+1. Use Python com yfinance e pandas.
+2. Baixe dados diários dos últimos 20 anos.
+3. Para ações, use preços ajustados ou preços com auto_adjust=True.
+4. Para o índice ^BVSP, use a série disponível no Yahoo Finance.
+5. Salve um arquivo chamado precos_acoes_brasil.csv.
+6. O CSV deve estar em formato longo, com exatamente estas colunas:
+   - date
+   - ticker
+   - adjusted_close
+7. No CSV, salve o índice como ticker IBOV, não como ^BVSP.
+8. Remova linhas sem preço.
+9. Antes de salvar, verifique:
+   - se cada ticker retornou dados;
+   - quantas observações válidas existem por ticker;
+   - se pelo menos 3 ações e o IBOV têm dados válidos.
+10. Se algum ticker falhar, mostre uma mensagem clara, mas continue se houver pelo menos 3 ações válidas e o IBOV.
+11. Se houver menos de 3 ações válidas ou se o IBOV falhar, pare o script com uma mensagem clara.
+12. Não use APIs que exijam autenticação.
+13. Mantenha o código curto, legível e adequado para uma demonstração ao vivo.
+
+Formato da resposta:
+- Primeiro mostre o comando para instalar dependências, se necessário.
+- Depois mostre o script completo em Python.
+- No final, explique em poucas linhas como executar o script e onde o CSV será salvo.
+```
+:::
+
+. . .
+
+Output esperado: `precos_acoes_brasil.csv`.
+
+---
+
+## Código gerado pelo Gemini {.smaller}
+
+::: {.scrollable-prompt}
+```{.python code-line-numbers="true"}
+import yfinance as yf
+import pandas as pd
+from datetime import date
+import os
+
+# Definir parâmetros do exercício
+tickers = ['PETR4.SA', 'VALE3.SA', 'ITUB4.SA', 'ABEV3.SA', 'WEGE3.SA']
+benchmark = '^BVSP'
+benchmark_label = 'IBOV'
+
+# Calcular o intervalo de 20 anos com base na data atual
+start_date = date.today().replace(year=date.today().year - 20).isoformat()
+end_date = date.today().isoformat()
+
+valid_stocks = []
+all_data = []
+
+print("Baixando dados das ações...")
+for tk in tickers:
+    try:
+        # Download dos dados
+        df = yf.download(tk, start=start_date, end=end_date, auto_adjust=True, progress=False)
+        
+        if not df.empty and 'Close' in df.columns:
+            # Filtra os dados e remove valores vazios
+            df = df[['Close']].dropna().reset_index()
+            df.columns = ['date', 'adjusted_close']
+            df['ticker'] = tk
+            
+            if not df.empty:
+                all_data.append(df)
+                valid_stocks.append(tk)
+        else:
+            print(f"Aviso: O ticker {tk} não retornou dados válidos.")
+    except Exception as e:
+        print(f"Erro ao baixar os dados do ticker {tk}: {e}")
+
+print("\nBaixando dados do benchmark (IBOV)...")
+ibov_df = None
+try:
+    df_ibov = yf.download(benchmark, start=start_date, end=end_date, auto_adjust=True, progress=False)
+    
+    if not df_ibov.empty and 'Close' in df_ibov.columns:
+        ibov_df = df_ibov[['Close']].dropna().reset_index()
+        ibov_df.columns = ['date', 'adjusted_close']
+        ibov_df['ticker'] = benchmark_label
+except Exception as e:
+    print(f"Erro ao baixar o benchmark {benchmark}: {e}")
+
+# Verificação dos requisitos 10 e 11
+if ibov_df is None or ibov_df.empty:
+    raise SystemExit("Erro crítico: O índice IBOV falhou ou está vazio. O script será encerrado.")
+
+if len(valid_stocks) < 3:
+    raise SystemExit(f"Erro crítico: Apenas {len(valid_stocks)} ações foram carregadas com sucesso. Mínimo necessário: 3. O script será encerrado.")
+
+# Concatena todos os dataframes válidos
+final_df = pd.concat(all_data + [ibov_df], ignore_index=True)
+
+# Define o caminho do arquivo na mesma pasta onde o script está salvo
+script_dir = os.path.dirname(os.path.abspath(__file__))
+output_path = os.path.join(script_dir, "precos_acoes_brasil.csv")
+
+# Salva o arquivo CSV
+final_df.to_csv(output_path, index=False)
+
+# Exibe o resultado e a contagem de observações
+print(f"\nSucesso! Arquivo salvo em: {output_path}")
+print("Observações válidas por ativo:")
+for tk in valid_stocks + [benchmark_label]:
+    count = len(final_df[final_df['ticker'] == tk])
+    print(f"- {tk}: {count} observações")
+```
+:::
+
+---
+
+## Prompt 2: gerar dashboard {.smaller}
+
+::: {.scrollable-prompt}
+```{.markdown code-line-numbers="true"}
+Você é um assistente de análise financeira para uma aula introdutória de IA aplicada a Finanças.
+
+Vou anexar um arquivo CSV chamado precos_acoes_brasil.csv com dados diários de ações brasileiras e do índice Ibovespa.
+
+Estrutura do CSV:
+- date: data da observação
+- ticker: ticker da ação ou benchmark
+- adjusted_close: preço ajustado ou nível do índice
+
+Objetivo:
+Crie um dashboard estático em HTML, autocontido, analisando os dados anexados. Não baixe dados externos. Use apenas o CSV anexado.
+
+Tarefa:
+1. Leia o CSV anexado.
+2. Converta date para data.
+3. Organize os preços por ticker.
+4. Calcule retornos diários logarítmicos.
+5. Use IBOV como benchmark de comparação.
+6. Gere uma tabela-resumo com:
+   - ticker
+   - número de observações
+   - primeira data disponível
+   - última data disponível
+   - retorno médio diário
+   - volatilidade diária
+   - retorno anualizado
+   - volatilidade anualizada
+   - melhor retorno diário
+   - pior retorno diário
+   - assimetria
+   - curtose
+
+7. Crie gráficos interativos claros:
+   - preços normalizados para 100
+   - drawdown, isto é, queda percentual em relação ao pico anterior
+   - volatilidade móvel anualizada de 63 pregões
+   - correlação móvel das ações com o IBOV, usando janela de 252 pregões
+   - distribuição dos retornos diários
+
+8. Não inclua gráfico de retorno acumulado, porque ele repete demais a informação do preço normalizado.
+
+9. Use uma paleta de cores que diferencie claramente as empresas. Não use tons parecidos demais. Pode usar as cores da FURG como acentos visuais, mas as linhas dos ativos precisam ser fáceis de distinguir.
+
+10. Inclua um botão visível no dashboard para alternar os principais gráficos entre:
+   - Com WEGE3.SA
+   - Sem WEGE3.SA
+
+11. O botão deve afetar pelo menos estes gráficos:
+   - preços normalizados
+   - drawdown
+   - volatilidade móvel
+
+12. A tabela-resumo pode continuar mostrando todos os ativos, inclusive WEGE3.SA.
+
+13. Monte tudo em um dashboard visualmente limpo, com títulos curtos e linguagem adequada para alunos de Finanças.
+
+14. Inclua uma seção final chamada "Limitações", explicando:
+   - os dados vêm de fonte externa e podem conter falhas
+   - retorno passado não garante retorno futuro
+   - correlações variam no tempo e dependem da janela escolhida
+   - WEGE3.SA pode distorcer a escala por ter tido desempenho muito superior no período
+   - a análise não é recomendação de investimento
+
+15. Gere o resultado final como um único arquivo HTML autocontido chamado dashboard_acoes_brasil.html, pronto para baixar e abrir no navegador.
+
+Critérios de qualidade:
+- Não invente dados.
+- Não baixe dados externos.
+- Use apenas o CSV anexado.
+- Se algum ticker tiver dados insuficientes, mostre isso claramente.
+- O dashboard deve abrir sem depender de rodar Python depois de pronto.
+- Se usar Plotly ou JavaScript, garanta que o HTML final funcione ao ser aberto localmente no navegador.
+```
+:::
+
+---
+
+::: {.center-link-slide}
+[clique aqui para o resultado](dashboard_acoes_brasil.html)
+:::
 
 ---
 

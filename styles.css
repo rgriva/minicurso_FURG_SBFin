@@ -527,3 +527,32 @@
   font-size: 0.78em;
   margin-top: 0.45rem;
 }
+
+.reveal .scrollable-prompt {
+  height: 585px;
+  max-height: 585px;
+  overflow-y: auto;
+}
+
+.reveal .scrollable-prompt pre {
+  font-size: 0.56em;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.reveal .scrollable-prompt .sourceCode,
+.reveal .scrollable-prompt .code-copy-outer-scaffold {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.reveal .center-link-slide {
+  align-items: center;
+  display: flex;
+  font-size: 1.45em;
+  justify-content: center;
+  min-height: 520px;
+  text-align: center;
+}
