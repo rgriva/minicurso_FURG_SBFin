@@ -40,8 +40,8 @@ warnings.filterwarnings("ignore")
 # PARÂMETROS DEFAULT
 # ═══════════════════════════════════════════════════════════════════════════════
 _HERE            = os.path.dirname(os.path.abspath(__file__))
-DEFAULT_CSV      = os.path.join(_HERE, "precos_acoes_brasil.csv")
-DEFAULT_OUT      = os.path.join(_HERE, "backtest")
+DEFAULT_CSV      = os.path.join(_HERE, "..", "precos_acoes_brasil.csv")
+DEFAULT_OUT      = os.path.join(_HERE, "..", "images", "backtest")
 DEFAULT_RF       = 0.1075   # taxa livre de risco anual
 DEFAULT_LOOKBACK = 2        # anos de janela de estimação
 TRADING_DAYS     = 252

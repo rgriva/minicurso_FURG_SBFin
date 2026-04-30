@@ -130,7 +130,7 @@ def plotar_histograma(coluna, ordem=None, normalizador=None):
 - Pesquisa em Finanças, Econometria, e métodos de Aprendizado de Máquina
 - Contato: [rgriva.github.io](https://rgriva.github.io) | [@rgriva no GitHub](https://github.com/rgriva)
 
-![](QR_code.png){fig-align="center" width="18%"}
+![](images/QR_code.png){fig-align="center" width="18%"}
 
 ---
 
@@ -226,7 +226,7 @@ plotar_histograma(
 
 Material do minicurso: [https://github.com/rgriva/minicurso_FURG_SBFin](https://github.com/rgriva/minicurso_FURG_SBFin)
 
-![](github_repo_QR.png){fig-align="center" width="18%"}
+![](images/github_repo_QR.png){fig-align="center" width="18%"}
 
 # IA, LLMs, Machine Learning?...
 
@@ -675,19 +675,19 @@ Tarefa:
 :::
 
 ## Prompt Pouco Detalhado em Ação
-![](claude_prompt_curto.png){fig-align="center" width="80%"}
+![](images/claude_prompt_curto.png){fig-align="center" width="80%"}
 
 ## Resultado: Muito Abrangente
-![](claude_aula_valuation.png){fig-align="center" width="90%"}
+![](images/claude_aula_valuation.png){fig-align="center" width="90%"}
 
 ## Prompt Bom em Ação
-![](claude_prompt_longo.png){fig-align="center" width="80%"}
+![](images/claude_prompt_longo.png){fig-align="center" width="80%"}
 
 ## Resultado: Foco na Tarefa
-![](claude_calculo_impacto.png){fig-align="center" width="90%"}
+![](images/claude_calculo_impacto.png){fig-align="center" width="90%"}
 
 ## Resultado: Foco Até em Limitações
-![](claude_limitacoes.png){fig-align="center" width="99%"}
+![](images/claude_limitacoes.png){fig-align="center" width="99%"}
 
 . . .
 
@@ -1094,10 +1094,10 @@ for label, w in [("Tangência", w_tan), ("Mín. Variância", w_mv), ("Risk Parit
 ```
 
 ## Resultado Pelo Claude -- Por Que Tão Concentrado?
-![](tabela_portfolios_claude.png){fig-align="center"}
+![](images/tabela_portfolios_claude.png){fig-align="center"}
 
 ## Limitações
-![](limitacoes_claude.png){fig-align="center" width="70%"}
+![](images/limitacoes_claude.png){fig-align="center" width="70%"}
 
 ## E Que Tal um Backtest?
 ```{.markdown code-line-numbers="true"}
@@ -1117,13 +1117,13 @@ Quero agora que você prepare, portanto, um backtest. Vamos fazer o seguinte:
 ```
 
 ## Tabela de Resultados do Backtest
-![](tabela_backtest.png){fig-align="center"}
+![](images/tabela_backtest.png){fig-align="center"}
 
 ## Evolução da Estratégia no Backtest
-![](backtest_drawdown.png){fig-align="center" width="80%"}
+![](images/backtest_drawdown.png){fig-align="center" width="80%"}
 
 ## Recomendação
-![](recomendacao.png){fig-align="center" width="80%"}
+![](images/recomendacao.png){fig-align="center" width="80%"}
 
 ## Ponte para os próximos dias
 

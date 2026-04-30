@@ -59,9 +59,9 @@ if len(valid_stocks) < 3:
 # Concatena todos os dataframes válidos
 final_df = pd.concat(all_data + [ibov_df], ignore_index=True)
 
-# Define o caminho do arquivo na mesma pasta onde o script está salvo
+# Define o caminho do arquivo na pasta dia1/ (pai da pasta scripts/)
 script_dir = os.path.dirname(os.path.abspath(__file__))
-output_path = os.path.join(script_dir, "precos_acoes_brasil.csv")
+output_path = os.path.join(script_dir, "..", "precos_acoes_brasil.csv")
 
 # Salva o arquivo CSV
 final_df.to_csv(output_path, index=False)
