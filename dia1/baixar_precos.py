@@ -1,63 +1,74 @@
-from datetime import datetime
-from pathlib import Path
-import pandas as pd
+# Gerado pelo Gemini via prompt nos slides!
+
 import yfinance as yf
+import pandas as pd
+from datetime import date
+import os
 
-tickers = ["PETR4.SA", "VALE3.SA", "ITUB4.SA", "ABEV3.SA", "WEGE3.SA"]
-output_file = Path(__file__).resolve().parent / "precos_acoes_brasil.csv"
+# Definir parâmetros do exercício
+tickers = ['PETR4.SA', 'VALE3.SA', 'ITUB4.SA', 'ABEV3.SA', 'WEGE3.SA']
+benchmark = '^BVSP'
+benchmark_label = 'IBOV'
 
-end_date = datetime.today()
-start_date = end_date.replace(year=end_date.year - 20)
+# Calcular o intervalo de 20 anos com base na data atual
+start_date = date.today().replace(year=date.today().year - 20).isoformat()
+end_date = date.today().isoformat()
 
-valid_parts = []
+valid_stocks = []
+all_data = []
 
-for ticker in tickers:
-    print(f"Baixando {ticker}...")
-
+print("Baixando dados das ações...")
+for tk in tickers:
     try:
-        data = yf.download(
-            ticker,
-            start=start_date,
-            end=end_date,
-            interval="1d",
-            auto_adjust=True,
-            progress=False,
-        )
-
-        if data.empty or "Close" not in data.columns:
-            print(f"Aviso: {ticker} não retornou dados válidos.")
-            continue
-
-        temp = data[["Close"]].reset_index()
-        temp.columns = ["date", "adjusted_close"]
-        temp["ticker"] = ticker
-        temp = temp[["date", "ticker", "adjusted_close"]]
-        temp = temp.dropna(subset=["adjusted_close"])
-
-        n_obs = len(temp)
-
-        if n_obs == 0:
-            print(f"Aviso: {ticker} não tem preços válidos.")
-            continue
-
-        print(f"{ticker}: {n_obs} observações válidas.")
-        valid_parts.append(temp)
-
+        # Download dos dados
+        df = yf.download(tk, start=start_date, end=end_date, auto_adjust=True, progress=False)
+        
+        if not df.empty and 'Close' in df.columns:
+            # Filtra os dados e remove valores vazios
+            df = df[['Close']].dropna().reset_index()
+            df.columns = ['date', 'adjusted_close']
+            df['ticker'] = tk
+            
+            if not df.empty:
+                all_data.append(df)
+                valid_stocks.append(tk)
+        else:
+            print(f"Aviso: O ticker {tk} não retornou dados válidos.")
     except Exception as e:
-        print(f"Aviso: falha ao baixar {ticker}. Erro: {e}")
+        print(f"Erro ao baixar os dados do ticker {tk}: {e}")
 
-if len(valid_parts) < 3:
-    raise SystemExit(
-        f"Erro: apenas {len(valid_parts)} tickers têm dados válidos. "
-        "É necessário ter pelo menos 3."
-    )
+print("\nBaixando dados do benchmark (IBOV)...")
+ibov_df = None
+try:
+    df_ibov = yf.download(benchmark, start=start_date, end=end_date, auto_adjust=True, progress=False)
+    
+    if not df_ibov.empty and 'Close' in df_ibov.columns:
+        ibov_df = df_ibov[['Close']].dropna().reset_index()
+        ibov_df.columns = ['date', 'adjusted_close']
+        ibov_df['ticker'] = benchmark_label
+except Exception as e:
+    print(f"Erro ao baixar o benchmark {benchmark}: {e}")
 
-prices = pd.concat(valid_parts, ignore_index=True)
+# Verificação dos requisitos 10 e 11
+if ibov_df is None or ibov_df.empty:
+    raise SystemExit("Erro crítico: O índice IBOV falhou ou está vazio. O script será encerrado.")
 
-counts = prices.groupby("ticker")["adjusted_close"].count()
-print("\nObservações válidas por ticker:")
-print(counts)
+if len(valid_stocks) < 3:
+    raise SystemExit(f"Erro crítico: Apenas {len(valid_stocks)} ações foram carregadas com sucesso. Mínimo necessário: 3. O script será encerrado.")
 
-prices.to_csv(output_file, index=False)
+# Concatena todos os dataframes válidos
+final_df = pd.concat(all_data + [ibov_df], ignore_index=True)
 
-print(f"\nArquivo salvo com sucesso: {output_file}")
+# Define o caminho do arquivo na mesma pasta onde o script está salvo
+script_dir = os.path.dirname(os.path.abspath(__file__))
+output_path = os.path.join(script_dir, "precos_acoes_brasil.csv")
+
+# Salva o arquivo CSV
+final_df.to_csv(output_path, index=False)
+
+# Exibe o resultado e a contagem de observações
+print(f"\nSucesso! Arquivo salvo em: {output_path}")
+print("Observações válidas por ativo:")
+for tk in valid_stocks + [benchmark_label]:
+    count = len(final_df[final_df['ticker'] == tk])
+    print(f"- {tk}: {count} observações")
