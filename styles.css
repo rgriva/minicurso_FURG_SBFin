@@ -548,6 +548,35 @@
   overflow: visible !important;
 }
 
+.reveal .prompt-box {
+  background: #f1f3f5;
+  border: 1px solid #d6d9dc;
+  border-radius: 4px;
+  color: #003b4f;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.58em;
+  line-height: 1.38;
+  margin-top: 0.7rem;
+  padding: 0.85rem 1.05rem;
+}
+
+.reveal .prompt-box p {
+  margin: 0 0 0.65rem 0;
+}
+
+.reveal .prompt-box ol {
+  margin: 0;
+  padding-left: 1.45rem;
+}
+
+.reveal .prompt-box li {
+  margin-bottom: 0.52rem;
+}
+
+.reveal .prompt-box li:last-child {
+  margin-bottom: 0;
+}
+
 .reveal .center-link-slide {
   align-items: center;
   display: flex;

@@ -1100,7 +1100,8 @@ for label, w in [("Tangência", w_tan), ("Mín. Variância", w_mv), ("Risk Parit
 ![](images/limitacoes_claude.png){fig-align="center" width="70%"}
 
 ## E Que Tal um Backtest?
-```{.markdown code-line-numbers="true"}
+
+::: {.prompt-box}
 Quero agora que você prepare, portanto, um backtest. Vamos fazer o seguinte:
 
 1. Para cada portfólio, vamos usar os últimos dois anos de dados e estimar o retorno esperado e a matriz de covariância. Vamos montar o portfólio e vamos continuar a comprar este portfólio.
@@ -1114,7 +1115,7 @@ Quero agora que você prepare, portanto, um backtest. Vamos fazer o seguinte:
 5. Crie também um script Python capaz de gerar esta figura e tabela e tornar tudo reprodutível.
 
 6. Dados os resultados, faça uma recomendação de estratégia.
-```
+:::
 
 ## Tabela de Resultados do Backtest
 ![](images/tabela_backtest.png){fig-align="center"}
