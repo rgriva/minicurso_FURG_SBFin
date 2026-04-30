@@ -2,7 +2,7 @@
 
 Este arquivo é o mapa de continuidade do projeto. `AGENTS.md` contém as regras permanentes; este plano registra o estado atual, decisões tomadas e próximos passos.
 
-Última atualização: 2026-04-28.
+Última atualização: 2026-04-30.
 
 ---
 
@@ -34,16 +34,31 @@ Ponto crítico para nuvem:
 ```text
 2026_FURG/
   AGENTS.md
+  README.md
+  index.html
   plano_codex.md
   _quarto.yml
   styles.css
   requirements.txt
   *.xlsx local com respostas dos participantes          # ignorado pelo git
   dia1/
-    QR_code.png
-    github_repo_QR.png
     slides_dia1.qmd
     slides_dia1.html
+    slides_dia1.quarto_ipynb
+    precos_acoes_brasil.csv
+    dashboard_acoes_brasil.html
+    images/
+      QR_code.png
+      github_repo_QR.png
+      backtest_retorno.png/.pdf
+      backtest_drawdown.png/.pdf
+      backtest_tabela.png/.pdf
+      outros PNGs de apoio visual dos exemplos
+    scripts/
+      baixar_precos.py
+      computar_portfolios.py
+      backtest_portfolios.py
+    slides_dia1_files/                                   # render/cache RevealJS
   dia2/
   dia3/
 ```
@@ -57,7 +72,7 @@ Arquivos gerados ou cache que não devem ser editados manualmente:
 
 ## Estado Atual do Dia 1
 
-Status: rascunho principal construído.
+Status: conteúdo principal construído e bloco prático de dados financeiros já materializado com scripts e outputs.
 
 O deck `dia1/slides_dia1.qmd` já contém:
 - título, autor, data e metadados Quarto
@@ -79,9 +94,15 @@ O deck `dia1/slides_dia1.qmd` já contém:
 - perspectiva histórica
 - explicação simples de ML
 - diferença entre modelo, produto e integração
+- prática de prompts (pedido pouco detalhado vs pedido bem especificado)
 - usos gerais de IA
 - usos de IA em Finanças
-- três exemplos-base:
+- exemplo de dados financeiros com artefatos concretos:
+  - `dia1/scripts/baixar_precos.py`: baixa preços com validações e gera `dia1/precos_acoes_brasil.csv`
+  - `dia1/scripts/computar_portfolios.py`: calcula alocações (tangência, mínima variância e risk parity)
+  - `dia1/scripts/backtest_portfolios.py`: executa backtest com rebalanceamento mensal e gera figuras em `dia1/images/`
+  - `dia1/dashboard_acoes_brasil.html`: dashboard exportado do exemplo
+- exemplos-base no fechamento do dia:
   - dados financeiros
   - texto financeiro
   - decisão corporativa
@@ -106,6 +127,7 @@ Antes de considerar o dia 1 fechado:
 - decidir se o projeto precisa renderizar integralmente em nuvem sem a planilha local
 - se sim, criar dados agregados versionados para os histogramas ou remover a dependência direta da planilha ignorada
 - adicionar speaker notes apenas onde ajudarem a execução ao vivo
+- decidir quais artefatos gerados em `dia1/images/` e `dia1/dashboard_acoes_brasil.html` devem ser mantidos como referência permanente no repositório
 
 ---
 

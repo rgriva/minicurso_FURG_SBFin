@@ -8,9 +8,16 @@ Estrutura esperada:
 
 ```text
 2026_FURG/
+  _quarto.yml
+  styles.css
+  requirements.txt
   dia1/
     slides_dia1.qmd
-    demo/              # se aplicável
+    slides_dia1.html
+    precos_acoes_brasil.csv
+    dashboard_acoes_brasil.html
+    images/
+    scripts/
   dia2/
     slides.qmd         # a criar
     demo/              # a criar se necessário
@@ -32,10 +39,18 @@ Cada dia deve conter:
 
 Referência para futuras sessões do Codex, inclusive em ambiente local e em nuvem.
 
-Em 2026-04-28:
+Em 2026-04-30:
 - o dia 1 está implementado em `dia1/slides_dia1.qmd`
 - o HTML renderizado do dia 1 está em `dia1/slides_dia1.html`
-- os QR codes usados no dia 1 estão em `dia1/QR_code.png` e `dia1/github_repo_QR.png`
+- os QR codes usados no dia 1 estão em `dia1/images/QR_code.png` e `dia1/images/github_repo_QR.png`
+- há materiais auxiliares já gerados para o exemplo de dados financeiros:
+  - `dia1/precos_acoes_brasil.csv`
+  - `dia1/dashboard_acoes_brasil.html`
+  - figuras de backtest em `dia1/images/` (`backtest_retorno`, `backtest_drawdown`, `backtest_tabela` em `.png` e `.pdf`)
+- há scripts de apoio em `dia1/scripts/`:
+  - `baixar_precos.py`
+  - `computar_portfolios.py`
+  - `backtest_portfolios.py`
 - `styles.css` contém o estilo global do deck RevealJS
 - `_quarto.yml` contém a configuração global do Quarto/RevealJS
 - `requirements.txt` contém dependências Python mínimas
@@ -50,6 +65,13 @@ Conteúdo já construído no dia 1:
 - usos gerais de IA
 - tradução desses usos para Finanças
 - três exemplos-base: dados financeiros, texto financeiro e decisão corporativa
+- seção prática de prompt engineering (prompt curto vs prompt detalhado)
+- exemplo de dados financeiros com fluxo aplicado:
+  - download de preços
+  - comparação visual/dashboard
+  - cálculo de portfólios
+  - backtest e leitura de limitações
+- ponte explícita para os dias 2 e 3
 
 Importante para execução em nuvem:
 - a planilha local de respostas na raiz do projeto contém os dados dos histogramas, mas `*.xlsx` está ignorado no `.gitignore`
@@ -63,6 +85,7 @@ Arquivos gerados/cache:
 - regenerar esses arquivos com Quarto quando necessário
 - tratar `.qmd` e `styles.css` como fontes principais
 - atualizar `dia1/slides_dia1.html` após mudanças substantivas no deck, se o HTML renderizado precisar acompanhar o fonte
+- `dia1/precos_acoes_brasil.csv`, `dia1/dashboard_acoes_brasil.html` e figuras em `dia1/images/` são artefatos de execução de scripts e podem ser regenerados
 
 ---
 
