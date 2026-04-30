@@ -728,18 +728,26 @@ IA é treinada para produzir respostas úteis e convincentes. Às vezes, isso si
 
 **Pergunta:** como grandes ações brasileiras se comportaram nos últimos anos?
 
+:::: {.columns}
+
+::: {.column width="55%"}
 - baixar preços diários
 - calcular retornos e momentos
 - comparar volatilidade
 - olhar correlações no tempo
 - montar um dashboard
+:::
 
-. . .
-
-Fluxo em duas etapas:
+::: {.column width="45%"}
+::: {.fragment}
+**Fluxo em duas etapas:**
 
 1. pedir código para baixar os dados e salvar um CSV
 2. depois anexar o CSV e pedir o dashboard HTML
+:::
+:::
+
+::::
 
 ---
 
