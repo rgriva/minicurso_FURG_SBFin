@@ -972,100 +972,169 @@ Critérios de qualidade:
 
 ---
 
-## Exemplo 2: texto financeiro
+## Prompt 3: alocação ótima de carteira {.smaller}
 
-**Pergunta:** qual é a mensagem principal de um documento?
+::: {.scrollable-prompt}
+```{.markdown code-line-numbers="true"}
+Você é um assistente de análise financeira para uma aula introdutória de IA aplicada a Finanças.
 
-- notícia de mercado
-- ata do COPOM
-- relatório de resultados
-- fato relevante
-- comentário de analista
+Vou anexar um arquivo CSV chamado precos_acoes_brasil.csv com preços diários de ações brasileiras.
+
+Estrutura do CSV:
+- date: data da observação
+- ticker: ticker da ação ou benchmark
+- adjusted_close: preço ajustado ou nível do índice
+
+Objetivo:
+Calcule três alocações de carteira usando apenas as ações (exclua o IBOV):
+1. Portfólio de Markowitz — tangência (máximo Sharpe ratio)
+2. Portfólio de mínima variância
+3. Portfólio de risk parity (contribuição de risco igual por ativo)
+
+Requisitos:
+1. Use apenas Python com pandas, numpy e scipy.
+2. Calcule retornos diários logarítmicos a partir dos preços.
+3. Annualize retornos (×252) e volatilidade (×√252).
+4. Use a taxa livre de risco de 10,75% ao ano para o Sharpe ratio.
+5. Restrições para Markowitz e mínima variância:
+   - pesos entre 0% e 100% (sem posições vendidas)
+   - soma dos pesos = 100%
+6. Para risk parity, use um solver numérico simples para igualar a contribuição
+   marginal de risco de cada ativo.
+7. Apresente os resultados em uma única tabela com:
+   - ticker
+   - peso no portfólio de tangência (%)
+   - peso no portfólio de mínima variância (%)
+   - peso no portfólio de risk parity (%)
+8. Abaixo da tabela, mostre para cada portfólio:
+   - retorno anualizado esperado
+   - volatilidade anualizada
+   - Sharpe ratio
+9. Mantenha o código curto, legível e adequado para demonstração ao vivo.
+10. Não use dados externos. Use apenas o CSV anexado.
+
+Formato da resposta:
+- Mostre o script Python completo.
+- Depois mostre a tabela de pesos formatada.
+- Adicione uma nota curta sobre as principais limitações desta análise.
+```
+:::
 
 . . .
 
-Saídas úteis: resumo, tópicos, riscos, tom e sentimento.
+Output esperado: tabela de pesos + métricas por portfólio.
 
----
+## Código Gerado Pelo Claude {.smaller}
+```{.python code-line-numbers="true"}
+# Criado pelo Claude com prompt dos slides.
+import pandas as pd
+import numpy as np
+from scipy.optimize import minimize
 
-## Exemplo 3: decisão corporativa
+# ── 1. Carrega e prepara os dados ─────────────────────────────────────────────
+df = pd.read_csv("dia1/precos_acoes_brasil.csv", parse_dates=["date"])
+prices = df.pivot(index="date", columns="ticker", values="adjusted_close")
 
-**Pergunta:** vale a pena tocar este projeto?
+# Exclui IBOV; mantém apenas ações
+stocks = prices.drop(columns=["IBOV"])
 
-- investimento inicial
-- receita esperada
-- custos
-- horizonte de análise
-- cenários otimista, base e pessimista
+# Retornos logarítmicos diários
+rets = np.log(stocks / stocks.shift(1)).dropna()
 
-. . .
+# ── 2. Parâmetros anualizados ─────────────────────────────────────────────────
+T   = 252
+mu  = rets.mean() * T          # retorno esperado anual
+cov = rets.cov()  * T          # covariância anual
+n   = len(stocks.columns)
+rf  = 0.1075                   # taxa livre de risco
 
-Saída: tabela simples para discutir decisão econômica.
+# ── 3. Funções auxiliares ─────────────────────────────────────────────────────
+def portfolio_stats(w, mu, cov):
+    ret = w @ mu
+    vol = np.sqrt(w @ cov @ w)
+    sr  = (ret - rf) / vol
+    return ret, vol, sr
 
----
+constraints = [{"type": "eq", "fun": lambda w: w.sum() - 1}]
+bounds = [(0, 1)] * n
+w0 = np.ones(n) / n
 
-## Outros usos em Finanças
+# ── 4. Portfólio de tangência (máximo Sharpe) ─────────────────────────────────
+neg_sharpe = lambda w: -portfolio_stats(w, mu, cov)[2]
+res_tan = minimize(neg_sharpe, w0, method="SLSQP",
+                   bounds=bounds, constraints=constraints)
+w_tan = res_tan.x
 
-:::: {.workflow-grid}
+# ── 5. Mínima variância ───────────────────────────────────────────────────────
+res_mv = minimize(lambda w: w @ cov @ w, w0, method="SLSQP",
+                  bounds=bounds, constraints=constraints)
+w_mv = res_mv.x
 
-::: {.workflow-card}
-**Risco**
+# ── 6. Risk parity ────────────────────────────────────────────────────────────
+def risk_parity_obj(w, cov):
+    vol  = np.sqrt(w @ cov @ w)
+    rc   = w * (cov @ w) / vol    # contribuições de risco
+    target = vol / n
+    return np.sum((rc - target) ** 2)
 
-alertas, revisão de exposição, explicação de variações
-:::
+res_rp = minimize(risk_parity_obj, w0, args=(cov,), method="SLSQP",
+                  bounds=bounds, constraints=constraints,
+                  options={"ftol": 1e-14, "maxiter": 5000})
+w_rp = res_rp.x
 
-::: {.workflow-card}
-**Crédito**
+# ── 7. Output ─────────────────────────────────────────────────────────────────
+tickers = stocks.columns.tolist()
+print(f"{'Ticker':<12} {'Tangência':>12} {'Mín. Var.':>12} {'Risk Parity':>12}")
+for i, t in enumerate(tickers):
+    print(f"{t:<12} {w_tan[i]*100:>11.1f}%  {w_mv[i]*100:>11.1f}%  {w_rp[i]*100:>11.1f}%")
 
-triagem, documentação, justificativas e monitoramento
-:::
+for label, w in [("Tangência", w_tan), ("Mín. Variância", w_mv), ("Risk Parity", w_rp)]:
+    r, v, sr = portfolio_stats(w, mu, cov)
+    print(f"\n{label}: retorno={r*100:.2f}%  vol={v*100:.2f}%  Sharpe={sr:.3f}")
+```
 
-::: {.workflow-card}
-**Operações**
+## Resultado Pelo Claude -- Por Que Tão Concentrado?
+![](tabela_portfolios_claude.png){fig-align="center"}
 
-conciliação, relatórios, checagens e automações pequenas
-:::
+## Limitações
+![](limitacoes_claude.png){fig-align="center" width="70%"}
 
-::::
+## E Que Tal um Backtest?
+```{.markdown code-line-numbers="true"}
+Quero agora que você prepare, portanto, um backtest. Vamos fazer o seguinte:
 
----
+1. Para cada portfólio, vamos usar os últimos dois anos de dados e estimar o retorno esperado e a matriz de covariância. Vamos montar o portfólio e vamos continuar a comprar este portfólio.
 
-## Contexto financeiro exige cuidado extra
+2. Vamos segurar o portfólio por um mês. No mês seguinte, vamos refazer os cálculos e ajustar as posições.
 
-- dados mudam rápido
-- pequenas diferenças numéricas importam
-- há regulação e confidencialidade
-- modelos podem errar de forma convincente
-- decisões têm custo real
+3. Vamos fazer isto até exaurir os dados
 
-. . .
+4. Quero no final um gráfico do retorno acumulado de cada estratégia e uma tabela mostrando o resumo dos retornos desta estratégia como média, variância, assimetria, curtose, dias de máximas e mínimas também.
 
-::: {.callout-important title="Atenção"}
-Em Finanças, IA boa é IA com trilha de validação.
-:::
+5. Crie também um script Python capaz de gerar esta figura e tabela e tornar tudo reprodutível.
 
----
+6. Dados os resultados, faça uma recomendação de estratégia.
+```
 
-## Os três exemplos-base
+## Tabela de Resultados do Backtest
+![](tabela_backtest.png){fig-align="center"}
 
-Vamos preparar o terreno para:
+## Evolução da Estratégia no Backtest
+![](backtest_drawdown.png){fig-align="center" width="80%"}
 
-1. **Dados financeiros:** preços, retornos e gráficos
-2. **Sentimento:** notícia, ata ou relatório
-3. **Finanças corporativas:** avaliação de projeto com cenários
-
-. . .
-
-Esses são os exemplos do roteiro em `plano_codex.md`.
-
----
+## Recomendação
+![](recomendacao.png){fig-align="center" width="80%"}
 
 ## Ponte para os próximos dias
 
 - **Hoje:** entender possibilidades e limites
-- **Dia 2:** ferramentas, prompts e workflow com agentes
-- **Dia 3:** exemplos ao vivo, com dados e documentos
+- **Amanhã:** ferramentas, prompts e workflow com agentes
+- **Último Dia:** exemplos ao vivo, com dados e documentos
 
 . . .
 
-Objetivo final: usar IA para acelerar trabalho real sem abandonar validação.
+Objetivos finais: 
+
+- Estar cientes das principais ferramentas
+- Saber como usá-las e ter uma ideia clara
+- Saber quando elas ajudam ou atrapalham

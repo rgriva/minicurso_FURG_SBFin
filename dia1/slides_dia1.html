@@ -235,7 +235,7 @@ Raul Riva
 </section>
 <section id="grau-de-ensino" class="slide level2">
 <h2>Grau de ensino</h2>
-<div id="558f0df9" class="cell" data-fig-height="3.9" data-fig-width="8.8" data-execution_count="2">
+<div id="fb20b9d7" class="cell" data-fig-height="3.9" data-fig-width="8.8" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -247,7 +247,7 @@ Raul Riva
 </section>
 <section id="curso" class="slide level2">
 <h2>Curso</h2>
-<div id="e65a28ee" class="cell" data-fig-height="3.9" data-fig-width="8.8" data-execution_count="3">
+<div id="43dd5c4b" class="cell" data-fig-height="3.9" data-fig-width="8.8" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -259,7 +259,7 @@ Raul Riva
 </section>
 <section id="conforto-com-programação" class="slide level2">
 <h2>Conforto com programação</h2>
-<div id="ccac9744" class="cell" data-fig-height="3.9" data-fig-width="8.8" data-execution_count="4">
+<div id="252d0275" class="cell" data-fig-height="3.9" data-fig-width="8.8" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -271,7 +271,7 @@ Raul Riva
 </section>
 <section id="percepção-sobre-ia" class="slide level2">
 <h2>Percepção sobre IA</h2>
-<div id="8ce347b1" class="cell" data-fig-height="3.9" data-fig-width="8.8" data-execution_count="5">
+<div id="59ae6f04" class="cell" data-fig-height="3.9" data-fig-width="8.8" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1080,99 +1080,173 @@ Tarefa:
 <p><a href="dashboard_acoes_brasil.html">clique aqui para o resultado</a></p>
 </div>
 </section>
-<section id="exemplo-2-texto-financeiro" class="slide level2">
-<h2>Exemplo 2: texto financeiro</h2>
-<p><strong>Pergunta:</strong> qual é a mensagem principal de um documento?</p>
-<ul>
-<li>notícia de mercado</li>
-<li>ata do COPOM</li>
-<li>relatório de resultados</li>
-<li>fato relevante</li>
-<li>comentário de analista</li>
-</ul>
+<section id="prompt-3-alocação-ótima-de-carteira" class="slide level2 smaller">
+<h2>Prompt 3: alocação ótima de carteira</h2>
+<div class="scrollable-prompt">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href=""></a>Você é um assistente de análise financeira para uma aula introdutória de IA aplicada a Finanças.</span>
+<span id="cb6-2"><a href=""></a></span>
+<span id="cb6-3"><a href=""></a>Vou anexar um arquivo CSV chamado precos_acoes_brasil.csv com preços diários de ações brasileiras.</span>
+<span id="cb6-4"><a href=""></a></span>
+<span id="cb6-5"><a href=""></a>Estrutura do CSV:</span>
+<span id="cb6-6"><a href=""></a><span class="ss">- </span>date: data da observação</span>
+<span id="cb6-7"><a href=""></a><span class="ss">- </span>ticker: ticker da ação ou benchmark</span>
+<span id="cb6-8"><a href=""></a><span class="ss">- </span>adjusted_close: preço ajustado ou nível do índice</span>
+<span id="cb6-9"><a href=""></a></span>
+<span id="cb6-10"><a href=""></a>Objetivo:</span>
+<span id="cb6-11"><a href=""></a>Calcule três alocações de carteira usando apenas as ações (exclua o IBOV):</span>
+<span id="cb6-12"><a href=""></a><span class="ss">1. </span>Portfólio de Markowitz — tangência (máximo Sharpe ratio)</span>
+<span id="cb6-13"><a href=""></a><span class="ss">2. </span>Portfólio de mínima variância</span>
+<span id="cb6-14"><a href=""></a><span class="ss">3. </span>Portfólio de risk parity (contribuição de risco igual por ativo)</span>
+<span id="cb6-15"><a href=""></a></span>
+<span id="cb6-16"><a href=""></a>Requisitos:</span>
+<span id="cb6-17"><a href=""></a><span class="ss">1. </span>Use apenas Python com pandas, numpy e scipy.</span>
+<span id="cb6-18"><a href=""></a><span class="ss">2. </span>Calcule retornos diários logarítmicos a partir dos preços.</span>
+<span id="cb6-19"><a href=""></a><span class="ss">3. </span>Annualize retornos (×252) e volatilidade (×√252).</span>
+<span id="cb6-20"><a href=""></a><span class="ss">4. </span>Use a taxa livre de risco de 10,75% ao ano para o Sharpe ratio.</span>
+<span id="cb6-21"><a href=""></a><span class="ss">5. </span>Restrições para Markowitz e mínima variância:</span>
+<span id="cb6-22"><a href=""></a><span class="ss">   - </span>pesos entre 0% e 100% (sem posições vendidas)</span>
+<span id="cb6-23"><a href=""></a><span class="ss">   - </span>soma dos pesos = 100%</span>
+<span id="cb6-24"><a href=""></a><span class="ss">6. </span>Para risk parity, use um solver numérico simples para igualar a contribuição</span>
+<span id="cb6-25"><a href=""></a>   marginal de risco de cada ativo.</span>
+<span id="cb6-26"><a href=""></a><span class="ss">7. </span>Apresente os resultados em uma única tabela com:</span>
+<span id="cb6-27"><a href=""></a><span class="ss">   - </span>ticker</span>
+<span id="cb6-28"><a href=""></a><span class="ss">   - </span>peso no portfólio de tangência (%)</span>
+<span id="cb6-29"><a href=""></a><span class="ss">   - </span>peso no portfólio de mínima variância (%)</span>
+<span id="cb6-30"><a href=""></a><span class="ss">   - </span>peso no portfólio de risk parity (%)</span>
+<span id="cb6-31"><a href=""></a><span class="ss">8. </span>Abaixo da tabela, mostre para cada portfólio:</span>
+<span id="cb6-32"><a href=""></a><span class="ss">   - </span>retorno anualizado esperado</span>
+<span id="cb6-33"><a href=""></a><span class="ss">   - </span>volatilidade anualizada</span>
+<span id="cb6-34"><a href=""></a><span class="ss">   - </span>Sharpe ratio</span>
+<span id="cb6-35"><a href=""></a><span class="ss">9. </span>Mantenha o código curto, legível e adequado para demonstração ao vivo.</span>
+<span id="cb6-36"><a href=""></a><span class="ss">10. </span>Não use dados externos. Use apenas o CSV anexado.</span>
+<span id="cb6-37"><a href=""></a></span>
+<span id="cb6-38"><a href=""></a>Formato da resposta:</span>
+<span id="cb6-39"><a href=""></a><span class="ss">- </span>Mostre o script Python completo.</span>
+<span id="cb6-40"><a href=""></a><span class="ss">- </span>Depois mostre a tabela de pesos formatada.</span>
+<span id="cb6-41"><a href=""></a><span class="ss">- </span>Adicione uma nota curta sobre as principais limitações desta análise.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <div class="fragment">
-<p>Saídas úteis: resumo, tópicos, riscos, tom e sentimento.</p>
+<p>Output esperado: tabela de pesos + métricas por portfólio.</p>
 </div>
 </section>
-<section id="exemplo-3-decisão-corporativa" class="slide level2">
-<h2>Exemplo 3: decisão corporativa</h2>
-<p><strong>Pergunta:</strong> vale a pena tocar este projeto?</p>
-<ul>
-<li>investimento inicial</li>
-<li>receita esperada</li>
-<li>custos</li>
-<li>horizonte de análise</li>
-<li>cenários otimista, base e pessimista</li>
-</ul>
-<div class="fragment">
-<p>Saída: tabela simples para discutir decisão econômica.</p>
-</div>
+<section id="código-gerado-pelo-claude" class="slide level2 smaller">
+<h2>Código Gerado Pelo Claude</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a><span class="co"># Criado pelo Claude com prompt dos slides.</span></span>
+<span id="cb7-2"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb7-3"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb7-4"><a href=""></a><span class="im">from</span> scipy.optimize <span class="im">import</span> minimize</span>
+<span id="cb7-5"><a href=""></a></span>
+<span id="cb7-6"><a href=""></a><span class="co"># ── 1. Carrega e prepara os dados ─────────────────────────────────────────────</span></span>
+<span id="cb7-7"><a href=""></a>df <span class="op">=</span> pd.read_csv(<span class="st">"dia1/precos_acoes_brasil.csv"</span>, parse_dates<span class="op">=</span>[<span class="st">"date"</span>])</span>
+<span id="cb7-8"><a href=""></a>prices <span class="op">=</span> df.pivot(index<span class="op">=</span><span class="st">"date"</span>, columns<span class="op">=</span><span class="st">"ticker"</span>, values<span class="op">=</span><span class="st">"adjusted_close"</span>)</span>
+<span id="cb7-9"><a href=""></a></span>
+<span id="cb7-10"><a href=""></a><span class="co"># Exclui IBOV; mantém apenas ações</span></span>
+<span id="cb7-11"><a href=""></a>stocks <span class="op">=</span> prices.drop(columns<span class="op">=</span>[<span class="st">"IBOV"</span>])</span>
+<span id="cb7-12"><a href=""></a></span>
+<span id="cb7-13"><a href=""></a><span class="co"># Retornos logarítmicos diários</span></span>
+<span id="cb7-14"><a href=""></a>rets <span class="op">=</span> np.log(stocks <span class="op">/</span> stocks.shift(<span class="dv">1</span>)).dropna()</span>
+<span id="cb7-15"><a href=""></a></span>
+<span id="cb7-16"><a href=""></a><span class="co"># ── 2. Parâmetros anualizados ─────────────────────────────────────────────────</span></span>
+<span id="cb7-17"><a href=""></a>T   <span class="op">=</span> <span class="dv">252</span></span>
+<span id="cb7-18"><a href=""></a>mu  <span class="op">=</span> rets.mean() <span class="op">*</span> T          <span class="co"># retorno esperado anual</span></span>
+<span id="cb7-19"><a href=""></a>cov <span class="op">=</span> rets.cov()  <span class="op">*</span> T          <span class="co"># covariância anual</span></span>
+<span id="cb7-20"><a href=""></a>n   <span class="op">=</span> <span class="bu">len</span>(stocks.columns)</span>
+<span id="cb7-21"><a href=""></a>rf  <span class="op">=</span> <span class="fl">0.1075</span>                   <span class="co"># taxa livre de risco</span></span>
+<span id="cb7-22"><a href=""></a></span>
+<span id="cb7-23"><a href=""></a><span class="co"># ── 3. Funções auxiliares ─────────────────────────────────────────────────────</span></span>
+<span id="cb7-24"><a href=""></a><span class="kw">def</span> portfolio_stats(w, mu, cov):</span>
+<span id="cb7-25"><a href=""></a>    ret <span class="op">=</span> w <span class="op">@</span> mu</span>
+<span id="cb7-26"><a href=""></a>    vol <span class="op">=</span> np.sqrt(w <span class="op">@</span> cov <span class="op">@</span> w)</span>
+<span id="cb7-27"><a href=""></a>    sr  <span class="op">=</span> (ret <span class="op">-</span> rf) <span class="op">/</span> vol</span>
+<span id="cb7-28"><a href=""></a>    <span class="cf">return</span> ret, vol, sr</span>
+<span id="cb7-29"><a href=""></a></span>
+<span id="cb7-30"><a href=""></a>constraints <span class="op">=</span> [{<span class="st">"type"</span>: <span class="st">"eq"</span>, <span class="st">"fun"</span>: <span class="kw">lambda</span> w: w.<span class="bu">sum</span>() <span class="op">-</span> <span class="dv">1</span>}]</span>
+<span id="cb7-31"><a href=""></a>bounds <span class="op">=</span> [(<span class="dv">0</span>, <span class="dv">1</span>)] <span class="op">*</span> n</span>
+<span id="cb7-32"><a href=""></a>w0 <span class="op">=</span> np.ones(n) <span class="op">/</span> n</span>
+<span id="cb7-33"><a href=""></a></span>
+<span id="cb7-34"><a href=""></a><span class="co"># ── 4. Portfólio de tangência (máximo Sharpe) ─────────────────────────────────</span></span>
+<span id="cb7-35"><a href=""></a>neg_sharpe <span class="op">=</span> <span class="kw">lambda</span> w: <span class="op">-</span>portfolio_stats(w, mu, cov)[<span class="dv">2</span>]</span>
+<span id="cb7-36"><a href=""></a>res_tan <span class="op">=</span> minimize(neg_sharpe, w0, method<span class="op">=</span><span class="st">"SLSQP"</span>,</span>
+<span id="cb7-37"><a href=""></a>                   bounds<span class="op">=</span>bounds, constraints<span class="op">=</span>constraints)</span>
+<span id="cb7-38"><a href=""></a>w_tan <span class="op">=</span> res_tan.x</span>
+<span id="cb7-39"><a href=""></a></span>
+<span id="cb7-40"><a href=""></a><span class="co"># ── 5. Mínima variância ───────────────────────────────────────────────────────</span></span>
+<span id="cb7-41"><a href=""></a>res_mv <span class="op">=</span> minimize(<span class="kw">lambda</span> w: w <span class="op">@</span> cov <span class="op">@</span> w, w0, method<span class="op">=</span><span class="st">"SLSQP"</span>,</span>
+<span id="cb7-42"><a href=""></a>                  bounds<span class="op">=</span>bounds, constraints<span class="op">=</span>constraints)</span>
+<span id="cb7-43"><a href=""></a>w_mv <span class="op">=</span> res_mv.x</span>
+<span id="cb7-44"><a href=""></a></span>
+<span id="cb7-45"><a href=""></a><span class="co"># ── 6. Risk parity ────────────────────────────────────────────────────────────</span></span>
+<span id="cb7-46"><a href=""></a><span class="kw">def</span> risk_parity_obj(w, cov):</span>
+<span id="cb7-47"><a href=""></a>    vol  <span class="op">=</span> np.sqrt(w <span class="op">@</span> cov <span class="op">@</span> w)</span>
+<span id="cb7-48"><a href=""></a>    rc   <span class="op">=</span> w <span class="op">*</span> (cov <span class="op">@</span> w) <span class="op">/</span> vol    <span class="co"># contribuições de risco</span></span>
+<span id="cb7-49"><a href=""></a>    target <span class="op">=</span> vol <span class="op">/</span> n</span>
+<span id="cb7-50"><a href=""></a>    <span class="cf">return</span> np.<span class="bu">sum</span>((rc <span class="op">-</span> target) <span class="op">**</span> <span class="dv">2</span>)</span>
+<span id="cb7-51"><a href=""></a></span>
+<span id="cb7-52"><a href=""></a>res_rp <span class="op">=</span> minimize(risk_parity_obj, w0, args<span class="op">=</span>(cov,), method<span class="op">=</span><span class="st">"SLSQP"</span>,</span>
+<span id="cb7-53"><a href=""></a>                  bounds<span class="op">=</span>bounds, constraints<span class="op">=</span>constraints,</span>
+<span id="cb7-54"><a href=""></a>                  options<span class="op">=</span>{<span class="st">"ftol"</span>: <span class="fl">1e-14</span>, <span class="st">"maxiter"</span>: <span class="dv">5000</span>})</span>
+<span id="cb7-55"><a href=""></a>w_rp <span class="op">=</span> res_rp.x</span>
+<span id="cb7-56"><a href=""></a></span>
+<span id="cb7-57"><a href=""></a><span class="co"># ── 7. Output ─────────────────────────────────────────────────────────────────</span></span>
+<span id="cb7-58"><a href=""></a>tickers <span class="op">=</span> stocks.columns.tolist()</span>
+<span id="cb7-59"><a href=""></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="st">'Ticker'</span><span class="sc">:&lt;12}</span><span class="ss"> </span><span class="sc">{</span><span class="st">'Tangência'</span><span class="sc">:&gt;12}</span><span class="ss"> </span><span class="sc">{</span><span class="st">'Mín. Var.'</span><span class="sc">:&gt;12}</span><span class="ss"> </span><span class="sc">{</span><span class="st">'Risk Parity'</span><span class="sc">:&gt;12}</span><span class="ss">"</span>)</span>
+<span id="cb7-60"><a href=""></a><span class="cf">for</span> i, t <span class="kw">in</span> <span class="bu">enumerate</span>(tickers):</span>
+<span id="cb7-61"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>t<span class="sc">:&lt;12}</span><span class="ss"> </span><span class="sc">{</span>w_tan[i]<span class="op">*</span><span class="dv">100</span><span class="sc">:&gt;11.1f}</span><span class="ss">%  </span><span class="sc">{</span>w_mv[i]<span class="op">*</span><span class="dv">100</span><span class="sc">:&gt;11.1f}</span><span class="ss">%  </span><span class="sc">{</span>w_rp[i]<span class="op">*</span><span class="dv">100</span><span class="sc">:&gt;11.1f}</span><span class="ss">%"</span>)</span>
+<span id="cb7-62"><a href=""></a></span>
+<span id="cb7-63"><a href=""></a><span class="cf">for</span> label, w <span class="kw">in</span> [(<span class="st">"Tangência"</span>, w_tan), (<span class="st">"Mín. Variância"</span>, w_mv), (<span class="st">"Risk Parity"</span>, w_rp)]:</span>
+<span id="cb7-64"><a href=""></a>    r, v, sr <span class="op">=</span> portfolio_stats(w, mu, cov)</span>
+<span id="cb7-65"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="sc">{</span>label<span class="sc">}</span><span class="ss">: retorno=</span><span class="sc">{</span>r<span class="op">*</span><span class="dv">100</span><span class="sc">:.2f}</span><span class="ss">%  vol=</span><span class="sc">{</span>v<span class="op">*</span><span class="dv">100</span><span class="sc">:.2f}</span><span class="ss">%  Sharpe=</span><span class="sc">{</span>sr<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="outros-usos-em-finanças" class="slide level2">
-<h2>Outros usos em Finanças</h2>
-<div class="workflow-grid">
-<div class="workflow-card">
-<p><strong>Risco</strong></p>
-<p>alertas, revisão de exposição, explicação de variações</p>
-</div>
-<div class="workflow-card">
-<p><strong>Crédito</strong></p>
-<p>triagem, documentação, justificativas e monitoramento</p>
-</div>
-<div class="workflow-card">
-<p><strong>Operações</strong></p>
-<p>conciliação, relatórios, checagens e automações pequenas</p>
-</div>
-</div>
+<section id="resultado-pelo-claude-por-que-tão-concentrado" class="slide level2">
+<h2>Resultado Pelo Claude – Por Que Tão Concentrado?</h2>
+
+<img data-src="tabela_portfolios_claude.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="limitações" class="slide level2">
+<h2>Limitações</h2>
+
+<img data-src="limitacoes_claude.png" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"></section>
+<section id="e-que-tal-um-backtest" class="slide level2">
+<h2>E Que Tal um Backtest?</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href=""></a>Quero agora que você prepare, portanto, um backtest. Vamos fazer o seguinte:</span>
+<span id="cb8-2"><a href=""></a></span>
+<span id="cb8-3"><a href=""></a><span class="ss">1. </span>Para cada portfólio, vamos usar os últimos dois anos de dados e estimar o retorno esperado e a matriz de covariância. Vamos montar o portfólio e vamos continuar a comprar este portfólio.</span>
+<span id="cb8-4"><a href=""></a></span>
+<span id="cb8-5"><a href=""></a><span class="ss">2. </span>Vamos segurar o portfólio por um mês. No mês seguinte, vamos refazer os cálculos e ajustar as posições.</span>
+<span id="cb8-6"><a href=""></a></span>
+<span id="cb8-7"><a href=""></a><span class="ss">3. </span>Vamos fazer isto até exaurir os dados</span>
+<span id="cb8-8"><a href=""></a></span>
+<span id="cb8-9"><a href=""></a><span class="ss">4. </span>Quero no final um gráfico do retorno acumulado de cada estratégia e uma tabela mostrando o resumo dos retornos desta estratégia como média, variância, assimetria, curtose, dias de máximas e mínimas também.</span>
+<span id="cb8-10"><a href=""></a></span>
+<span id="cb8-11"><a href=""></a><span class="ss">5. </span>Crie também um script Python capaz de gerar esta figura e tabela e tornar tudo reprodutível.</span>
+<span id="cb8-12"><a href=""></a></span>
+<span id="cb8-13"><a href=""></a><span class="ss">6. </span>Dados os resultados, faça uma recomendação de estratégia.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="contexto-financeiro-exige-cuidado-extra" class="slide level2">
-<h2>Contexto financeiro exige cuidado extra</h2>
-<ul>
-<li>dados mudam rápido</li>
-<li>pequenas diferenças numéricas importam</li>
-<li>há regulação e confidencialidade</li>
-<li>modelos podem errar de forma convincente</li>
-<li>decisões têm custo real</li>
-</ul>
-<div class="fragment">
-<div title="Atenção">
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Atenção</strong></p>
-</div>
-<div class="callout-content">
-<p>Em Finanças, IA boa é IA com trilha de validação.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="os-três-exemplos-base" class="slide level2">
-<h2>Os três exemplos-base</h2>
-<p>Vamos preparar o terreno para:</p>
-<ol type="1">
-<li><strong>Dados financeiros:</strong> preços, retornos e gráficos</li>
-<li><strong>Sentimento:</strong> notícia, ata ou relatório</li>
-<li><strong>Finanças corporativas:</strong> avaliação de projeto com cenários</li>
-</ol>
-<div class="fragment">
-<p>Esses são os exemplos do roteiro em <code>plano_codex.md</code>.</p>
-</div>
-</section>
+<section id="tabela-de-resultados-do-backtest" class="slide level2">
+<h2>Tabela de Resultados do Backtest</h2>
+
+<img data-src="tabela_backtest.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="evolução-da-estratégia-no-backtest" class="slide level2">
+<h2>Evolução da Estratégia no Backtest</h2>
+
+<img data-src="backtest_drawdown.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
+<section id="recomendação" class="slide level2">
+<h2>Recomendação</h2>
+
+<img data-src="recomendacao.png" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
 <section id="ponte-para-os-próximos-dias" class="slide level2">
 <h2>Ponte para os próximos dias</h2>
 <ul>
 <li><strong>Hoje:</strong> entender possibilidades e limites</li>
-<li><strong>Dia 2:</strong> ferramentas, prompts e workflow com agentes</li>
-<li><strong>Dia 3:</strong> exemplos ao vivo, com dados e documentos</li>
+<li><strong>Amanhã:</strong> ferramentas, prompts e workflow com agentes</li>
+<li><strong>Último Dia:</strong> exemplos ao vivo, com dados e documentos</li>
 </ul>
 <div class="fragment">
-<p>Objetivo final: usar IA para acelerar trabalho real sem abandonar validação.</p>
+<p>Objetivos finais:</p>
+<ul>
+<li>Estar cientes das principais ferramentas</li>
+<li>Saber como usá-las e ter uma ideia clara</li>
+<li>Saber quando elas ajudam ou atrapalham</li>
+</ul>
 
 </div>
 </section></section>
