@@ -12,6 +12,7 @@ date-format: "[Maio], YYYY"
 
 from pathlib import Path
 from textwrap import wrap
+import unicodedata
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -23,20 +24,55 @@ CORES_FURG = ["#A31229", "#C77824", "#E5AD2A"]
 VERMELHO_FURG = CORES_FURG[0]
 COR_CONTORNO = "#5F0A18"
 
+COLUNAS_PERFIL = [
+    "Minicurso",
+    "Grau de ensino:",
+    "Qual curso de graduação ou pós-graduação você está cursando?",
+    "Como você se sente em relação a técnicas de programação?",
+    "Como você se sente em relação ao uso de técnicas de Inteligência Artificial (IA)?",
+]
+MINICURSO_ALVO = "inteligencia artificial em financas"
+
 
 def localizar_planilha():
     bases = [Path.cwd(), Path.cwd().parent]
 
     for base in bases:
-        arquivos = sorted(base.glob("*.xlsx"))
+        arquivos = sorted(base.glob("Inscritos - Escola SBFin*.xlsx"))
         if arquivos:
             return arquivos[0]
 
-    raise FileNotFoundError("Planilha Excel não encontrada na pasta do projeto.")
+    for base in bases:
+        arquivos = sorted(path for path in base.glob("*.xlsx") if not path.name.startswith("~$"))
+        if arquivos:
+            return arquivos[0]
+
+    raise FileNotFoundError("Planilha Excel não encontrada na pasta do projeto ou no diretório pai.")
+
+
+def remover_acentos(texto):
+    return "".join(
+        caractere
+        for caractere in unicodedata.normalize("NFKD", texto)
+        if not unicodedata.combining(caractere)
+    )
 
 
 planilha = localizar_planilha()
 df = pd.read_excel(planilha)
+
+colunas_ausentes = [coluna for coluna in COLUNAS_PERFIL if coluna not in df.columns]
+if colunas_ausentes:
+    raise ValueError(
+        "A planilha de inscritos não contém as colunas esperadas: "
+        + ", ".join(colunas_ausentes)
+    )
+
+minicursos = df["Minicurso"].fillna("").astype(str).map(remover_acentos).str.lower()
+df = df.loc[minicursos == MINICURSO_ALVO].copy()
+
+if df.empty:
+    raise ValueError("Nenhuma inscrição encontrada para o minicurso de IA aplicada a Finanças.")
 
 
 def serie_limpa(coluna):
@@ -51,13 +87,13 @@ def serie_limpa(coluna):
 
 def normalizar_curso(valor):
     texto = str(valor).strip()
-    texto_min = texto.lower()
+    texto_min = remover_acentos(texto).lower()
 
-    if texto_min in {"", "-", "não informado"}:
+    if texto_min in {"", "-", "nao informado", "nan"}:
         return "Não informado"
     if "cont" in texto_min:
         return "Ciências Contábeis"
-    if "comput" in texto_min or "sistemas" in texto_min:
+    if "comput" in texto_min or "sistema" in texto_min or "desenvolvimento de sistemas" in texto_min:
         return "Computação e Sistemas"
     if "econ" in texto_min or "economia" in texto_min:
         return "Ciências Econômicas"
