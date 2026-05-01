@@ -106,26 +106,27 @@ Fonte, teste, cálculo, revisão humana, comparação com benchmark?
 
 ## Pagar por IA é infraestrutura
 
-- Para uso profissional, IA paga já se parece com internet, cloud e software básico
-- O plano gratuito serve para experimentar
-- O plano pago remove fricções: limites, modelos melhores, arquivos, contexto e velocidade
-- O custo relevante não é só a mensalidade: é tempo, erro evitado e qualidade da entrega
+- Uso profissional: IA paga já se parece com internet, cloud e software básico
+- O plano gratuito serve para experimentar, mas só isso!
+- Planos pagos diminuem fricções: limites, modelos melhores, arquivos, contexto e velocidade
+- Qual o custo verdadeiro? Tempo, erro evitado, qualidade da entrega, ...
 
 . . .
 
-::: {.callout-important title="Mensagem prática"}
+::: {.callout-important title="Fica esperto"}
 Se a ferramenta poupa algumas horas por mês, US$20 deixa de ser caro. O problema é pagar sem mudar o workflow.
 :::
 
 ---
 
-## Preços: ordem de grandeza {.smaller}
+## Preços: ordem de grandeza {.price-table-slide .vcenter-slide}
 
-::: {.product-table}
+:::: {.vcenter-body .product-table-body}
+::: {.product-table .product-table-large}
 | Categoria | Exemplos | Faixa típica em USD |
 |---|---|---|
 | Uso regular | ChatGPT Plus, Claude Pro, Google AI Pro, Cursor Pro | US$20/mês |
-| Programação leve | GitHub Copilot Pro | US$10/mês |
+| Programação leve | GitHub Copilot Pro | US$10/mês (mas gratuito para estudantes!) |
 | Uso intenso | ChatGPT Pro, Claude Max, Cursor Pro+ | US$60-100+/mês |
 | Power user | ChatGPT Pro alto, Cursor Ultra, Google AI Ultra | US$200+/mês |
 | Equipes | ChatGPT Business, Claude Team, Copilot Business, Cursor Teams | por usuário/mês |
@@ -135,21 +136,7 @@ Se a ferramenta poupa algumas horas por mês, US$20 deixa de ser caro. O problem
 ::: {.source-note}
 Verificado em 2026-05-01. Preços mudam; conferir as páginas oficiais antes de comprar.
 :::
-
----
-
-## Exemplos de preços oficiais {.smaller}
-
-::: {.product-table}
-| Produto | Planos citados | Observação |
-|---|---|---|
-| [ChatGPT](https://chatgpt.com/pricing/) | Plus US$20; Pro US$100/US$200 | API é cobrada separadamente |
-| [Claude](https://claude.com/pricing) | Pro US$20 mensal; Max a partir de US$100 | inclui Claude Code no Pro/Max |
-| [GitHub Copilot](https://github.com/features/copilot/plans) | Pro US$10; Pro+ US$39 | usa cotas de premium requests |
-| [Cursor](https://cursor.com/pricing) | Pro US$20; Pro+ US$60; Ultra US$200 | focado em agentic coding |
-| [Google AI / NotebookLM](https://support.google.com/notebooklm/answer/16213268) | NotebookLM tem limites maiores em planos AI | preço depende do plano Google AI |
-| [OpenAI API](https://openai.com/api/pricing/) / [Gemini API](https://ai.google.dev/gemini-api/docs/pricing) | cobrança por tokens e ferramentas | bom para automação e escala |
-:::
+::::
 
 ---
 
@@ -160,7 +147,7 @@ Verificado em 2026-05-01. Preços mudam; conferir as páginas oficiais antes de 
 ::: {.price-decision-card}
 **US$20/mês**
 
-- melhor para uso semanal
+- usuário mais "casual"
 - estudar, escrever, pesquisar
 - pequenos códigos e arquivos
 :::
@@ -191,10 +178,12 @@ Não comece pelo plano mais caro. Comece pelo gargalo real.
 
 ## Prompt bom tem estrutura
 
-:::: {.columns}
+:::: {.do-dont-grid}
 
-::: {.column width="50%"}
-**Inclua**
+::: {.do-dont-card .do}
+::: {.do-dont-title}
+Inclua
+:::
 
 - papel da IA
 - objetivo
@@ -205,8 +194,10 @@ Não comece pelo plano mais caro. Comece pelo gargalo real.
 - critério de qualidade
 :::
 
-::: {.column width="50%"}
-**Evite**
+::: {.do-dont-card .dont}
+::: {.do-dont-title}
+Evite
+:::
 
 - "faça uma análise"
 - "melhore isso"
@@ -301,28 +292,16 @@ Antes de responder: liste dúvidas críticas ou hipóteses necessárias.
 Quando a conversa ficar confusa, abra uma nova conversa com um resumo limpo: objetivo, decisões tomadas, arquivos importantes e próximo passo.
 :::
 
----
-
-## O que colocar no contexto {.vcenter-slide}
-
-:::: {.vcenter-body .product-table-body}
-::: {.product-table}
-| Inclua | Por quê |
-|---|---|
-| objetivo final | evita resposta genérica |
-| público e tom | muda linguagem e profundidade |
-| dados ou trechos relevantes | reduz alucinação |
-| restrições | protege tempo e escopo |
-| exemplo de saída desejada | melhora formato |
-| critérios de validação | força raciocínio checável |
+::: {.pdf-link-box .fragment}
+<a href="Attention_Is_All_You_Need.pdf" target="_blank" rel="noopener">Onde tudo nasceu: Attention Is All You Need</a>
 :::
-::::
 
 ---
 
-## Modelo grande ou pequeno?
+## Modelo grande ou pequeno? {.model-size-slide .vcenter-slide}
 
-::: {.product-table}
+:::: {.vcenter-body}
+::: {.product-table .product-table-large .model-size-table}
 | Use modelo pequeno quando... | Use modelo grande quando... |
 |---|---|
 | tarefa é repetitiva | tarefa é ambígua |
@@ -331,10 +310,35 @@ Quando a conversa ficar confusa, abra uma nova conversa com um resumo limpo: obj
 | há formato bem definido | precisa raciocínio longo |
 | volume importa | qualidade marginal importa |
 :::
+::::
 
-. . .
+---
 
-Exemplo: classificar 500 notícias pode usar modelo barato; desenhar a metodologia da classificação merece modelo melhor.
+## Exemplos em finanças: grande ou pequeno?
+
+:::: {.model-use-grid}
+
+::: {.model-use-card .small-model}
+**Modelos pequenos**
+
+- classificar 500 notícias por tema
+- extrair tickers, datas e valores de comunicados
+- padronizar descrições de despesas
+- gerar rascunhos curtos de emails recorrentes
+- aplicar uma rubrica fixa a relatórios simples
+:::
+
+::: {.model-use-card .large-model}
+**Modelos grandes**
+
+- desenhar a metodologia de uma análise de sentimento
+- revisar premissas de valuation com contexto amplo
+- comparar políticas contábeis em notas explicativas
+- sintetizar riscos de crédito em documentos longos
+- depurar uma rotina financeira com várias etapas
+:::
+
+::::
 
 ---
 
@@ -349,8 +353,8 @@ Exemplo: classificar 500 notícias pode usar modelo barato; desenhar a metodolog
 
 . . .
 
-::: {.callout-warning title="Sinal de alerta"}
-Resposta fluente não é evidência de resposta correta.
+::: {.callout-warning title="Fica esperto"}
+Resposta verossímil não é evidência de resposta correta.
 :::
 
 # Chat na web

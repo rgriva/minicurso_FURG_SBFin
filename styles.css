@@ -100,6 +100,11 @@
   transform: translateY(-35px);
 }
 
+.reveal .price-table-slide .product-table-body {
+  margin-top: 0.5rem;
+  transform: none;
+}
+
 .reveal .concept-map {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -351,6 +356,29 @@
   font-size: 0.66em;
 }
 
+.reveal .product-table.model-size-table {
+  font-size: 1.12em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+.reveal .model-size-table th {
+  color: #A31229;
+  white-space: nowrap;
+}
+
+.reveal .model-size-table table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.reveal .product-table.model-size-table td,
+.reveal .product-table.model-size-table th {
+  padding-left: 0.32rem;
+  padding-right: 0.32rem;
+}
+
 .reveal .product-table td,
 .reveal .product-table th {
   padding: 0.38rem 0.5rem;
@@ -418,10 +446,118 @@
   margin-bottom: 0.45rem;
 }
 
+.reveal .model-use-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 1rem;
+}
+
+.reveal .model-use-card {
+  background: #f7f7f7;
+  border-top: 7px solid #A31229;
+  min-height: 380px;
+  padding: 1rem 1.05rem;
+}
+
+.reveal .model-use-card.large-model {
+  border-top-color: #C77824;
+}
+
+.reveal .model-use-card strong {
+  color: #A31229;
+  display: block;
+  font-size: 1.1em;
+  margin-bottom: 0.55rem;
+}
+
+.reveal .model-use-card.large-model strong {
+  color: #C77824;
+}
+
+.reveal .model-use-card li {
+  margin-bottom: 0.32rem;
+}
+
+.reveal .do-dont-grid {
+  align-items: stretch;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 1rem;
+}
+
+.reveal .do-dont-card {
+  background: #f7f7f7;
+  border: 2px solid #d8d8d8;
+  border-top-width: 8px;
+  min-height: 380px;
+  padding: 1rem 1.1rem;
+}
+
+.reveal .do-dont-card.do {
+  background: #f1f8f4;
+  border-color: #2E7D4F;
+}
+
+.reveal .do-dont-card.dont {
+  background: #fbf1f3;
+  border-color: #A31229;
+}
+
+.reveal .do-dont-title {
+  align-items: center;
+  display: flex;
+  font-size: 1.15em;
+  font-weight: 700;
+  gap: 0.55rem;
+  margin-bottom: 0.75rem;
+}
+
+.reveal .do-dont-card.do .do-dont-title {
+  color: #2E7D4F;
+}
+
+.reveal .do-dont-card.dont .do-dont-title {
+  color: #A31229;
+}
+
+.reveal .do-dont-title span {
+  border: 2px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.62em;
+  letter-spacing: 0.04em;
+  padding: 0.12rem 0.42rem;
+  text-transform: uppercase;
+}
+
+.reveal .do-dont-card ul {
+  margin-top: 0.35rem;
+}
+
+.reveal .do-dont-card li {
+  margin-bottom: 0.35rem;
+}
+
 .reveal .source-note {
   color: #555;
   font-size: 0.48em;
   margin-top: 0.55rem;
+}
+
+.reveal .pdf-link-box {
+  background: #f7f7f7;
+  border-left: 6px solid #A31229;
+  font-size: 0.62em;
+  margin: 0.9rem auto 0;
+  max-width: 780px;
+  padding: 0.55rem 0.75rem;
+  text-align: center;
+}
+
+.reveal .pdf-link-box a {
+  color: #A31229;
+  font-weight: 700;
 }
 
 .reveal .wrap-code pre,
