@@ -20,8 +20,12 @@ maio de 2026.
     slides_dia1.html    # HTML renderizado (não editar manualmente)
     QR_code.png         # QR de contato do instrutor
     github_repo_QR.png  # QR do repositório GitHub
-  dia2/                 # a construir
+  dia2/
+    slides_dia2.qmd     # fonte principal do deck — Dia 2
+    slides_dia2.html    # HTML renderizado (não editar manualmente)
   dia3/                 # a construir
+    slides_dia3.qmd     # fonte principal do deck — Dia 3
+    slides_dia3.html    # HTML renderizado (não editar manualmente)
     demo/
       materiais_dados_financeiros/
       materiais_sentimento/
@@ -35,7 +39,7 @@ Arquivos gerados automaticamente — **não editar manualmente**:
 
 Exceção de publicação:
 
-- `dia1/slides_dia1_files/` é gerado pelo Quarto, mas precisa ficar versionado porque `dia1/slides_dia1.html` depende desses assets no GitHub Pages.
+- `dia1/slides_dia1_files/` e `dia2/slides_dia2_files/` são gerados pelo Quarto, mas precisam ficar versionados porque os HTMLs renderizados dependem desses assets no GitHub Pages.
 
 ---
 
@@ -72,11 +76,11 @@ conda run -n FURG quarto render dia1/slides_dia1.qmd
 > literal do arquivo. Sem a planilha, a renderização falhará nos slides de perfil
 > dos participantes.
 
-### Dias 2 e 3 (a construir)
+### Dias 2 e 3
 
 ```bash
-conda run -n FURG quarto render dia2/slides.qmd
-conda run -n FURG quarto render dia3/slides.qmd
+conda run -n FURG quarto render dia2/slides_dia2.qmd
+conda run -n FURG quarto render dia3/slides_dia3.qmd
 ```
 
 ## Publicação no GitHub Pages
@@ -85,6 +89,7 @@ O repositório está preparado para ser publicado como Project Page:
 
 - Página inicial: <https://rgriva.github.io/minicurso_FURG_SBFin/>
 - Slides do Dia 1: <https://rgriva.github.io/minicurso_FURG_SBFin/dia1/slides_dia1.html>
+- Slides do Dia 2: <https://rgriva.github.io/minicurso_FURG_SBFin/dia2/slides_dia2.html>
 - Dashboard do Exemplo 1: <https://rgriva.github.io/minicurso_FURG_SBFin/dia1/dashboard_acoes_brasil.html>
 
 Configuração recomendada no GitHub:
@@ -97,8 +102,8 @@ Configuração recomendada no GitHub:
 Notas:
 
 - O arquivo `.nojekyll` instrui o GitHub Pages a servir os HTMLs estáticos diretamente, sem processamento adicional por Jekyll.
-- O arquivo `index.html` na raiz redireciona para `dia1/slides_dia1.html`.
-- A pasta `dia1/slides_dia1_files/` deve ser commitada junto com `dia1/slides_dia1.html`, pois contém JavaScript, CSS, fontes e figuras usados pelo deck renderizado.
+- O arquivo `index.html` na raiz lista os links para os dias disponíveis.
+- As pastas `dia1/slides_dia1_files/` e `dia2/slides_dia2_files/` devem ser commitadas junto com seus respectivos HTMLs, pois contêm JavaScript, CSS, fontes e figuras usados pelos decks renderizados.
 - O dashboard `dia1/dashboard_acoes_brasil.html` é autocontido e pesa cerca de 8,4 MB. Ele está dentro dos limites do GitHub Pages, mas pode demorar um pouco para carregar em redes lentas.
 - Para testar localmente antes de publicar:
 
@@ -121,14 +126,16 @@ Depois abra <http://localhost:8000/>.
 - Usos gerais de IA e sua tradução para Finanças
 - Três exemplos-base: dados financeiros, texto financeiro e decisão corporativa
 
-### Dia 2 — Ferramentas 🔲
+### Dia 2 — Ferramentas ✅
 
-- Chatbots e estrutura básica de prompt
-- Fluxo de iteração: pedir, avaliar, corrigir, refinar
-- Ferramentas: ChatGPT, GitHub Copilot, OpenAI Codex, Claude Code, Cursor
-- Agentic workflow aplicado a Finanças
-- Terminal básico: navegar pastas, rodar scripts, interpretar erros
-- Custos: assinatura, API, limites e dados sensíveis
+- Chat na web, prompting e gerenciamento de contexto
+- Preços e decisão de assinatura
+- ChatGPT, Claude, Gemini, Microsoft Copilot e Perplexity
+- GitHub Copilot vs Cursor para código
+- NotebookLM, Perplexity e Deep Research para documentos e fontes
+- Terminal básico antes de workflows com agentes
+- Claude Code, Codex, GitHub Copilot agent mode e Cursor Agent
+- APIs, tokens, chaves, privacidade e automação
 
 ### Dia 3 — Demos com Agents 🔲
 

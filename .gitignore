@@ -48,6 +48,8 @@ _site/
 *_files/
 !dia1/slides_dia1_files/
 !dia1/slides_dia1_files/**
+!dia2/slides_files/
+!dia2/slides_files/**
 *.quarto_ipynb*
 
 # Rendered outputs (opcional — veja nota abaixo)

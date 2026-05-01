@@ -371,6 +371,93 @@
   color: #A31229;
 }
 
+.reveal .tool-family-grid {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-top: 1rem;
+}
+
+.reveal .tool-family-card {
+  background: #f7f7f7;
+  border-top: 6px solid #A31229;
+  font-size: 0.68em;
+  min-height: 225px;
+  padding: 0.75rem;
+}
+
+.reveal .tool-family-card strong {
+  color: #A31229;
+  display: block;
+  font-size: 1.05em;
+  margin-bottom: 0.45rem;
+}
+
+.reveal .price-decision-grid {
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 1rem;
+}
+
+.reveal .price-decision-card {
+  background: #f7f7f7;
+  border-left: 7px solid #C77824;
+  min-height: 210px;
+  padding: 0.9rem 1rem;
+}
+
+.reveal .price-decision-card strong {
+  color: #A31229;
+  display: block;
+  font-size: 1.1em;
+  margin-bottom: 0.45rem;
+}
+
+.reveal .source-note {
+  color: #555;
+  font-size: 0.48em;
+  margin-top: 0.55rem;
+}
+
+.reveal .wrap-code pre,
+.reveal .wrap-code pre code {
+  white-space: pre-wrap !important;
+  word-break: break-word;
+}
+
+.reveal .mini-prompt {
+  background: #f8f9fa;
+  border: 1px solid #d6d9dc;
+  border-radius: 4px;
+  color: #003b4f;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.48em;
+  line-height: 1.32;
+  margin: 0.45rem 0 0.55rem;
+  padding: 0.55rem 0.7rem;
+}
+
+.reveal .agent-flow {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 1.3rem;
+}
+
+.reveal .agent-step {
+  background: #f7f7f7;
+  border-top: 7px solid #A31229;
+  min-height: 190px;
+  padding: 0.85rem;
+}
+
+.reveal .agent-step strong {
+  color: #A31229;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
 .reveal .prompt-quality-grid {
   align-items: stretch;
   display: grid;

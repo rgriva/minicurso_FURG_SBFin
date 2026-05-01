@@ -2,7 +2,7 @@
 
 Este arquivo é o mapa de continuidade do projeto. `AGENTS.md` contém as regras permanentes; este plano registra o estado atual, decisões tomadas e próximos passos.
 
-Última atualização: 2026-04-30.
+Última atualização: 2026-05-01.
 
 ---
 
@@ -10,7 +10,9 @@ Este arquivo é o mapa de continuidade do projeto. `AGENTS.md` contém as regras
 
 - Projeto: minicurso de Inteligência Artificial aplicada a Finanças, FURG / Escola SBFin
 - Fonte principal do dia 1: `dia1/slides_dia1.qmd`
+- Fonte principal do dia 2: `dia2/slides_dia2.qmd`
 - HTML renderizado do dia 1: `dia1/slides_dia1.html`
+- HTML renderizado do dia 2: `dia2/slides_dia2.html`
 - Estilo global: `styles.css`
 - Configuração Quarto: `_quarto.yml`
 - Ambiente local esperado: conda `FURG`
@@ -18,6 +20,7 @@ Este arquivo é o mapa de continuidade do projeto. `AGENTS.md` contém as regras
 
 ```bash
 conda run -n FURG quarto render dia1/slides_dia1.qmd
+conda run -n FURG quarto render dia2/slides_dia2.qmd
 ```
 
 Ponto crítico para nuvem:
@@ -60,12 +63,16 @@ Ponto crítico para nuvem:
       backtest_portfolios.py
     slides_dia1_files/                                   # render/cache RevealJS
   dia2/
+    slides_dia2.qmd
+    slides_dia2.html
+    slides_dia2_files/                                 # render/cache RevealJS
   dia3/
 ```
 
 Arquivos gerados ou cache que não devem ser editados manualmente:
 - `.quarto/`
 - `dia1/slides_dia1_files/`
+- `dia2/slides_dia2_files/`
 - `*.quarto_ipynb*`
 
 ---
@@ -133,38 +140,25 @@ Antes de considerar o dia 1 fechado:
 
 ## Dia 2 -- Ferramentas
 
-Status: ainda não construído.
+Status: deck construído e renderizado em `dia2/slides_dia2.html`.
 
 Objetivo:
-- ensinar uso prático de ferramentas de IA para trabalho em Finanças
+- ensinar uso prático de ferramentas de IA, com menos ênfase em Finanças e mais foco em escolha de ferramenta, preço, prompting, contexto, agentes e APIs.
 
-`dia2/slides.qmd` deve cobrir:
-- chatbots e estrutura básica de prompt
-- iteração: pedir, avaliar, corrigir, refinar
-- ferramentas:
-  - ChatGPT
-  - GitHub Copilot
-  - OpenAI Codex
-  - Claude Code
-  - Cursor
-- agentic workflow:
-  1. definir problema
-  2. gerar código
-  3. executar
-  4. corrigir
-  5. iterar
-- terminal, de forma breve:
-  - navegar pastas
-  - rodar scripts
-  - entender mensagens de erro
-- custos:
-  - assinatura mensal
-  - uso por API
-  - cuidado com limites e dados sensíveis
+O deck `dia2/slides_dia2.qmd` cobre:
+- chat na web: ChatGPT, Claude, Gemini, Microsoft Copilot e Perplexity
+- preços e faixas de custo, com fontes oficiais verificadas em 2026-05-01
+- boas práticas de prompt, contexto, validação e escolha entre modelos grandes/pequenos
+- GitHub Copilot vs Cursor para ajuda a escrever código
+- ferramentas especializadas: NotebookLM, Perplexity e Deep Research
+- terminal mínimo antes de agentes: `pwd`, `ls`, `cd`, execução, erro, `git status` e `git diff`
+- agentes: Claude Code, Codex, Copilot agent mode e Cursor Agent
+- APIs: tokens, chaves, limites, privacidade e automação
+- sete microdemos guiadas para execução ao vivo, sem scripts ou datasets novos
 
 Direção de estilo:
 - manter o foco em fluxo de trabalho, não em comparação promocional de ferramentas
-- usar exemplos pequenos que possam preparar o dia 3
+- usar exemplos pequenos e mistos, preparando o dia 3 sem substituir as demos ao vivo
 
 ---
 
@@ -181,7 +175,8 @@ Estrutura planejada:
 
 ```text
 dia3/
-  slides.qmd
+  slides_dia3.qmd
+  slides_dia3.html
   demo/
     materiais_dados_financeiros/
     materiais_sentimento/

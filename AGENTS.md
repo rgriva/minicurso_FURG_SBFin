@@ -19,10 +19,12 @@ Estrutura esperada:
     images/
     scripts/
   dia2/
-    slides.qmd         # a criar
+    slides_dia2.qmd
+    slides_dia2.html
     demo/              # a criar se necessário
   dia3/
-    slides.qmd         # a criar
+    slides_dia3.qmd    # a criar
+    slides_dia3.html   # a criar
     demo/
       materiais_dados_financeiros/
       materiais_sentimento/
@@ -54,7 +56,9 @@ Em 2026-04-30:
 - `styles.css` contém o estilo global do deck RevealJS
 - `_quarto.yml` contém a configuração global do Quarto/RevealJS
 - `requirements.txt` contém dependências Python mínimas
-- `dia2/` e `dia3/` existem, mas ainda estão vazios
+- o dia 2 está implementado em `dia2/slides_dia2.qmd`
+- o HTML renderizado do dia 2 está em `dia2/slides_dia2.html`
+- `dia3/` existe, mas ainda está vazio
 
 Conteúdo já construído no dia 1:
 - introdução do instrutor e contato
@@ -172,14 +176,12 @@ Estrutura esperada:
 
 ```text
 diaX/
-  slides.qmd
+  slides_diaX.qmd
+  slides_diaX.html
   demo/
     materiais_de_apoio
     outputs/          # opcional
 ```
-
-Exceção atual:
-- o deck do dia 1 usa o nome `dia1/slides_dia1.qmd`
 
 Materiais de apoio devem ser curtos, legíveis e versionáveis. Evitar datasets grandes.
 
