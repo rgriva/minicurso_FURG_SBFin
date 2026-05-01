@@ -347,6 +347,10 @@
   font-size: 0.6em;
 }
 
+.reveal .product-table.product-table-large {
+  font-size: 0.66em;
+}
+
 .reveal .product-table td,
 .reveal .product-table th {
   padding: 0.38rem 0.5rem;

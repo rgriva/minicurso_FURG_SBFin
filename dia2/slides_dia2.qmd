@@ -23,7 +23,7 @@ Não existe "a melhor IA". Existe a ferramenta que encaixa melhor na tarefa, no 
 
 ---
 
-## Cinco famílias de uso
+## Cinco famílias de uso {.vcenter-slide}
 
 :::: {.tool-family-grid}
 
@@ -87,9 +87,10 @@ Fonte, teste, cálculo, revisão humana, comparação com benchmark?
 
 ---
 
-## Mapa rápido de escolha
+## Mapa rápido de escolha {.vcenter-slide}
 
-::: {.product-table}
+:::: {.vcenter-body .product-table-body}
+::: {.product-table .product-table-large}
 | Tarefa | Melhor ponto de partida | Cuidado principal |
 |---|---|---|
 | Brainstorm, email, explicação | ChatGPT, Claude, Gemini | vagueza no pedido |
@@ -99,6 +100,7 @@ Fonte, teste, cálculo, revisão humana, comparação com benchmark?
 | Mudança complexa em projeto | Codex, Claude Code, Copilot agent | escopo e permissões |
 | Produto ou rotina repetida | API | custo, chave e privacidade |
 :::
+::::
 
 # Custos
 
@@ -301,8 +303,9 @@ Quando a conversa ficar confusa, abra uma nova conversa com um resumo limpo: obj
 
 ---
 
-## O que colocar no contexto
+## O que colocar no contexto {.vcenter-slide}
 
+:::: {.vcenter-body .product-table-body}
 ::: {.product-table}
 | Inclua | Por quê |
 |---|---|
@@ -313,6 +316,7 @@ Quando a conversa ficar confusa, abra uma nova conversa com um resumo limpo: obj
 | exemplo de saída desejada | melhora formato |
 | critérios de validação | força raciocínio checável |
 :::
+::::
 
 ---
 
@@ -364,8 +368,9 @@ Comece no chat quando a tarefa cabe em uma conversa.
 
 ---
 
-## Principais opções de chat
+## Principais opções de chat {.vcenter-slide}
 
+:::: {.vcenter-body .product-table-body}
 ::: {.product-table}
 | Ferramenta | Ponto forte | Quando eu usaria |
 |---|---|---|
@@ -375,6 +380,7 @@ Comece no chat quando a tarefa cabe em uma conversa.
 | Microsoft Copilot | Office, Teams, Excel, ambiente corporativo | empresa com Microsoft 365 |
 | Perplexity | busca com fontes e resposta rápida | pesquisa web com citações |
 :::
+::::
 
 ---
 
@@ -465,8 +471,9 @@ Bom para rascunhar funções pequenas, mas longe do estado real do projeto.
 
 ---
 
-## Copilot vs Cursor: comparação prática
+## Copilot vs Cursor: comparação prática {.vcenter-slide}
 
+:::: {.vcenter-body .product-table-body}
 ::: {.product-table}
 | Dimensão | GitHub Copilot | Cursor |
 |---|---|---|
@@ -476,6 +483,7 @@ Bom para rascunhar funções pequenas, mas longe do estado real do projeto.
 | Agentes | Copilot agent mode e cloud agent | Agent, rules, background/cloud agents |
 | Risco | aceitar sugestão sem entender | deixar agente mexer em escopo grande |
 :::
+::::
 
 ---
 
@@ -559,8 +567,9 @@ Se a ferramenta não conseguir apontar fonte, trate como rascunho, não como evi
 
 ---
 
-## Perplexity e Deep Research
+## Perplexity e Deep Research {.vcenter-slide}
 
+:::: {.vcenter-body .product-table-body}
 ::: {.product-table}
 | Uso | Ferramenta típica | Ponto de atenção |
 |---|---|---|
@@ -569,6 +578,7 @@ Se a ferramenta não conseguir apontar fonte, trate como rascunho, não como evi
 | comparação de mercado | web + fontes oficiais | data e jurisdição importam |
 | revisão bibliográfica inicial | pesquisa com citações | não substituir leitura |
 :::
+::::
 
 ---
 
@@ -603,8 +613,9 @@ Não é virar programador avançado. É conseguir acompanhar a máquina trabalha
 
 ---
 
-## Comandos que bastam para começar
+## Comandos que bastam para começar {.vcenter-slide}
 
+:::: {.vcenter-body .product-table-body}
 ::: {.product-table}
 | Comando | Pergunta que responde |
 |---|---|
@@ -616,6 +627,7 @@ Não é virar programador avançado. É conseguir acompanhar a máquina trabalha
 | `git status` | o que mudou? |
 | `git diff` | quais linhas mudaram? |
 :::
+::::
 
 ---
 
@@ -692,8 +704,9 @@ diff, resultado e limites
 
 ---
 
-## Exemplos de agentes
+## Exemplos de agentes {.vcenter-slide}
 
+:::: {.vcenter-body .product-table-body}
 ::: {.product-table}
 | Ferramenta | Onde trabalha | Bom para |
 |---|---|---|
@@ -702,6 +715,7 @@ diff, resultado e limites
 | GitHub Copilot agent | IDE/GitHub | issues, mudanças em projeto, PRs |
 | Cursor Agent | editor Cursor | edição multiarquivo com contexto do workspace |
 :::
+::::
 
 ---
 
@@ -767,8 +781,9 @@ Se é uma tarefa única, chat ou agente costuma ser melhor.
 
 ---
 
-## Como pensar custo de API
+## Como pensar custo de API {.vcenter-slide}
 
+:::: {.vcenter-body .product-table-body}
 ::: {.product-table}
 | Componente | O que significa |
 |---|---|
@@ -778,6 +793,7 @@ Se é uma tarefa única, chat ou agente costuma ser melhor.
 | ferramentas | busca web, execução de código, imagens, áudio |
 | cache/batch | modos para reduzir custo em escala |
 :::
+::::
 
 . . .
 
@@ -832,8 +848,9 @@ Evitar: decisão financeira automática sem validação, governança e responsab
 
 # Fechamento
 
-## Checklist de escolha
+## Checklist de escolha {.vcenter-slide}
 
+:::: {.vcenter-body .product-table-body}
 ::: {.product-table}
 | Se você precisa... | Use primeiro |
 |---|---|
@@ -844,6 +861,7 @@ Evitar: decisão financeira automática sem validação, governança e responsab
 | mudar arquivos e testar | agente |
 | repetir em escala | API |
 :::
+::::
 
 ---
 
