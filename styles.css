@@ -356,6 +356,14 @@
   font-size: 0.66em;
 }
 
+.reveal .product-table.terminal-os-table {
+  font-size: 0.82em;
+}
+
+.reveal .terminal-os-table-body {
+  margin-top: 0.55rem;
+}
+
 .reveal .copilot-cursor-table th {
   color: #A31229;
 }

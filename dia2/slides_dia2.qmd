@@ -538,14 +538,30 @@ Você precise de uma conta (gratuita) do Google para usar o NotebookLM!
 - Com uma conta, acesse esse exemplo: [https://notebooklm.google.com/notebook/0e51dd49-99b8-4a1d-96a3-613a4405ffff](https://notebooklm.google.com/notebook/0e51dd49-99b8-4a1d-96a3-613a4405ffff)
 - Vamos construir um exemplo juntos também!
 
-# Terminal mínimo
+# Olá, Terminal
 
-## Por que falar de terminal?
+## O que é o ```terminal```?
 
-- Agentes usam terminal para executar trabalho
-- Erros aparecem como texto
-- Você precisa saber onde está e o que mudou
-- Poucos comandos já reduzem muito a dependência
+- É uma forma de conversar com o computador por texto
+- O computador é o mesmo: arquivos, pastas, programas, internet
+- O que muda é a interface: comandos escritos em vez de cliques e janelas
+- Cada comando diz exatamente uma ação: listar, entrar, criar, mover, apagar, executar
+
+. . .
+
+::: {.callout-tip}
+No terminal, programar é escrever arquivos e pedir ao computador para executar esses arquivos.
+:::
+
+---
+
+## Por que isso é útil?
+
+- Comandos são precisos e repetíveis
+- Erros aparecem como texto, com pistas do que corrigir
+- Dá para automatizar tarefas repetidas
+- É mais fácil registrar o que foi feito
+- Muitas ferramentas profissionais nascem no terminal
 
 . . .
 
@@ -553,50 +569,48 @@ Não é virar programador avançado. É conseguir acompanhar a máquina trabalha
 
 ---
 
+## Unix e Windows não falam igual {.vcenter-slide}
+
+:::: {.terminal-os-table-body}
+::: {.product-table .terminal-os-table}
+| Tema | Mac / Linux | Windows |
+|---|---|---|
+| Ambiente comum | Terminal, bash, zsh | PowerShell, Prompt |
+| Separador de pastas | `/Users/raul/projeto` | `C:\Users\Raul\projeto` |
+| Pasta inicial | `~` | `$HOME` ou `%USERPROFILE%` |
+| Listar arquivos | `ls` | `dir` ou `Get-ChildItem` |
+| Limpar tela | `clear` | `cls` ou `Clear-Host` |
+:::
+::::
+
+. . .
+
+::: {.callout-warning}
+## Atenção
+Agentes e instruções online costumam assumir Unix (Linux ou Mac). Aqui o ambiente importa bastante.
+:::
+
 ## Comandos que bastam para começar {.vcenter-slide}
 
 :::: {.vcenter-body .product-table-body}
-::: {.product-table}
+::: {.product-table .product-table-large}
 | Comando | Pergunta que responde |
 |---|---|
 | `pwd` | em que pasta estou? |
 | `ls` | quais arquivos existem aqui? |
 | `cd pasta` | como entro em outra pasta? |
-| `python script.py` | o script roda? |
-| `quarto render slides_dia2.qmd` | o deck renderiza? |
-| `git status` | o que mudou? |
-| `git diff` | quais linhas mudaram? |
+| `mkdir demo` | como crio uma pasta? |
+| `cp arquivo.csv demo/` | como copio um arquivo? |
+| `mv antigo.csv novo.csv` | como movo ou renomeio? |
+| `cat arquivo.txt` | como vejo um arquivo curto? |
+| `less arquivo.txt` | como navego em um arquivo maior? |
+| `rm teste.txt` | como apago um arquivo? |
 :::
 ::::
 
----
+. . .
 
-## Ler erro sem pânico
-
-:::: {.columns}
-
-::: {.column width="48%"}
-**Procure**
-
-- última linha do erro
-- arquivo e número da linha
-- nome da exceção
-- variável ou pacote faltante
-:::
-
-::: {.column width="52%"}
-**Peça ajuda assim**
-
-```markdown
-Explique este erro e proponha a menor correção.
-Não reescreva o projeto inteiro.
-
-[cole o comando executado]
-[cole o traceback completo]
-```
-:::
-
-::::
+Vale conhecer: [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/)
 
 # Agentes
 
@@ -608,7 +622,7 @@ Não reescreva o projeto inteiro.
 
 . . .
 
-Um agente pode ler arquivos, editar código, rodar testes, abrir navegador, buscar contexto e iterar.
+O terminal é uma das principais ferramentas do agente: por ali ele enxerga a estrutura do projeto, executa scripts, lê erros e confirma se a mudança funcionou.
 
 ---
 

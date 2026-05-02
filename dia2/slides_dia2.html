@@ -31,72 +31,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="slides_dia2_files/libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
   <link rel="stylesheet" href="../styles.css">
@@ -941,26 +875,114 @@ Você é um analista de investimentos ajudando a construir uma carteira de inves
 </ul>
 </section></section>
 <section>
-<section id="terminal-mínimo" class="title-slide slide level1 center">
-<h1>Terminal mínimo</h1>
+<section id="olá-terminal" class="title-slide slide level1 center">
+<h1>Olá, Terminal</h1>
 
 </section>
-<section id="por-que-falar-de-terminal" class="slide level2">
-<h2>Por que falar de terminal?</h2>
+<section id="o-que-é-o-terminal" class="slide level2">
+<h2>O que é o <code>terminal</code>?</h2>
 <ul>
-<li>Agentes usam terminal para executar trabalho</li>
-<li>Erros aparecem como texto</li>
-<li>Você precisa saber onde está e o que mudou</li>
-<li>Poucos comandos já reduzem muito a dependência</li>
+<li>É uma forma de conversar com o computador por texto</li>
+<li>O computador é o mesmo: arquivos, pastas, programas, internet</li>
+<li>O que muda é a interface: comandos escritos em vez de cliques e janelas</li>
+<li>Cada comando diz exatamente uma ação: listar, entrar, criar, mover, apagar, executar</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Dica</strong></p>
+</div>
+<div class="callout-content">
+<p>No terminal, programar é escrever arquivos e pedir ao computador para executar esses arquivos.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="por-que-isso-é-útil" class="slide level2">
+<h2>Por que isso é útil?</h2>
+<ul>
+<li>Comandos são precisos e repetíveis</li>
+<li>Erros aparecem como texto, com pistas do que corrigir</li>
+<li>Dá para automatizar tarefas repetidas</li>
+<li>É mais fácil registrar o que foi feito</li>
+<li>Muitas ferramentas profissionais nascem no terminal</li>
 </ul>
 <div class="fragment">
 <p>Não é virar programador avançado. É conseguir acompanhar a máquina trabalhando.</p>
 </div>
 </section>
+<section id="unix-e-windows-não-falam-igual" class="slide level2 vcenter-slide">
+<h2>Unix e Windows não falam igual</h2>
+<div class="terminal-os-table-body">
+<div class="product-table terminal-os-table">
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tema</th>
+<th>Mac / Linux</th>
+<th>Windows</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ambiente comum</td>
+<td>Terminal, bash, zsh</td>
+<td>PowerShell, Prompt</td>
+</tr>
+<tr class="even">
+<td>Separador de pastas</td>
+<td><code>/Users/raul/projeto</code></td>
+<td><code>C:\Users\Raul\projeto</code></td>
+</tr>
+<tr class="odd">
+<td>Pasta inicial</td>
+<td><code>~</code></td>
+<td><code>$HOME</code> ou <code>%USERPROFILE%</code></td>
+</tr>
+<tr class="even">
+<td>Listar arquivos</td>
+<td><code>ls</code></td>
+<td><code>dir</code> ou <code>Get-ChildItem</code></td>
+</tr>
+<tr class="odd">
+<td>Limpar tela</td>
+<td><code>clear</code></td>
+<td><code>cls</code> ou <code>Clear-Host</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Atenção</strong></p>
+</div>
+<div class="callout-content">
+<p>Agentes e instruções online costumam assumir Unix (Linux ou Mac). Aqui o ambiente importa bastante.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="comandos-que-bastam-para-começar" class="slide level2 vcenter-slide">
 <h2>Comandos que bastam para começar</h2>
 <div class="vcenter-body product-table-body">
-<div class="product-table">
+<div class="product-table product-table-large">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -982,45 +1004,36 @@ Você é um analista de investimentos ajudando a construir uma carteira de inves
 <td>como entro em outra pasta?</td>
 </tr>
 <tr class="even">
-<td><code>python script.py</code></td>
-<td>o script roda?</td>
+<td><code>mkdir demo</code></td>
+<td>como crio uma pasta?</td>
 </tr>
 <tr class="odd">
-<td><code>quarto render slides_dia2.qmd</code></td>
-<td>o deck renderiza?</td>
+<td><code>cp arquivo.csv demo/</code></td>
+<td>como copio um arquivo?</td>
 </tr>
 <tr class="even">
-<td><code>git status</code></td>
-<td>o que mudou?</td>
+<td><code>mv antigo.csv novo.csv</code></td>
+<td>como movo ou renomeio?</td>
 </tr>
 <tr class="odd">
-<td><code>git diff</code></td>
-<td>quais linhas mudaram?</td>
+<td><code>cat arquivo.txt</code></td>
+<td>como vejo um arquivo curto?</td>
+</tr>
+<tr class="even">
+<td><code>less arquivo.txt</code></td>
+<td>como navego em um arquivo maior?</td>
+</tr>
+<tr class="odd">
+<td><code>rm teste.txt</code></td>
+<td>como apago um arquivo?</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-</section>
-<section id="ler-erro-sem-pânico" class="slide level2">
-<h2>Ler erro sem pânico</h2>
-<div class="columns">
-<div class="column" style="width:48%;">
-<p><strong>Procure</strong></p>
-<ul>
-<li>última linha do erro</li>
-<li>arquivo e número da linha</li>
-<li>nome da exceção</li>
-<li>variável ou pacote faltante</li>
-</ul>
-</div><div class="column" style="width:52%;">
-<p><strong>Peça ajuda assim</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href=""></a>Explique este erro e proponha a menor correção.</span>
-<span id="cb1-2"><a href=""></a>Não reescreva o projeto inteiro.</span>
-<span id="cb1-3"><a href=""></a></span>
-<span id="cb1-4"><a href=""></a><span class="co">[</span><span class="ot">cole o comando executado</span><span class="co">]</span></span>
-<span id="cb1-5"><a href=""></a><span class="co">[</span><span class="ot">cole o traceback completo</span><span class="co">]</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div></div>
+<div class="fragment">
+<p>Vale conhecer: <a href="https://missing.csail.mit.edu/">The Missing Semester of Your CS Education</a></p>
+</div>
 </section></section>
 <section>
 <section id="agentes" class="title-slide slide level1 center">
@@ -1035,7 +1048,7 @@ Você é um analista de investimentos ajudando a construir uma carteira de inves
 <li>Agente executa uma tarefa com ferramentas</li>
 </ul>
 <div class="fragment">
-<p>Um agente pode ler arquivos, editar código, rodar testes, abrir navegador, buscar contexto e iterar.</p>
+<p>O terminal é uma das principais ferramentas do agente: por ali ele enxerga a estrutura do projeto, executa scripts, lê erros e confirma se a mudança funcionou.</p>
 </div>
 </section>
 <section id="fluxo-de-trabalho-com-agentes" class="slide level2">
