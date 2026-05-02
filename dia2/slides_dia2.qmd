@@ -395,19 +395,19 @@ Comece no chat quando a tarefa cabe em uma conversa.
 ::: {.column width="48%"}
 **Sem contexto**
 
-<div class="mini-prompt">Escreva um email sobre o minicurso.</div>
+<div class="mini-prompt">Quais são os principais riscos de investir em Petrobras?</div>
 
 Provável resultado:
 
-- genérico
-- tom errado
-- pouca utilidade
+- amplo demais
+- pode misturar fatos antigos e recentes
+- pode virar recomendação implícita
 :::
 
 ::: {.column width="52%"}
 **Com contexto**
 
-<div class="mini-prompt">Escreva um email curto para alunos de graduação.<br>Objetivo: lembrar que amanhã faremos demos ao vivo com agentes.<br>Tom: direto e acolhedor. Máximo 120 palavras.<br>Inclua 3 itens para trazer: notebook, conta em uma ferramenta de IA e curiosidade.</div>
+<div class="mini-prompt">Você é um analista de investimentos ajudando a construir uma carteira de investimentos.<br><br>Tarefa: liste os principais riscos de investir em Petrobras, pensando em um investidor pessoa física com horizonte de 3 a 5 anos.<br><br>Organize seu pensamento em infográficos e tabelas se necessário.<br><br>Divida riscos em categorias e explique em até 2 frases por que o risco importa e qual indicador eu deveria acompanhar. Separe riscos estruturais de fatos recentes que precisariam ser verificados em fontes atuais. Não dê recomendação de compra ou venda.</div>
 
 Resultado esperado: pronto para revisar.
 :::
@@ -416,36 +416,18 @@ Resultado esperado: pronto para revisar.
 
 ---
 
-## Chat com arquivos
+## Microdemo 2.5: projetos
 
-- Diga o que o arquivo contém
-- Diga o que você quer extrair
-- Peça para citar página, seção, linha ou trecho
-- Peça uma tabela de achados e limitações
-- Não envie dado sensível sem política clara
+Quando a IA vê um **projeto**, ela deixa de responder só ao prompt.
 
-::: {.prompt-box}
-Analise o PDF anexado. Quero apenas:
-1. tese central;
-2. três evidências;
-3. duas limitações;
-4. perguntas que eu deveria fazer ao autor.
-Se uma resposta depender de inferência, marque como inferência.
-:::
-
----
-
-## Bom uso em Finanças
-
-- resumir ata do COPOM ou release de resultados
-- explicar uma tabela de valuation
-- revisar premissas de um orçamento
-- transformar notas soltas em checklist
-- gerar primeira versão de código simples
+- Entende arquivos, pastas e convenções existentes
+- Reaproveita contexto: código, dados, slides, documentação
+- Sugere mudanças alinhadas ao estilo do trabalho
+- Ajuda a navegar tarefas que não cabem em uma pergunta isolada
 
 . . .
 
-Não usar sozinho para recomendação de investimento sem dados, método e revisão.
+O ganho aparece quando o pedido vira: "olhe este projeto e me ajude a avançar".
 
 # Copilot vs Cursor
 
