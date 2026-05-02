@@ -51,12 +51,6 @@ Pesquisa, documentos, fontes e conhecimento pessoal.
 Executar tarefas em arquivos, terminal, browser e repositórios.
 :::
 
-::: {.tool-family-card}
-**5. APIs**
-
-Colocar IA dentro de produtos, planilhas e rotinas.
-:::
-
 ::::
 
 ---
@@ -98,7 +92,6 @@ Fonte, teste, cálculo, revisão humana, comparação com benchmark?
 | Estudar documentos próprios | NotebookLM | lixo entra, lixo sai |
 | Código pequeno | Copilot, Cursor, chat | testar antes de confiar |
 | Mudança complexa em projeto | Codex, Claude Code, Copilot agent | escopo e permissões |
-| Produto ou rotina repetida | API | custo, chave e privacidade |
 :::
 ::::
 
@@ -130,7 +123,6 @@ Se a ferramenta poupa algumas horas por mês, US$20 deixa de ser caro. O problem
 | Uso intenso | ChatGPT Pro, Claude Max, Cursor Pro+ | US$60-100+/mês |
 | Power user | ChatGPT Pro alto, Cursor Ultra, Google AI Ultra | US$200+/mês |
 | Equipes | ChatGPT Business, Claude Team, Copilot Business, Cursor Teams | por usuário/mês |
-| APIs | OpenAI, Anthropic, Gemini | por token, chamada ou ferramenta |
 :::
 
 ::: {.source-note}
@@ -270,7 +262,7 @@ Dados disponíveis: [cole, anexe ou descreva].
 
 Tarefa: [o que fazer exatamente].
 
-Restrições: [não inventar, não usar API, manter simples, citar fontes].
+Restrições: [não inventar, manter simples, citar fontes].
 
 Formato: [tabela, bullets, código, roteiro, email].
 
@@ -481,22 +473,54 @@ Roteiro:
 
 Ponto central: autocomplete acelera, mas quem valida os dados e os cálculos continua sendo você.
 
-# Ferramentas de pesquisa
+# Ferramentas de pesquisa e aprendizado
 
-## Por que usar ferramentas especializadas?
+## LLMs não foram feitos para pesquisa
 
-- Chat geral tenta resolver tudo
-- Ferramenta especializada limita o problema
-- Menos liberdade pode significar mais confiabilidade
-- O ganho aparece quando há fontes, documentos ou fluxo repetido
+- Um modelo do tipo Transformer só sabe o que ele já "viu"
+- Mas e se quiséssemos que ele usasse fontes atuais, confiáveis e relevantes?
+- A informação muda mais rápido do que os modelos são atualizados
+- Também não foram treinados com foco nas *nossas* fontes
+- Exemplo: notas de aula do seu curso de Álgebra Linear
+- Duas ferramentas importantes: **Perplexity** e **NotebookLM**
+
+## Perplexity e Deep Research {.vcenter-slide}
+
+- Perplexity: ferramenta 100% focada em pesquisa
+- Otimizada para resposta rápida, com fontes e citações
+- Tenta minimizar alucinações: menos criatividade, mais rigor
+- Idealmente, um substituto de pesquisas no Google
+- Deep Research: modo de pesquisa mais longa de vários produtos (exemplo: ChatGPT)
+- Melhor para relatório, pior para triagem rápida
+
+## Microdemo 4: pesquisa com fontes
+
+Use o mesmo prompt no Perplexity e no ChatGPT com Deep Research:
+
+::: {.prompt-box}
+Para uma aula de Finanças, responda em português e em no máximo 220 palavras.
+
+Caso: Petrobras (PETR4/PBR).
+
+Pergunta: para uma primeira análise de valuation em 30 minutos, qual método eu deveria usar primeiro: fluxo de caixa descontado, múltiplos de mercado ou dividendos?
+
+Use 3 a 5 fontes públicas recentes, com links. Inclua pelo menos uma fonte da própria empresa e uma fonte externa. Não calcule preço-alvo. Você pode e deve citar também partes de livro-texto.
+
+Entregue apenas:
+
+ - tabela curta: método, quando ajuda, principal risco;
+ - recomendação final em 3 bullets;
+:::
 
 ---
 
 ## NotebookLM
 
+- Aqui a ideia é criar um parceiro de estudos
+- Muito útil se você quer ajuda para aprender algum tópico
+- Um curso? Aprender sobre um setor? Aprender sobre uma empresa?
 - Melhor quando você tem documentos próprios
 - A unidade de trabalho é o conjunto de fontes
-- Bom para estudar, preparar aula, revisar relatórios e comparar documentos
 - Ajuda a manter respostas ancoradas no material
 
 . . .
@@ -507,53 +531,12 @@ Suba poucos documentos bons, faça perguntas específicas e peça evidências do
 
 ---
 
-## Microdemo 4: NotebookLM
+## Microdemo 5: NotebookLM
 
-::: {.prompt-box}
-Com base apenas nas fontes deste notebook:
+Você precise de uma conta (gratuita) do Google para usar o NotebookLM!
 
-1. Resuma o argumento central em 5 bullets.
-2. Liste os conceitos que um aluno de graduação provavelmente não conhece.
-3. Monte 5 perguntas para discussão em sala.
-4. Indique quais respostas dependem diretamente de uma fonte e quais são inferências.
-:::
-
-. . .
-
-Se a ferramenta não conseguir apontar fonte, trate como rascunho, não como evidência.
-
----
-
-## Perplexity e Deep Research {.vcenter-slide}
-
-:::: {.vcenter-body .product-table-body}
-::: {.product-table}
-| Uso | Ferramenta típica | Ponto de atenção |
-|---|---|---|
-| resposta rápida com fontes | Perplexity | checar qualidade das fontes |
-| pesquisa mais longa | Deep Research | demora e pode misturar níveis de evidência |
-| comparação de mercado | web + fontes oficiais | data e jurisdição importam |
-| revisão bibliográfica inicial | pesquisa com citações | não substituir leitura |
-:::
-::::
-
----
-
-## Microdemo 5: pesquisa com fontes
-
-::: {.prompt-box}
-Pesquise as principais diferenças entre ChatGPT, Claude e Gemini para uso por estudantes.
-
-Regras:
-- use apenas fontes oficiais ou documentação do produto;
-- separe fatos de avaliação;
-- inclua data de acesso;
-- termine com uma tabela: ferramenta, ponto forte, limitação, melhor caso de uso.
-:::
-
-. . .
-
-O objetivo não é a resposta perfeita. É aprender a perguntar de modo auditável.
+- Com uma conta, acesse esse exemplo: [https://notebooklm.google.com/notebook/0e51dd49-99b8-4a1d-96a3-613a4405ffff](https://notebooklm.google.com/notebook/0e51dd49-99b8-4a1d-96a3-613a4405ffff)
+- Vamos construir um exemplo juntos também!
 
 # Terminal mínimo
 
@@ -679,7 +662,7 @@ diff, resultado e limites
 ## Microdemo 6: pedido para agente
 
 ::: {.prompt-box}
-No projeto atual, crie um slide novo no deck do Dia 2 explicando quando usar APIs.
+No projeto atual, crie um slide novo no deck do Dia 2 comparando Perplexity e NotebookLM.
 
 Regras:
 - leia primeiro `_quarto.yml`, `styles.css` e o deck existente;
@@ -691,7 +674,7 @@ Regras:
 
 . . .
 
-Compare isso com "faz um slide sobre APIs". A diferença é escopo, contexto e verificação.
+Compare isso com "faz um slide sobre ferramentas de pesquisa". A diferença é escopo, contexto e verificação.
 
 ---
 
@@ -722,87 +705,6 @@ Quanto mais amplo o pedido, maior o risco de uma solução bonita resolver o pro
 
 Agente bom acelera trabalho bem definido. Ele não salva especificação ruim.
 
-# APIs
-
-## Quando usar API
-
-- tarefa repetida muitas vezes
-- precisa integrar em sistema, planilha ou app
-- precisa controlar formato e logs
-- precisa rodar em lote
-- precisa comparar custo por volume
-
-. . .
-
-Se é uma tarefa única, chat ou agente costuma ser melhor.
-
----
-
-## Como pensar custo de API {.vcenter-slide}
-
-:::: {.vcenter-body .product-table-body}
-::: {.product-table}
-| Componente | O que significa |
-|---|---|
-| input tokens | tudo que você envia: prompt, contexto, arquivos resumidos |
-| output tokens | tudo que o modelo responde |
-| modelo | pequeno, grande, reasoning, multimodal |
-| ferramentas | busca web, execução de código, imagens, áudio |
-| cache/batch | modos para reduzir custo em escala |
-:::
-::::
-
-. . .
-
-O maior erro é mandar contexto demais para uma tarefa simples.
-
----
-
-## Microdemo 7: API sem chave real
-
-```python
-from openai import OpenAI
-
-client = OpenAI(api_key="NAO_COLE_CHAVE_NO_SLIDE")
-
-resposta = client.responses.create(
-    model="modelo-pequeno",
-    instructions="Classifique em positivo, neutro ou negativo.",
-    input="A empresa reportou lucro acima do esperado.",
-)
-
-print(resposta.output_text)
-```
-
-::: {.source-note}
-Exemplo conceitual. Em aula, não usar chave real em slide, GitHub ou gravação.
-:::
-
----
-
-## Boas práticas com API
-
-- chave em variável de ambiente, nunca no código
-- limite de gasto configurado
-- logs de entrada e saída
-- modelos pequenos para tarefas simples
-- fallback quando API falhar
-- teste com amostra pequena antes de rodar em lote
-
----
-
-## API em Finanças: bons exemplos
-
-- classificar notícias por tema
-- resumir relatórios de resultados
-- extrair campos de documentos padronizados
-- gerar primeira versão de comentário mensal
-- criar assistente interno com base em políticas e documentos
-
-. . .
-
-Evitar: decisão financeira automática sem validação, governança e responsabilidade clara.
-
 # Fechamento
 
 ## Checklist de escolha {.vcenter-slide}
@@ -816,7 +718,6 @@ Evitar: decisão financeira automática sem validação, governança e responsab
 | pesquisar com fontes | Perplexity ou Deep Research |
 | escrever código no editor | Copilot ou Cursor |
 | mudar arquivos e testar | agente |
-| repetir em escala | API |
 :::
 ::::
 
@@ -827,10 +728,9 @@ Evitar: decisão financeira automática sem validação, governança e responsab
 1. transformar prompt ruim em prompt estruturado
 2. comparar chat com e sem contexto
 3. pedir função simples no editor
-4. sintetizar documentos no NotebookLM
-5. pesquisar com fontes
+4. pesquisar com fontes
+5. sintetizar documentos no NotebookLM
 6. delimitar tarefa para agente
-7. entender uma chamada de API
 
 ---
 
@@ -853,8 +753,6 @@ Objetivo final: sair sabendo escolher a ferramenta e controlar o workflow.
 - [GitHub Copilot plans](https://github.com/features/copilot/plans)
 - [Cursor pricing](https://cursor.com/pricing)
 - [NotebookLM upgrade limits](https://support.google.com/notebooklm/answer/16213268)
-- [OpenAI API pricing](https://openai.com/api/pricing/)
-- [Gemini API pricing](https://ai.google.dev/gemini-api/docs/pricing)
 
 ::: {.callout-warning title="Aviso"}
 Preços, limites e modelos mudam com frequência. Conferir antes de recomendar uma assinatura.

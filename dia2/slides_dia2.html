@@ -259,10 +259,6 @@ Raul Riva
 <p><strong>4. Agentes</strong></p>
 <p>Executar tarefas em arquivos, terminal, browser e repositórios.</p>
 </div>
-<div class="tool-family-card">
-<p><strong>5. APIs</strong></p>
-<p>Colocar IA dentro de produtos, planilhas e rotinas.</p>
-</div>
 </div>
 </section>
 <section id="perguntas-que-guiam-a-escolha" class="slide level2">
@@ -324,11 +320,6 @@ Raul Riva
 <td>Mudança complexa em projeto</td>
 <td>Codex, Claude Code, Copilot agent</td>
 <td>escopo e permissões</td>
-</tr>
-<tr class="even">
-<td>Produto ou rotina repetida</td>
-<td>API</td>
-<td>custo, chave e privacidade</td>
 </tr>
 </tbody>
 </table>
@@ -408,11 +399,6 @@ Raul Riva
 <td>Equipes</td>
 <td>ChatGPT Business, Claude Team, Copilot Business, Cursor Teams</td>
 <td>por usuário/mês</td>
-</tr>
-<tr class="even">
-<td>APIs</td>
-<td>OpenAI, Anthropic, Gemini</td>
-<td>por token, chamada ou ferramenta</td>
 </tr>
 </tbody>
 </table>
@@ -559,7 +545,7 @@ Explique esta tabela para alunos de graduação.<br>Foque em 3 achados, 2 limita
 <p>Contexto: [quem sou eu, público, situação, objetivo].</p>
 <p>Dados disponíveis: [cole, anexe ou descreva].</p>
 <p>Tarefa: [o que fazer exatamente].</p>
-<p>Restrições: [não inventar, não usar API, manter simples, citar fontes].</p>
+<p>Restrições: [não inventar, manter simples, citar fontes].</p>
 <p>Formato: [tabela, bullets, código, roteiro, email].</p>
 <p>Antes de responder: liste dúvidas críticas ou hipóteses necessárias.</p>
 </div>
@@ -877,25 +863,55 @@ Você é um analista de investimentos ajudando a construir uma carteira de inves
 </div>
 </section></section>
 <section>
-<section id="ferramentas-de-pesquisa" class="title-slide slide level1 center">
-<h1>Ferramentas de pesquisa</h1>
+<section id="ferramentas-de-pesquisa-e-aprendizado" class="title-slide slide level1 center">
+<h1>Ferramentas de pesquisa e aprendizado</h1>
 
 </section>
-<section id="por-que-usar-ferramentas-especializadas" class="slide level2">
-<h2>Por que usar ferramentas especializadas?</h2>
+<section id="llms-não-foram-feitos-para-pesquisa" class="slide level2">
+<h2>LLMs não foram feitos para pesquisa</h2>
 <ul>
-<li>Chat geral tenta resolver tudo</li>
-<li>Ferramenta especializada limita o problema</li>
-<li>Menos liberdade pode significar mais confiabilidade</li>
-<li>O ganho aparece quando há fontes, documentos ou fluxo repetido</li>
+<li>Um modelo do tipo Transformer só sabe o que ele já “viu”</li>
+<li>Mas e se quiséssemos que ele usasse fontes atuais, confiáveis e relevantes?</li>
+<li>A informação muda mais rápido do que os modelos são atualizados</li>
+<li>Também não foram treinados com foco nas <em>nossas</em> fontes</li>
+<li>Exemplo: notas de aula do seu curso de Álgebra Linear</li>
+<li>Duas ferramentas importantes: <strong>Perplexity</strong> e <strong>NotebookLM</strong></li>
 </ul>
+</section>
+<section id="perplexity-e-deep-research" class="slide level2 vcenter-slide">
+<h2>Perplexity e Deep Research</h2>
+<ul>
+<li>Perplexity: ferramenta 100% focada em pesquisa</li>
+<li>Otimizada para resposta rápida, com fontes e citações</li>
+<li>Tenta minimizar alucinações: menos criatividade, mais rigor</li>
+<li>Idealmente, um substituto de pesquisas no Google</li>
+<li>Deep Research: modo de pesquisa mais longa de vários produtos (exemplo: ChatGPT)</li>
+<li>Melhor para relatório, pior para triagem rápida</li>
+</ul>
+</section>
+<section id="microdemo-4-pesquisa-com-fontes" class="slide level2">
+<h2>Microdemo 4: pesquisa com fontes</h2>
+<p>Use o mesmo prompt no Perplexity e no ChatGPT com Deep Research:</p>
+<div class="prompt-box">
+<p>Para uma aula de Finanças, responda em português e em no máximo 220 palavras.</p>
+<p>Caso: Petrobras (PETR4/PBR).</p>
+<p>Pergunta: para uma primeira análise de valuation em 30 minutos, qual método eu deveria usar primeiro: fluxo de caixa descontado, múltiplos de mercado ou dividendos?</p>
+<p>Use 3 a 5 fontes públicas recentes, com links. Inclua pelo menos uma fonte da própria empresa e uma fonte externa. Não calcule preço-alvo. Você pode e deve citar também partes de livro-texto.</p>
+<p>Entregue apenas:</p>
+<ul>
+<li>tabela curta: método, quando ajuda, principal risco;</li>
+<li>recomendação final em 3 bullets;</li>
+</ul>
+</div>
 </section>
 <section id="notebooklm" class="slide level2">
 <h2>NotebookLM</h2>
 <ul>
+<li>Aqui a ideia é criar um parceiro de estudos</li>
+<li>Muito útil se você quer ajuda para aprender algum tópico</li>
+<li>Um curso? Aprender sobre um setor? Aprender sobre uma empresa?</li>
 <li>Melhor quando você tem documentos próprios</li>
 <li>A unidade de trabalho é o conjunto de fontes</li>
-<li>Bom para estudar, preparar aula, revisar relatórios e comparar documentos</li>
 <li>Ajuda a manter respostas ancoradas no material</li>
 </ul>
 <div class="fragment">
@@ -916,73 +932,13 @@ Você é um analista de investimentos ajudando a construir uma carteira de inves
 </div>
 </div>
 </section>
-<section id="microdemo-4-notebooklm" class="slide level2">
-<h2>Microdemo 4: NotebookLM</h2>
-<div class="prompt-box">
-<p>Com base apenas nas fontes deste notebook:</p>
-<ol type="1">
-<li>Resuma o argumento central em 5 bullets.</li>
-<li>Liste os conceitos que um aluno de graduação provavelmente não conhece.</li>
-<li>Monte 5 perguntas para discussão em sala.</li>
-<li>Indique quais respostas dependem diretamente de uma fonte e quais são inferências.</li>
-</ol>
-</div>
-<div class="fragment">
-<p>Se a ferramenta não conseguir apontar fonte, trate como rascunho, não como evidência.</p>
-</div>
-</section>
-<section id="perplexity-e-deep-research" class="slide level2 vcenter-slide">
-<h2>Perplexity e Deep Research</h2>
-<div class="vcenter-body product-table-body">
-<div class="product-table">
-<table class="caption-top">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Uso</th>
-<th>Ferramenta típica</th>
-<th>Ponto de atenção</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>resposta rápida com fontes</td>
-<td>Perplexity</td>
-<td>checar qualidade das fontes</td>
-</tr>
-<tr class="even">
-<td>pesquisa mais longa</td>
-<td>Deep Research</td>
-<td>demora e pode misturar níveis de evidência</td>
-</tr>
-<tr class="odd">
-<td>comparação de mercado</td>
-<td>web + fontes oficiais</td>
-<td>data e jurisdição importam</td>
-</tr>
-<tr class="even">
-<td>revisão bibliográfica inicial</td>
-<td>pesquisa com citações</td>
-<td>não substituir leitura</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section id="microdemo-5-pesquisa-com-fontes" class="slide level2">
-<h2>Microdemo 5: pesquisa com fontes</h2>
-<div class="prompt-box">
-<p>Pesquise as principais diferenças entre ChatGPT, Claude e Gemini para uso por estudantes.</p>
-<p>Regras: - use apenas fontes oficiais ou documentação do produto; - separe fatos de avaliação; - inclua data de acesso; - termine com uma tabela: ferramenta, ponto forte, limitação, melhor caso de uso.</p>
-</div>
-<div class="fragment">
-<p>O objetivo não é a resposta perfeita. É aprender a perguntar de modo auditável.</p>
-</div>
+<section id="microdemo-5-notebooklm" class="slide level2">
+<h2>Microdemo 5: NotebookLM</h2>
+<p>Você precise de uma conta (gratuita) do Google para usar o NotebookLM!</p>
+<ul>
+<li>Com uma conta, acesse esse exemplo: <a href="https://notebooklm.google.com/notebook/0e51dd49-99b8-4a1d-96a3-613a4405ffff">https://notebooklm.google.com/notebook/0e51dd49-99b8-4a1d-96a3-613a4405ffff</a></li>
+<li>Vamos construir um exemplo juntos também!</li>
+</ul>
 </section></section>
 <section>
 <section id="terminal-mínimo" class="title-slide slide level1 center">
@@ -1149,11 +1105,11 @@ Você é um analista de investimentos ajudando a construir uma carteira de inves
 <section id="microdemo-6-pedido-para-agente" class="slide level2">
 <h2>Microdemo 6: pedido para agente</h2>
 <div class="prompt-box">
-<p>No projeto atual, crie um slide novo no deck do Dia 2 explicando quando usar APIs.</p>
+<p>No projeto atual, crie um slide novo no deck do Dia 2 comparando Perplexity e NotebookLM.</p>
 <p>Regras: - leia primeiro <code>_quarto.yml</code>, <code>styles.css</code> e o deck existente; - mantenha o estilo visual atual; - não edite arquivos gerados; - depois rode <code>conda run -n FURG quarto render dia2/slides_dia2.qmd</code>; - no final, diga quais arquivos mudou e qual comando de teste rodou.</p>
 </div>
 <div class="fragment">
-<p>Compare isso com “faz um slide sobre APIs”. A diferença é escopo, contexto e verificação.</p>
+<p>Compare isso com “faz um slide sobre ferramentas de pesquisa”. A diferença é escopo, contexto e verificação.</p>
 </div>
 </section>
 <section id="dar-autonomia-com-limites" class="slide level2">
@@ -1196,109 +1152,6 @@ Você é um analista de investimentos ajudando a construir uma carteira de inves
 </div>
 </section></section>
 <section>
-<section id="apis" class="title-slide slide level1 center">
-<h1>APIs</h1>
-
-</section>
-<section id="quando-usar-api" class="slide level2">
-<h2>Quando usar API</h2>
-<ul>
-<li>tarefa repetida muitas vezes</li>
-<li>precisa integrar em sistema, planilha ou app</li>
-<li>precisa controlar formato e logs</li>
-<li>precisa rodar em lote</li>
-<li>precisa comparar custo por volume</li>
-</ul>
-<div class="fragment">
-<p>Se é uma tarefa única, chat ou agente costuma ser melhor.</p>
-</div>
-</section>
-<section id="como-pensar-custo-de-api" class="slide level2 vcenter-slide">
-<h2>Como pensar custo de API</h2>
-<div class="vcenter-body product-table-body">
-<div class="product-table">
-<table class="caption-top">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Componente</th>
-<th>O que significa</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>input tokens</td>
-<td>tudo que você envia: prompt, contexto, arquivos resumidos</td>
-</tr>
-<tr class="even">
-<td>output tokens</td>
-<td>tudo que o modelo responde</td>
-</tr>
-<tr class="odd">
-<td>modelo</td>
-<td>pequeno, grande, reasoning, multimodal</td>
-</tr>
-<tr class="even">
-<td>ferramentas</td>
-<td>busca web, execução de código, imagens, áudio</td>
-</tr>
-<tr class="odd">
-<td>cache/batch</td>
-<td>modos para reduzir custo em escala</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="fragment">
-<p>O maior erro é mandar contexto demais para uma tarefa simples.</p>
-</div>
-</section>
-<section id="microdemo-7-api-sem-chave-real" class="slide level2">
-<h2>Microdemo 7: API sem chave real</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="im">from</span> openai <span class="im">import</span> OpenAI</span>
-<span id="cb2-2"><a href=""></a></span>
-<span id="cb2-3"><a href=""></a>client <span class="op">=</span> OpenAI(api_key<span class="op">=</span><span class="st">"NAO_COLE_CHAVE_NO_SLIDE"</span>)</span>
-<span id="cb2-4"><a href=""></a></span>
-<span id="cb2-5"><a href=""></a>resposta <span class="op">=</span> client.responses.create(</span>
-<span id="cb2-6"><a href=""></a>    model<span class="op">=</span><span class="st">"modelo-pequeno"</span>,</span>
-<span id="cb2-7"><a href=""></a>    instructions<span class="op">=</span><span class="st">"Classifique em positivo, neutro ou negativo."</span>,</span>
-<span id="cb2-8"><a href=""></a>    <span class="bu">input</span><span class="op">=</span><span class="st">"A empresa reportou lucro acima do esperado."</span>,</span>
-<span id="cb2-9"><a href=""></a>)</span>
-<span id="cb2-10"><a href=""></a></span>
-<span id="cb2-11"><a href=""></a><span class="bu">print</span>(resposta.output_text)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="source-note">
-<p>Exemplo conceitual. Em aula, não usar chave real em slide, GitHub ou gravação.</p>
-</div>
-</section>
-<section id="boas-práticas-com-api" class="slide level2">
-<h2>Boas práticas com API</h2>
-<ul>
-<li>chave em variável de ambiente, nunca no código</li>
-<li>limite de gasto configurado</li>
-<li>logs de entrada e saída</li>
-<li>modelos pequenos para tarefas simples</li>
-<li>fallback quando API falhar</li>
-<li>teste com amostra pequena antes de rodar em lote</li>
-</ul>
-</section>
-<section id="api-em-finanças-bons-exemplos" class="slide level2">
-<h2>API em Finanças: bons exemplos</h2>
-<ul>
-<li>classificar notícias por tema</li>
-<li>resumir relatórios de resultados</li>
-<li>extrair campos de documentos padronizados</li>
-<li>gerar primeira versão de comentário mensal</li>
-<li>criar assistente interno com base em políticas e documentos</li>
-</ul>
-<div class="fragment">
-<p>Evitar: decisão financeira automática sem validação, governança e responsabilidade clara.</p>
-</div>
-</section></section>
-<section>
 <section id="fechamento" class="title-slide slide level1 center">
 <h1>Fechamento</h1>
 
@@ -1335,10 +1188,6 @@ Você é um analista de investimentos ajudando a construir uma carteira de inves
 <td>mudar arquivos e testar</td>
 <td>agente</td>
 </tr>
-<tr class="even">
-<td>repetir em escala</td>
-<td>API</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -1350,10 +1199,9 @@ Você é um analista de investimentos ajudando a construir uma carteira de inves
 <li>transformar prompt ruim em prompt estruturado</li>
 <li>comparar chat com e sem contexto</li>
 <li>pedir função simples no editor</li>
-<li>sintetizar documentos no NotebookLM</li>
 <li>pesquisar com fontes</li>
+<li>sintetizar documentos no NotebookLM</li>
 <li>delimitar tarefa para agente</li>
-<li>entender uma chamada de API</li>
 </ol>
 </section>
 <section id="ponte-para-o-dia-3" class="slide level2">
@@ -1375,8 +1223,6 @@ Você é um analista de investimentos ajudando a construir uma carteira de inves
 <li><a href="https://github.com/features/copilot/plans">GitHub Copilot plans</a></li>
 <li><a href="https://cursor.com/pricing">Cursor pricing</a></li>
 <li><a href="https://support.google.com/notebooklm/answer/16213268">NotebookLM upgrade limits</a></li>
-<li><a href="https://openai.com/api/pricing/">OpenAI API pricing</a></li>
-<li><a href="https://ai.google.dev/gemini-api/docs/pricing">Gemini API pricing</a></li>
 </ul>
 <div title="Aviso">
 <div class="callout callout-warning callout-titled callout-style-default">
