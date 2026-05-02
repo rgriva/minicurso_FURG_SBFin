@@ -356,6 +356,18 @@
   font-size: 0.66em;
 }
 
+.reveal .copilot-cursor-table th {
+  color: #A31229;
+}
+
+.reveal .product-table.copilot-cursor-table {
+  font-size: 0.66em;
+}
+
+.reveal .copilot-cursor-table th a {
+  color: #A31229;
+}
+
 .reveal .product-table.model-size-table {
   font-size: 1.12em;
   margin-left: auto;

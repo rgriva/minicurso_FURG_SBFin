@@ -429,41 +429,30 @@ Quando a IA vê um **projeto**, ela deixa de responder só ao prompt.
 
 O ganho aparece quando o pedido vira: "olhe este projeto e me ajude a avançar".
 
-# Copilot vs Cursor
+# Copilot e Cursor
 
-## Duas formas de IA para código
+## Por que não basta usar o chat?
 
-:::: {.workflow-grid}
+- Finanças em 2026 é uma área empírica
+- Dados + cálculos de gente grande = necessidade de código bem feito
+- Código quase nunca vive sozinho
+- Um projeto tem arquivos, dependências, estilo e decisões anteriores
+- O chat só sabe o que você copiou para a conversa
+- Um *copilot* trabalha mais perto do código real e realmente edita arquivos
 
-::: {.workflow-card}
-**Copilot**
+. . .
 
-Ajuda dentro do editor: autocompletar, explicar, sugerir testes e responder perguntas sobre arquivos.
+::: {.callout-tip title="Ideia central"}
+Para gerar código útil, contexto do projeto importa tanto quanto o prompt.
 :::
-
-::: {.workflow-card}
-**Cursor**
-
-Editor pensado para IA: contexto do projeto, chat, regras, edição multiarquivo e agentes.
-:::
-
-::: {.workflow-card}
-**Chat web**
-
-Bom para rascunhar funções pequenas, mas longe do estado real do projeto.
-:::
-
-::::
-
----
 
 ## Copilot vs Cursor: comparação prática {.vcenter-slide}
 
 :::: {.vcenter-body .product-table-body}
-::: {.product-table}
-| Dimensão | GitHub Copilot | Cursor |
+::: {.product-table .copilot-cursor-table}
+| Dimensão | [GitHub Copilot](https://github.com/features/copilot) | [Cursor](https://cursor.com/) |
 |---|---|---|
-| Onde vive | VS Code, JetBrains, GitHub, CLI | editor próprio baseado em VS Code |
+| Onde vive | VS Code, JetBrains, Positron, GitHub, CLI | editor próprio baseado em VS Code |
 | Melhor uso | completar código e ajudar no fluxo existente | mudanças com muito contexto do projeto |
 | Curva de adoção | baixa se você já usa IDE comum | média, exige mudar editor ou workflow |
 | Agentes | Copilot agent mode e cloud agent | Agent, rules, background/cloud agents |
@@ -473,44 +462,26 @@ Bom para rascunhar funções pequenas, mas longe do estado real do projeto.
 
 ---
 
-## Microdemo 3: função pequena no editor
+## Microdemo 3: lidando com código legado
 
 ::: {.prompt-box}
-Estou em um arquivo Python. Crie uma função chamada `resumir_retornos`.
+Abrir no VS Code ou qualquer IDE com suporte ao Copilot:
 
-Input: DataFrame com colunas `date`, `ticker`, `price`.
+`dia2/demo/microdemo3_etfs_copilot.ipynb`
 
-Output: DataFrame com uma linha por ticker e colunas:
-- retorno acumulado;
-- volatilidade diária;
-- primeira data;
-- última data.
+Roteiro:
 
-Use pandas, mantenha o código simples, trate preços faltantes e adicione um exemplo mínimo de uso.
+- rodar um notebook já preparado;
+- observar sugestões do Copilot durante o fluxo;
+- conversar com o Copilot Chat quando aparecer uma melhoria;
+- rodar de novo e validar o resultado.
 :::
 
 . . .
 
-Depois da sugestão: rodar, ler erro, pedir correção com a mensagem exata.
+Ponto central: autocomplete acelera, mas quem valida os dados e os cálculos continua sendo você.
 
----
-
-## Como usar copilots sem virar passageiro
-
-- Escreva o nome da função antes de pedir ajuda
-- Defina inputs e outputs
-- Peça uma solução simples antes da elegante
-- Aceite trechos pequenos
-- Leia o diff
-- Rode um teste mínimo
-
-. . .
-
-::: {.callout-important title="Regra"}
-Autocomplete acelera digitação. Não substitui entendimento.
-:::
-
-# Ferramentas especializadas
+# Ferramentas de pesquisa
 
 ## Por que usar ferramentas especializadas?
 

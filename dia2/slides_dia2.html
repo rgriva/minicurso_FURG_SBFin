@@ -784,48 +784,54 @@ Você é um analista de investimentos ajudando a construir uma carteira de inves
 </div>
 </section></section>
 <section>
-<section id="copilot-vs-cursor" class="title-slide slide level1 center">
-<h1>Copilot vs Cursor</h1>
+<section id="copilot-e-cursor" class="title-slide slide level1 center">
+<h1>Copilot e Cursor</h1>
 
 </section>
-<section id="duas-formas-de-ia-para-código" class="slide level2">
-<h2>Duas formas de IA para código</h2>
-<div class="workflow-grid">
-<div class="workflow-card">
-<p><strong>Copilot</strong></p>
-<p>Ajuda dentro do editor: autocompletar, explicar, sugerir testes e responder perguntas sobre arquivos.</p>
+<section id="por-que-não-basta-usar-o-chat" class="slide level2">
+<h2>Por que não basta usar o chat?</h2>
+<ul>
+<li>Finanças em 2026 é uma área empírica</li>
+<li>Dados + cálculos de gente grande = necessidade de código bem feito</li>
+<li>Código quase nunca vive sozinho</li>
+<li>Um projeto tem arquivos, dependências, estilo e decisões anteriores</li>
+<li>O chat só sabe o que você copiou para a conversa</li>
+<li>Um <em>copilot</em> trabalha mais perto do código real e realmente edita arquivos</li>
+</ul>
+<div class="fragment">
+<div title="Ideia central">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="workflow-card">
-<p><strong>Cursor</strong></p>
-<p>Editor pensado para IA: contexto do projeto, chat, regras, edição multiarquivo e agentes.</p>
+<p><strong>Ideia central</strong></p>
 </div>
-<div class="workflow-card">
-<p><strong>Chat web</strong></p>
-<p>Bom para rascunhar funções pequenas, mas longe do estado real do projeto.</p>
+<div class="callout-content">
+<p>Para gerar código útil, contexto do projeto importa tanto quanto o prompt.</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </section>
 <section id="copilot-vs-cursor-comparação-prática" class="slide level2 vcenter-slide">
 <h2>Copilot vs Cursor: comparação prática</h2>
 <div class="vcenter-body product-table-body">
-<div class="product-table">
+<div class="product-table copilot-cursor-table">
 <table class="caption-top">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
 <thead>
 <tr class="header">
 <th>Dimensão</th>
-<th>GitHub Copilot</th>
-<th>Cursor</th>
+<th><a href="https://github.com/features/copilot">GitHub Copilot</a></th>
+<th><a href="https://cursor.com/">Cursor</a></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Onde vive</td>
-<td>VS Code, JetBrains, GitHub, CLI</td>
+<td>VS Code, JetBrains, Positron, GitHub, CLI</td>
 <td>editor próprio baseado em VS Code</td>
 </tr>
 <tr class="even">
@@ -853,49 +859,26 @@ Você é um analista de investimentos ajudando a construir uma carteira de inves
 </div>
 </div>
 </section>
-<section id="microdemo-3-função-pequena-no-editor" class="slide level2">
-<h2>Microdemo 3: função pequena no editor</h2>
+<section id="microdemo-3-lidando-com-código-legado" class="slide level2">
+<h2>Microdemo 3: lidando com código legado</h2>
 <div class="prompt-box">
-<p>Estou em um arquivo Python. Crie uma função chamada <code>resumir_retornos</code>.</p>
-<p>Input: DataFrame com colunas <code>date</code>, <code>ticker</code>, <code>price</code>.</p>
-<p>Output: DataFrame com uma linha por ticker e colunas: - retorno acumulado; - volatilidade diária; - primeira data; - última data.</p>
-<p>Use pandas, mantenha o código simples, trate preços faltantes e adicione um exemplo mínimo de uso.</p>
-</div>
-<div class="fragment">
-<p>Depois da sugestão: rodar, ler erro, pedir correção com a mensagem exata.</p>
-</div>
-</section>
-<section id="como-usar-copilots-sem-virar-passageiro" class="slide level2">
-<h2>Como usar copilots sem virar passageiro</h2>
+<p>Abrir no VS Code ou qualquer IDE com suporte ao Copilot:</p>
+<p><code>dia2/demo/microdemo3_etfs_copilot.ipynb</code></p>
+<p>Roteiro:</p>
 <ul>
-<li>Escreva o nome da função antes de pedir ajuda</li>
-<li>Defina inputs e outputs</li>
-<li>Peça uma solução simples antes da elegante</li>
-<li>Aceite trechos pequenos</li>
-<li>Leia o diff</li>
-<li>Rode um teste mínimo</li>
+<li>rodar um notebook já preparado;</li>
+<li>observar sugestões do Copilot durante o fluxo;</li>
+<li>conversar com o Copilot Chat quando aparecer uma melhoria;</li>
+<li>rodar de novo e validar o resultado.</li>
 </ul>
+</div>
 <div class="fragment">
-<div title="Regra">
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Regra</strong></p>
-</div>
-<div class="callout-content">
-<p>Autocomplete acelera digitação. Não substitui entendimento.</p>
-</div>
-</div>
-</div>
-</div>
+<p>Ponto central: autocomplete acelera, mas quem valida os dados e os cálculos continua sendo você.</p>
 </div>
 </section></section>
 <section>
-<section id="ferramentas-especializadas" class="title-slide slide level1 center">
-<h1>Ferramentas especializadas</h1>
+<section id="ferramentas-de-pesquisa" class="title-slide slide level1 center">
+<h1>Ferramentas de pesquisa</h1>
 
 </section>
 <section id="por-que-usar-ferramentas-especializadas" class="slide level2">
