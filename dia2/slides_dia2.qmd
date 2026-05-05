@@ -317,16 +317,14 @@ Quando a conversa ficar confusa, abra uma nova conversa com um resumo limpo: obj
 - extrair tickers, datas e valores de comunicados
 - padronizar descrições de despesas
 - gerar rascunhos curtos de emails recorrentes
-- aplicar uma rubrica fixa a relatórios simples
 :::
 
 ::: {.model-use-card .large-model}
 **Modelos grandes**
 
 - desenhar a metodologia de uma análise de sentimento
-- revisar premissas de valuation com contexto amplo
+- revisar premissas de *valuation* com contexto amplo
 - comparar políticas contábeis em notas explicativas
-- sintetizar riscos de crédito em documentos longos
 - depurar uma rotina financeira com várias etapas
 :::
 
@@ -618,13 +616,31 @@ Vale conhecer: [The Missing Semester of Your CS Education](https://missing.csail
 
 - Chat responde
 - Copilot sugere
-- Agente executa uma tarefa com ferramentas
+- Agente executa uma tarefa com ferramentas locais
+- Agentes tem acesso a arquivos, terminal local, podem ler e escrever no disco...
 
 . . .
 
-O terminal é uma das principais ferramentas do agente: por ali ele enxerga a estrutura do projeto, executa scripts, lê erros e confirma se a mudança funcionou.
+::: {.callout-warning title="Cuidado"}
+Quais os riscos de dar acesso local a um agente?
+:::
 
----
+## Exemplos de agentes {.vcenter-slide}
+
+:::: {.vcenter-body .product-table-body}
+::: {.product-table}
+| Ferramenta | Onde trabalha | Bom para |
+|---|---|---|
+| Claude Code | terminal e projeto local | código, scripts, refatoração, debugging |
+| Codex | workspace, terminal, browser, repositório | implementação, testes, PRs, tarefas longas |
+| GitHub Copilot agent | IDE/GitHub | issues, mudanças em projeto, PRs |
+| Cursor Agent | editor Cursor | edição multiarquivo com contexto do workspace |
+:::
+::::
+
+. . .
+
+Mais algum?
 
 ## Fluxo de trabalho com agentes
 
@@ -656,39 +672,48 @@ diff, resultado e limites
 
 ::::
 
----
-
-## Exemplos de agentes {.vcenter-slide}
-
-:::: {.vcenter-body .product-table-body}
-::: {.product-table}
-| Ferramenta | Onde trabalha | Bom para |
-|---|---|---|
-| Claude Code | terminal e projeto local | código, scripts, refatoração, debugging |
-| Codex | workspace, terminal, browser, repositório | implementação, testes, PRs, tarefas longas |
-| GitHub Copilot agent | IDE/GitHub | issues, mudanças em projeto, PRs |
-| Cursor Agent | editor Cursor | edição multiarquivo com contexto do workspace |
+::: {.callout-tip title="Me ajuda a te ajudar!"}
+Em todos os passos, use o agente!
 :::
-::::
+
+
+## Background: *covenants* e cobertura
+
+- Covenants são limites financeiros em contratos de dívida
+- Funcionam como sinais de alerta antes de um possível *default*
+- `dívida líquida / EBITDA`: quanto maior, maior a alavancagem
+- `EBITDA / despesa financeira`: quanto maior, maior a folga para pagar juros
+
+. . .
+
+- Há, em geral, limites contratuais para esses indicadores
+- Quando o limite é ultrapassado, o credor pode forçar uma renegociação, ou liquidação
 
 ---
 
 ## Microdemo 6: pedido para agente
 
 ::: {.prompt-box}
-No projeto atual, crie um slide novo no deck do Dia 2 comparando Perplexity e NotebookLM.
+Você é um analista financeiro. Trabalhe só em dia2/demo/microdemo6.
+
+Temos um CSV com empresas e covenants de dívida. Crie um script Python simples que calcule alavancagem, cobertura de juros, status base e status com EBITDA 15% menor.
 
 Regras:
-- leia primeiro `_quarto.yml`, `styles.css` e o deck existente;
-- mantenha o estilo visual atual;
-- não edite arquivos gerados;
-- depois rode `conda run -n FURG quarto render dia2/slides_dia2.qmd`;
-- no final, diga quais arquivos mudou e qual comando de teste rodou.
+
+- Violado: dívida líquida / EBITDA > limite máximo, ou EBITDA / despesa financeira < limite mínimo
+- Atenção: não violou, mas está a até 10% de algum limite
+- OK: caso contrário
+
+Rode o script, salve o resultado em CSV e me mostre a tabela final com 3 comentários de risco.
+
+Depois, escreva um relatório curto em Markdown e use pandoc para gerar um PDF.
+
+Use pandas, não use internet e não altere arquivos fora dessa pasta.
 :::
 
 . . .
 
-Compare isso com "faz um slide sobre ferramentas de pesquisa". A diferença é escopo, contexto e verificação.
+Compare isso com "analise os covenants". A diferença é escopo, arquivos, execução e verificação.
 
 ---
 
@@ -705,26 +730,12 @@ Compare isso com "faz um slide sobre ferramentas de pesquisa". A diferença é e
 Quanto mais amplo o pedido, maior o risco de uma solução bonita resolver o problema errado.
 :::
 
----
-
-## Quando agentes atrapalham
-
-- tarefa ainda não está clara
-- não há teste ou critério de aceite
-- dados são sensíveis
-- mudança é política, não técnica
-- você não consegue revisar o resultado
-
-. . .
-
-Agente bom acelera trabalho bem definido. Ele não salva especificação ruim.
-
 # Fechamento
 
-## Checklist de escolha {.vcenter-slide}
+## Regra de bolso {.vcenter-slide}
 
 :::: {.vcenter-body .product-table-body}
-::: {.product-table}
+::: {.product-table .rule-of-thumb-table style="font-size: 0.82em;"}
 | Se você precisa... | Use primeiro |
 |---|---|
 | pensar e escrever | chat na web |
@@ -735,30 +746,18 @@ Agente bom acelera trabalho bem definido. Ele não salva especificação ruim.
 :::
 ::::
 
----
-
-## Roteiro de microdemos de hoje
-
-1. transformar prompt ruim em prompt estruturado
-2. comparar chat com e sem contexto
-3. pedir função simples no editor
-4. pesquisar com fontes
-5. sintetizar documentos no NotebookLM
-6. delimitar tarefa para agente
-
----
-
 ## Ponte para o Dia 3
 
 - Hoje: ferramentas, preços e boas práticas
-- Amanhã: usar agentes em problemas concretos
-- Vamos buscar outputs pequenos, revisáveis e úteis
+- Amanhã: usar agentes de maneira avançada: skills, AGENTS.md, etc
 
 . . .
 
-Objetivo final: sair sabendo escolher a ferramenta e controlar o workflow.
+Opções de "projeto final":
 
----
+- Fazer análises de sensibilidade num projeto de investimento
+- Apreçar um derivativo complexo
+- Ideias de vocês? ...
 
 ## Fontes de preços e limites {.smaller}
 

@@ -61,6 +61,7 @@ _site/
 data/raw/
 data/processed/
 *.csv
+!dia2/demo/microdemo6/dados_covenants.csv
 *.xlsx
 
 ##############################

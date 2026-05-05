@@ -560,16 +560,14 @@ Explique esta tabela para alunos de graduação.<br>Foque em 3 achados, 2 limita
 <li>extrair tickers, datas e valores de comunicados</li>
 <li>padronizar descrições de despesas</li>
 <li>gerar rascunhos curtos de emails recorrentes</li>
-<li>aplicar uma rubrica fixa a relatórios simples</li>
 </ul>
 </div>
 <div class="model-use-card large-model">
 <p><strong>Modelos grandes</strong></p>
 <ul>
 <li>desenhar a metodologia de uma análise de sentimento</li>
-<li>revisar premissas de valuation com contexto amplo</li>
+<li>revisar premissas de <em>valuation</em> com contexto amplo</li>
 <li>comparar políticas contábeis em notas explicativas</li>
-<li>sintetizar riscos de crédito em documentos longos</li>
 <li>depurar uma rotina financeira com várias etapas</li>
 </ul>
 </div>
@@ -1045,30 +1043,24 @@ Você é um analista de investimentos ajudando a construir uma carteira de inves
 <ul>
 <li>Chat responde</li>
 <li>Copilot sugere</li>
-<li>Agente executa uma tarefa com ferramentas</li>
+<li>Agente executa uma tarefa com ferramentas locais</li>
+<li>Agentes tem acesso a arquivos, terminal local, podem ler e escrever no disco…</li>
 </ul>
 <div class="fragment">
-<p>O terminal é uma das principais ferramentas do agente: por ali ele enxerga a estrutura do projeto, executa scripts, lê erros e confirma se a mudança funcionou.</p>
+<div title="Cuidado">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-</section>
-<section id="fluxo-de-trabalho-com-agentes" class="slide level2">
-<h2>Fluxo de trabalho com agentes</h2>
-<div class="agent-flow">
-<div class="agent-step">
-<p><strong>1. Planejar</strong></p>
-<p>escopo, arquivos, riscos</p>
+<p><strong>Cuidado</strong></p>
 </div>
-<div class="agent-step">
-<p><strong>2. Editar</strong></p>
-<p>mudança pequena e rastreável</p>
+<div class="callout-content">
+<p>Quais os riscos de dar acesso local a um agente?</p>
 </div>
-<div class="agent-step">
-<p><strong>3. Testar</strong></p>
-<p>comando real e erro real</p>
 </div>
-<div class="agent-step">
-<p><strong>4. Revisar</strong></p>
-<p>diff, resultado e limites</p>
+</div>
 </div>
 </div>
 </section>
@@ -1114,15 +1106,78 @@ Você é um analista de investimentos ajudando a construir uma carteira de inves
 </table>
 </div>
 </div>
+<div class="fragment">
+<p>Mais algum?</p>
+</div>
+</section>
+<section id="fluxo-de-trabalho-com-agentes" class="slide level2">
+<h2>Fluxo de trabalho com agentes</h2>
+<div class="agent-flow">
+<div class="agent-step">
+<p><strong>1. Planejar</strong></p>
+<p>escopo, arquivos, riscos</p>
+</div>
+<div class="agent-step">
+<p><strong>2. Editar</strong></p>
+<p>mudança pequena e rastreável</p>
+</div>
+<div class="agent-step">
+<p><strong>3. Testar</strong></p>
+<p>comando real e erro real</p>
+</div>
+<div class="agent-step">
+<p><strong>4. Revisar</strong></p>
+<p>diff, resultado e limites</p>
+</div>
+</div>
+<div title="Me ajuda a te ajudar!">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Me ajuda a te ajudar!</strong></p>
+</div>
+<div class="callout-content">
+<p>Em todos os passos, use o agente!</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="background-covenants-e-cobertura" class="slide level2">
+<h2>Background: <em>covenants</em> e cobertura</h2>
+<ul>
+<li>Covenants são limites financeiros em contratos de dívida</li>
+<li>Funcionam como sinais de alerta antes de um possível <em>default</em></li>
+<li><code>dívida líquida / EBITDA</code>: quanto maior, maior a alavancagem</li>
+<li><code>EBITDA / despesa financeira</code>: quanto maior, maior a folga para pagar juros</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Há, em geral, limites contratuais para esses indicadores</li>
+<li>Quando o limite é ultrapassado, o credor pode forçar uma renegociação, ou liquidação</li>
+</ul>
+</div>
 </section>
 <section id="microdemo-6-pedido-para-agente" class="slide level2">
 <h2>Microdemo 6: pedido para agente</h2>
 <div class="prompt-box">
-<p>No projeto atual, crie um slide novo no deck do Dia 2 comparando Perplexity e NotebookLM.</p>
-<p>Regras: - leia primeiro <code>_quarto.yml</code>, <code>styles.css</code> e o deck existente; - mantenha o estilo visual atual; - não edite arquivos gerados; - depois rode <code>conda run -n FURG quarto render dia2/slides_dia2.qmd</code>; - no final, diga quais arquivos mudou e qual comando de teste rodou.</p>
+<p>Você é um analista financeiro. Trabalhe só em dia2/demo/microdemo6.</p>
+<p>Temos um CSV com empresas e covenants de dívida. Crie um script Python simples que calcule alavancagem, cobertura de juros, status base e status com EBITDA 15% menor.</p>
+<p>Regras:</p>
+<ul>
+<li>Violado: dívida líquida / EBITDA &gt; limite máximo, ou EBITDA / despesa financeira &lt; limite mínimo</li>
+<li>Atenção: não violou, mas está a até 10% de algum limite</li>
+<li>OK: caso contrário</li>
+</ul>
+<p>Rode o script, salve o resultado em CSV e me mostre a tabela final com 3 comentários de risco.</p>
+<p>Depois, escreva um relatório curto em Markdown e use pandoc para gerar um PDF.</p>
+<p>Use pandas, não use internet e não altere arquivos fora dessa pasta.</p>
 </div>
 <div class="fragment">
-<p>Compare isso com “faz um slide sobre ferramentas de pesquisa”. A diferença é escopo, contexto e verificação.</p>
+<p>Compare isso com “analise os covenants”. A diferença é escopo, arquivos, execução e verificação.</p>
 </div>
 </section>
 <section id="dar-autonomia-com-limites" class="slide level2">
@@ -1150,29 +1205,16 @@ Você é um analista de investimentos ajudando a construir uma carteira de inves
 </div>
 </div>
 </div>
-</section>
-<section id="quando-agentes-atrapalham" class="slide level2">
-<h2>Quando agentes atrapalham</h2>
-<ul>
-<li>tarefa ainda não está clara</li>
-<li>não há teste ou critério de aceite</li>
-<li>dados são sensíveis</li>
-<li>mudança é política, não técnica</li>
-<li>você não consegue revisar o resultado</li>
-</ul>
-<div class="fragment">
-<p>Agente bom acelera trabalho bem definido. Ele não salva especificação ruim.</p>
-</div>
 </section></section>
 <section>
 <section id="fechamento" class="title-slide slide level1 center">
 <h1>Fechamento</h1>
 
 </section>
-<section id="checklist-de-escolha" class="slide level2 vcenter-slide">
-<h2>Checklist de escolha</h2>
+<section id="regra-de-bolso" class="slide level2 vcenter-slide">
+<h2>Regra de bolso</h2>
 <div class="vcenter-body product-table-body">
-<div class="product-table">
+<div class="product-table rule-of-thumb-table" style="font-size: 0.82em;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -1206,26 +1248,19 @@ Você é um analista de investimentos ajudando a construir uma carteira de inves
 </div>
 </div>
 </section>
-<section id="roteiro-de-microdemos-de-hoje" class="slide level2">
-<h2>Roteiro de microdemos de hoje</h2>
-<ol type="1">
-<li>transformar prompt ruim em prompt estruturado</li>
-<li>comparar chat com e sem contexto</li>
-<li>pedir função simples no editor</li>
-<li>pesquisar com fontes</li>
-<li>sintetizar documentos no NotebookLM</li>
-<li>delimitar tarefa para agente</li>
-</ol>
-</section>
 <section id="ponte-para-o-dia-3" class="slide level2">
 <h2>Ponte para o Dia 3</h2>
 <ul>
 <li>Hoje: ferramentas, preços e boas práticas</li>
-<li>Amanhã: usar agentes em problemas concretos</li>
-<li>Vamos buscar outputs pequenos, revisáveis e úteis</li>
+<li>Amanhã: usar agentes de maneira avançada: skills, AGENTS.md, etc</li>
 </ul>
 <div class="fragment">
-<p>Objetivo final: sair sabendo escolher a ferramenta e controlar o workflow.</p>
+<p>Opções de “projeto final”:</p>
+<ul>
+<li>Fazer análises de sensibilidade num projeto de investimento</li>
+<li>Apreçar um derivativo complexo</li>
+<li>Ideias de vocês? …</li>
+</ul>
 </div>
 </section>
 <section id="fontes-de-preços-e-limites" class="slide level2 smaller">

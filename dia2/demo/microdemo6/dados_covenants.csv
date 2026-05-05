@@ -1,0 +1,1001 @@
+empresa,setor,divida_liquida,ebitda,despesa_financeira,alavancagem_max,cobertura_min
+Alfa Capital A,Energia,435,220,30,3.5,3.9
+Beta Capital A,Varejo,359,163,26,4.2,4.9
+Gamma Capital A,Infraestrutura,574,310,30,2.3,5.0
+Delta Capital A,Alimentos,1422,485,159,4.4,2.1
+Epsilon Capital A,Tecnologia,429,319,51,2.7,3.9
+Zeta Capital A,Logistica,87,71,17,2.5,2.1
+Ares Capital A,Saneamento,673,200,39,4.1,2.7
+Boreal Capital A,Mineracao,281,166,43,2.6,2.6
+Celta Capital A,Papel e Celulose,809,446,63,2.9,3.0
+Duna Capital A,Saude,116,76,10,3.0,3.2
+Estrela Capital A,Educacao,953,500,68,3.4,4.6
+Fenix Capital A,Telecom,1285,492,108,3.4,2.6
+Horizonte Capital A,Agronegocio,105,47,7,3.4,2.9
+Icaro Capital A,Construcao,287,224,34,2.8,4.2
+Juno Capital A,Shopping Centers,144,76,17,2.7,3.2
+Kronos Capital A,Metalurgia,597,202,33,3.7,2.7
+Lumina Capital A,Quimica,1175,366,58,3.9,3.8
+Marfim Capital A,Bebidas,1212,467,80,4.0,2.6
+Nexo Capital A,Portos,720,464,60,3.2,4.0
+Orion Capital A,Servicos Financeiros,765,475,71,2.3,4.6
+Prisma Capital A,Imoveis,193,109,18,3.2,3.2
+Quasar Capital A,Concessoes,795,286,90,3.4,2.6
+Rota Capital A,Rodovias,527,163,36,4.2,3.7
+Sigma Capital A,Plasticos,357,209,41,3.2,3.7
+Terra Capital A,Farmaceutico,287,144,24,2.9,3.3
+Urano Capital A,Energia,114,104,15,2.3,4.2
+Vela Capital A,Varejo,900,518,71,3.7,3.3
+Wega Capital A,Infraestrutura,547,392,67,2.9,3.9
+Xingu Capital A,Alimentos,148,51,12,4.1,2.4
+Yara Capital A,Tecnologia,670,432,91,2.9,3.1
+Zenit Capital A,Logistica,575,295,29,3.2,4.2
+Aurora Capital A,Saneamento,742,363,49,2.9,5.0
+Brisa Capital A,Mineracao,1004,516,78,3.5,4.5
+Cobre Capital A,Papel e Celulose,545,292,32,2.5,4.3
+Diamante Capital A,Saude,343,113,24,4.1,2.2
+Elo Capital A,Educacao,643,471,122,2.3,2.7
+Forma Capital A,Telecom,695,351,71,2.8,2.6
+Granito Capital A,Agronegocio,1423,448,111,3.8,3.1
+Helio Capital A,Construcao,745,416,89,2.5,2.6
+Indigo Capital A,Shopping Centers,573,262,28,3.1,4.7
+Alfa Holding B,Metalurgia,540,271,38,3.7,4.1
+Beta Holding B,Quimica,943,428,65,3.9,4.2
+Gamma Holding B,Bebidas,1037,453,99,3.5,2.1
+Delta Holding B,Portos,1082,519,86,2.8,4.8
+Epsilon Holding B,Servicos Financeiros,614,241,69,4.2,2.8
+Zeta Holding B,Imoveis,486,236,41,3.4,3.1
+Ares Holding B,Concessoes,458,145,23,3.8,2.6
+Boreal Holding B,Rodovias,576,294,33,3.6,4.5
+Celta Holding B,Plasticos,748,363,126,4.3,2.0
+Duna Holding B,Farmaceutico,1205,410,58,4.0,4.6
+Estrela Holding B,Energia,1081,315,46,4.1,3.0
+Fenix Holding B,Varejo,1699,482,108,4.3,2.5
+Horizonte Holding B,Infraestrutura,299,257,40,2.3,3.4
+Icaro Holding B,Alimentos,476,385,93,2.7,3.1
+Juno Holding B,Tecnologia,905,332,74,4.2,2.4
+Kronos Holding B,Logistica,1063,445,53,3.6,5.0
+Lumina Holding B,Saneamento,214,105,29,2.6,2.6
+Marfim Holding B,Mineracao,172,78,14,3.4,4.7
+Nexo Holding B,Papel e Celulose,376,169,19,3.2,3.9
+Orion Holding B,Saude,89,47,6,3.6,4.6
+Prisma Holding B,Educacao,138,122,28,2.4,2.1
+Quasar Holding B,Telecom,888,422,58,3.2,4.0
+Rota Holding B,Agronegocio,893,497,97,3.1,2.7
+Sigma Holding B,Construcao,323,103,18,4.1,3.0
+Terra Holding B,Shopping Centers,619,330,33,2.3,4.7
+Urano Holding B,Metalurgia,82,69,16,2.2,2.9
+Vela Holding B,Quimica,1087,341,95,4.3,2.5
+Wega Holding B,Bebidas,420,313,44,2.7,3.6
+Xingu Holding B,Portos,571,253,42,2.9,3.2
+Yara Holding B,Servicos Financeiros,586,339,67,2.9,2.2
+Zenit Holding B,Imoveis,1358,432,82,4.0,4.0
+Aurora Holding B,Concessoes,310,140,18,3.8,4.8
+Brisa Holding B,Rodovias,371,184,27,2.7,3.2
+Cobre Holding B,Plasticos,515,376,78,2.3,2.7
+Diamante Holding B,Farmaceutico,174,89,14,2.8,4.4
+Elo Holding B,Energia,743,419,81,2.6,2.9
+Forma Holding B,Varejo,570,332,45,3.4,3.2
+Granito Holding B,Infraestrutura,969,420,55,2.9,3.3
+Helio Holding B,Alimentos,545,324,67,2.9,2.8
+Indigo Holding B,Tecnologia,371,170,49,3.6,2.1
+Alfa Brasil C,Logistica,1010,463,63,3.6,3.7
+Beta Brasil C,Saneamento,1296,491,95,4.2,2.4
+Gamma Brasil C,Mineracao,636,287,41,4.1,3.6
+Delta Brasil C,Papel e Celulose,706,313,43,3.2,4.2
+Epsilon Brasil C,Saude,798,288,56,3.8,2.6
+Zeta Brasil C,Educacao,778,284,61,4.0,2.5
+Ares Brasil C,Telecom,229,125,23,2.7,4.0
+Boreal Brasil C,Agronegocio,1555,452,107,4.4,3.6
+Celta Brasil C,Construcao,1446,512,75,4.3,4.3
+Duna Brasil C,Shopping Centers,465,197,64,3.0,2.6
+Estrela Brasil C,Metalurgia,1455,458,73,4.4,3.3
+Fenix Brasil C,Quimica,489,287,34,3.3,4.1
+Horizonte Brasil C,Bebidas,469,184,30,3.3,2.8
+Icaro Brasil C,Portos,463,280,49,2.4,4.3
+Juno Brasil C,Servicos Financeiros,698,396,105,2.6,2.7
+Kronos Brasil C,Imoveis,541,196,28,4.1,4.8
+Lumina Brasil C,Concessoes,798,438,84,2.8,4.3
+Marfim Brasil C,Rodovias,787,377,52,4.1,3.8
+Nexo Brasil C,Plasticos,140,113,16,2.3,3.1
+Orion Brasil C,Farmaceutico,588,305,40,3.6,3.8
+Prisma Brasil C,Energia,703,496,55,3.1,4.9
+Quasar Brasil C,Varejo,141,103,22,2.5,3.1
+Rota Brasil C,Infraestrutura,637,236,82,3.4,2.0
+Sigma Brasil C,Alimentos,366,302,69,2.2,2.3
+Terra Brasil C,Tecnologia,719,237,69,4.3,2.2
+Urano Brasil C,Logistica,796,476,86,2.3,3.9
+Vela Brasil C,Saneamento,384,197,33,4.2,3.9
+Wega Brasil C,Mineracao,988,328,48,3.9,3.1
+Xingu Brasil C,Papel e Celulose,808,370,123,3.6,2.4
+Yara Brasil C,Saude,413,223,35,2.4,3.2
+Zenit Brasil C,Educacao,1000,314,31,4.2,4.7
+Aurora Brasil C,Telecom,470,289,51,2.8,3.2
+Brisa Brasil C,Agronegocio,750,434,137,2.2,2.5
+Cobre Brasil C,Construcao,645,285,78,4.2,2.1
+Diamante Brasil C,Shopping Centers,228,101,16,3.0,4.8
+Elo Brasil C,Metalurgia,375,258,50,2.7,2.4
+Forma Brasil C,Quimica,80,51,8,2.3,2.8
+Granito Brasil C,Bebidas,635,396,123,2.3,2.2
+Helio Brasil C,Portos,261,134,19,3.2,4.6
+Indigo Brasil C,Servicos Financeiros,128,75,13,2.3,2.5
+Alfa Sul D,Imoveis,694,355,114,2.9,2.1
+Beta Sul D,Concessoes,206,139,18,2.7,4.0
+Gamma Sul D,Rodovias,629,322,67,3.7,2.3
+Delta Sul D,Plasticos,1145,492,44,4.4,4.7
+Epsilon Sul D,Farmaceutico,127,52,11,4.0,3.2
+Zeta Sul D,Energia,781,407,73,2.9,4.0
+Ares Sul D,Varejo,317,186,18,2.4,4.7
+Boreal Sul D,Infraestrutura,275,170,40,3.4,2.6
+Celta Sul D,Alimentos,839,499,43,2.7,4.9
+Duna Sul D,Tecnologia,829,470,81,3.1,2.5
+Estrela Sul D,Logistica,1524,485,57,3.8,4.5
+Fenix Sul D,Saneamento,593,287,37,3.6,4.8
+Horizonte Sul D,Mineracao,500,200,31,3.8,2.7
+Icaro Sul D,Papel e Celulose,916,474,42,2.5,4.9
+Juno Sul D,Saude,751,388,116,3.5,2.4
+Kronos Sul D,Educacao,853,306,49,3.6,3.0
+Lumina Sul D,Telecom,682,326,63,2.9,3.0
+Marfim Sul D,Agronegocio,302,155,24,4.3,3.5
+Nexo Sul D,Construcao,653,330,74,2.9,2.2
+Orion Sul D,Shopping Centers,321,181,26,2.5,3.5
+Prisma Sul D,Metalurgia,95,46,8,3.0,3.7
+Quasar Sul D,Quimica,916,419,137,3.8,2.3
+Rota Sul D,Bebidas,497,334,53,2.3,3.3
+Sigma Sul D,Portos,513,350,60,3.0,2.9
+Terra Sul D,Servicos Financeiros,437,240,25,3.4,4.2
+Urano Sul D,Imoveis,403,161,36,3.2,2.6
+Vela Sul D,Concessoes,225,119,18,2.9,3.0
+Wega Sul D,Rodovias,173,72,10,3.3,3.1
+Xingu Sul D,Plasticos,821,279,63,4.4,2.2
+Yara Sul D,Farmaceutico,569,367,108,2.2,2.2
+Zenit Sul D,Energia,638,253,61,3.4,3.1
+Aurora Sul D,Varejo,846,434,84,2.7,2.6
+Brisa Sul D,Infraestrutura,541,421,61,2.5,4.3
+Cobre Sul D,Alimentos,922,436,37,3.2,5.0
+Diamante Sul D,Tecnologia,519,284,25,3.0,5.0
+Elo Sul D,Logistica,236,153,29,3.2,3.2
+Forma Sul D,Saneamento,1106,476,82,4.1,3.4
+Granito Sul D,Mineracao,1274,509,90,3.3,2.5
+Helio Sul D,Papel e Celulose,588,293,37,2.6,3.6
+Indigo Sul D,Saude,615,219,35,3.5,3.8
+Alfa Norte E,Educacao,328,161,35,3.6,2.3
+Beta Norte E,Telecom,1152,391,102,4.3,2.6
+Gamma Norte E,Agronegocio,879,457,120,3.8,2.9
+Delta Norte E,Construcao,865,506,133,2.5,2.5
+Epsilon Norte E,Shopping Centers,883,447,126,2.5,2.8
+Zeta Norte E,Metalurgia,131,105,16,2.3,4.2
+Ares Norte E,Quimica,1202,422,155,4.3,2.2
+Boreal Norte E,Bebidas,979,380,49,3.7,3.4
+Celta Norte E,Portos,420,237,22,2.8,4.6
+Duna Norte E,Servicos Financeiros,698,377,78,2.3,3.8
+Estrela Norte E,Imoveis,365,181,65,3.8,2.1
+Fenix Norte E,Concessoes,546,388,50,2.8,3.3
+Horizonte Norte E,Rodovias,1353,462,55,4.2,4.1
+Icaro Norte E,Plasticos,676,221,32,4.1,3.3
+Juno Norte E,Farmaceutico,1026,433,89,3.7,2.5
+Kronos Norte E,Energia,562,447,80,2.2,2.6
+Lumina Norte E,Varejo,421,417,45,2.2,4.1
+Marfim Norte E,Infraestrutura,694,275,35,3.5,3.7
+Nexo Norte E,Alimentos,524,172,17,3.7,4.9
+Orion Norte E,Tecnologia,1283,372,55,4.4,4.6
+Prisma Norte E,Logistica,646,323,67,3.1,3.4
+Quasar Norte E,Saneamento,452,204,43,3.0,2.0
+Rota Norte E,Mineracao,658,390,65,2.4,3.7
+Sigma Norte E,Papel e Celulose,798,330,38,3.9,4.7
+Terra Norte E,Saude,1251,488,75,3.1,3.3
+Urano Norte E,Educacao,427,184,39,3.8,3.1
+Vela Norte E,Telecom,737,400,85,2.3,2.3
+Wega Norte E,Agronegocio,133,49,12,3.4,2.6
+Xingu Norte E,Construcao,1310,409,48,4.2,4.5
+Yara Norte E,Shopping Centers,925,439,84,2.6,2.7
+Zenit Norte E,Metalurgia,238,91,14,3.7,3.2
+Aurora Norte E,Quimica,116,71,15,3.0,3.9
+Brisa Norte E,Bebidas,1033,433,52,3.1,3.9
+Cobre Norte E,Portos,177,98,13,3.5,4.2
+Diamante Norte E,Servicos Financeiros,1318,498,66,4.1,4.3
+Elo Norte E,Imoveis,381,307,87,2.7,2.9
+Forma Norte E,Concessoes,177,59,10,4.3,2.5
+Granito Norte E,Rodovias,955,457,70,3.0,2.8
+Helio Norte E,Plasticos,760,378,74,3.1,4.3
+Indigo Norte E,Farmaceutico,1140,480,88,3.1,3.3
+Alfa Atlantico Sul,Energia,679,198,28,4.1,3.4
+Beta Atlantico Sul,Varejo,1003,451,88,4.3,3.2
+Gamma Atlantico Sul,Infraestrutura,637,440,75,3.0,3.6
+Delta Atlantico Sul,Alimentos,135,73,10,2.3,4.1
+Epsilon Atlantico Sul,Tecnologia,482,257,42,3.7,4.4
+Zeta Atlantico Sul,Logistica,943,468,56,3.3,3.7
+Ares Atlantico Sul,Saneamento,938,474,83,4.2,3.2
+Boreal Atlantico Sul,Mineracao,490,229,58,2.8,2.5
+Celta Atlantico Sul,Papel e Celulose,510,185,49,3.6,2.7
+Duna Atlantico Sul,Saude,451,180,26,3.9,4.4
+Estrela Atlantico Sul,Educacao,215,125,24,2.8,2.5
+Fenix Atlantico Sul,Telecom,580,216,36,4.4,2.8
+Horizonte Atlantico Sul,Agronegocio,398,188,45,4.1,2.1
+Icaro Atlantico Sul,Construcao,929,356,40,3.5,4.6
+Juno Atlantico Sul,Shopping Centers,85,51,7,2.4,3.7
+Kronos Atlantico Sul,Metalurgia,1240,454,72,4.4,4.0
+Lumina Atlantico Sul,Quimica,614,388,60,3.1,4.6
+Marfim Atlantico Sul,Bebidas,259,168,21,2.4,3.8
+Nexo Atlantico Sul,Portos,275,130,29,3.6,2.5
+Orion Atlantico Sul,Servicos Financeiros,357,190,27,2.9,4.3
+Prisma Atlantico Sul,Imoveis,831,369,70,4.2,4.1
+Quasar Atlantico Sul,Concessoes,706,482,45,2.8,4.8
+Rota Atlantico Sul,Rodovias,1413,472,70,3.6,4.3
+Sigma Atlantico Sul,Plasticos,328,251,35,2.4,3.7
+Terra Atlantico Sul,Farmaceutico,1092,399,106,3.7,2.2
+Urano Atlantico Sul,Energia,934,319,63,3.5,4.1
+Vela Atlantico Sul,Varejo,178,64,12,4.0,3.5
+Wega Atlantico Sul,Infraestrutura,342,178,21,2.6,3.6
+Xingu Atlantico Sul,Alimentos,675,366,52,2.9,3.6
+Yara Atlantico Sul,Tecnologia,719,350,86,4.3,2.2
+Zenit Atlantico Sul,Logistica,910,488,68,2.7,3.0
+Aurora Atlantico Sul,Saneamento,867,389,114,4.4,2.7
+Brisa Atlantico Sul,Mineracao,595,282,30,3.2,5.0
+Cobre Atlantico Sul,Papel e Celulose,604,330,44,2.7,3.3
+Diamante Atlantico Sul,Saude,884,331,61,3.4,2.6
+Elo Atlantico Sul,Educacao,172,81,15,4.2,2.7
+Forma Atlantico Sul,Telecom,339,118,20,3.8,3.2
+Granito Atlantico Sul,Agronegocio,431,162,25,3.3,4.0
+Helio Atlantico Sul,Construcao,606,448,73,2.3,4.3
+Indigo Atlantico Sul,Shopping Centers,869,443,86,2.7,4.4
+Alfa Global Norte,Metalurgia,581,284,35,2.8,4.7
+Beta Global Norte,Quimica,1466,404,75,4.4,2.7
+Gamma Global Norte,Bebidas,1131,449,76,3.0,3.7
+Delta Global Norte,Portos,375,213,37,2.5,2.7
+Epsilon Global Norte,Servicos Financeiros,824,443,45,3.4,4.6
+Zeta Global Norte,Imoveis,851,507,102,3.5,3.6
+Ares Global Norte,Concessoes,116,94,13,2.6,4.6
+Boreal Global Norte,Rodovias,286,105,16,3.4,3.4
+Celta Global Norte,Plasticos,646,406,64,3.4,4.9
+Duna Global Norte,Farmaceutico,928,465,104,3.1,3.2
+Estrela Global Norte,Energia,544,302,55,2.4,4.4
+Fenix Global Norte,Varejo,828,427,99,4.1,3.6
+Horizonte Global Norte,Infraestrutura,124,66,11,2.4,2.5
+Icaro Global Norte,Alimentos,329,231,94,2.4,2.1
+Juno Global Norte,Tecnologia,1226,420,125,4.3,2.4
+Kronos Global Norte,Logistica,458,218,39,3.1,3.6
+Lumina Global Norte,Saneamento,429,344,96,2.7,2.0
+Marfim Global Norte,Mineracao,354,155,41,3.5,2.2
+Nexo Global Norte,Papel e Celulose,393,162,26,4.0,4.0
+Orion Global Norte,Saude,719,307,49,3.0,4.5
+Prisma Global Norte,Educacao,490,403,54,2.6,3.4
+Quasar Global Norte,Telecom,800,413,47,3.1,4.3
+Rota Global Norte,Agronegocio,687,441,46,2.3,4.2
+Sigma Global Norte,Construcao,800,452,73,2.5,3.0
+Terra Global Norte,Shopping Centers,595,495,56,2.6,4.0
+Urano Global Norte,Metalurgia,708,415,84,2.4,3.3
+Vela Global Norte,Quimica,1264,520,103,3.7,3.0
+Wega Global Norte,Bebidas,548,349,77,2.7,3.7
+Xingu Global Norte,Portos,479,263,34,3.5,3.3
+Yara Global Norte,Servicos Financeiros,295,154,30,2.3,3.1
+Zenit Global Norte,Imoveis,1312,442,69,4.2,2.7
+Aurora Global Norte,Concessoes,258,191,73,2.3,2.1
+Brisa Global Norte,Rodovias,790,275,48,3.8,3.6
+Cobre Global Norte,Plasticos,527,413,100,2.7,3.2
+Diamante Global Norte,Farmaceutico,645,452,71,2.5,4.5
+Elo Global Norte,Energia,905,337,63,3.7,4.2
+Forma Global Norte,Varejo,446,300,62,3.0,3.2
+Granito Global Norte,Infraestrutura,895,515,60,3.5,5.0
+Helio Global Norte,Alimentos,191,93,16,3.4,4.0
+Indigo Global Norte,Tecnologia,660,464,80,2.8,3.2
+Alfa Mercantil Leste,Logistica,216,161,20,2.8,4.5
+Beta Mercantil Leste,Saneamento,682,472,107,3.1,2.9
+Gamma Mercantil Leste,Mineracao,602,410,61,2.6,5.0
+Delta Mercantil Leste,Papel e Celulose,848,330,69,4.1,4.1
+Epsilon Mercantil Leste,Saude,711,265,35,4.0,3.2
+Zeta Mercantil Leste,Educacao,590,430,78,2.7,4.7
+Ares Mercantil Leste,Telecom,205,101,20,3.8,3.8
+Boreal Mercantil Leste,Agronegocio,233,121,21,2.4,2.6
+Celta Mercantil Leste,Construcao,1059,432,51,3.2,3.6
+Duna Mercantil Leste,Shopping Centers,216,97,23,3.7,2.6
+Estrela Mercantil Leste,Metalurgia,293,113,18,3.9,3.6
+Fenix Mercantil Leste,Quimica,661,216,41,4.4,3.8
+Horizonte Mercantil Leste,Bebidas,198,85,13,4.1,3.4
+Icaro Mercantil Leste,Portos,831,326,36,3.1,4.8
+Juno Mercantil Leste,Servicos Financeiros,709,277,38,3.7,3.3
+Kronos Mercantil Leste,Imoveis,859,478,90,2.6,3.0
+Lumina Mercantil Leste,Concessoes,780,330,45,3.0,3.3
+Marfim Mercantil Leste,Rodovias,128,82,11,2.9,4.9
+Nexo Mercantil Leste,Plasticos,773,223,25,4.4,4.3
+Orion Mercantil Leste,Farmaceutico,518,255,43,2.9,3.8
+Prisma Mercantil Leste,Energia,144,142,25,2.2,2.8
+Quasar Mercantil Leste,Varejo,707,475,68,3.0,4.2
+Rota Mercantil Leste,Infraestrutura,836,488,66,3.4,3.8
+Sigma Mercantil Leste,Alimentos,288,173,27,3.7,4.5
+Terra Mercantil Leste,Tecnologia,798,259,36,3.9,3.3
+Urano Mercantil Leste,Logistica,815,368,68,3.0,2.5
+Vela Mercantil Leste,Saneamento,631,498,80,2.6,4.8
+Wega Mercantil Leste,Mineracao,837,290,52,4.1,4.0
+Xingu Mercantil Leste,Papel e Celulose,73,53,9,3.0,3.9
+Yara Mercantil Leste,Saude,763,347,79,2.7,2.6
+Zenit Mercantil Leste,Educacao,582,421,87,2.6,2.8
+Aurora Mercantil Leste,Telecom,298,167,19,2.5,4.5
+Brisa Mercantil Leste,Agronegocio,908,399,75,4.3,2.3
+Cobre Mercantil Leste,Construcao,685,363,86,3.3,3.0
+Diamante Mercantil Leste,Shopping Centers,770,447,89,2.9,4.0
+Elo Mercantil Leste,Metalurgia,315,245,43,2.5,3.6
+Forma Mercantil Leste,Quimica,77,47,8,3.6,3.1
+Granito Mercantil Leste,Bebidas,245,168,25,2.6,3.9
+Helio Mercantil Leste,Portos,389,192,38,2.8,4.3
+Indigo Mercantil Leste,Servicos Financeiros,1205,510,81,3.6,2.7
+Alfa Investimentos Oeste,Imoveis,532,256,39,2.6,3.8
+Beta Investimentos Oeste,Concessoes,255,105,14,3.7,3.2
+Gamma Investimentos Oeste,Rodovias,208,92,16,2.9,3.8
+Delta Investimentos Oeste,Plasticos,479,318,33,2.8,4.5
+Epsilon Investimentos Oeste,Farmaceutico,1147,438,75,4.3,4.2
+Zeta Investimentos Oeste,Energia,621,343,46,3.6,3.8
+Ares Investimentos Oeste,Varejo,269,110,13,4.0,4.6
+Boreal Investimentos Oeste,Infraestrutura,387,315,51,2.4,4.4
+Celta Investimentos Oeste,Alimentos,462,261,29,2.5,3.9
+Duna Investimentos Oeste,Tecnologia,984,308,45,4.3,3.8
+Estrela Investimentos Oeste,Logistica,451,246,44,3.0,2.7
+Fenix Investimentos Oeste,Saneamento,1051,432,115,3.3,2.3
+Horizonte Investimentos Oeste,Mineracao,389,184,25,2.8,3.8
+Icaro Investimentos Oeste,Papel e Celulose,177,52,10,4.3,3.3
+Juno Investimentos Oeste,Saude,479,339,64,2.7,4.3
+Kronos Investimentos Oeste,Educacao,85,45,6,3.0,4.7
+Lumina Investimentos Oeste,Telecom,328,169,37,3.2,3.6
+Marfim Investimentos Oeste,Agronegocio,313,267,36,2.6,3.2
+Nexo Investimentos Oeste,Construcao,443,182,22,4.3,4.7
+Orion Investimentos Oeste,Shopping Centers,1575,499,108,4.1,2.6
+Prisma Investimentos Oeste,Metalurgia,622,358,105,2.4,2.9
+Quasar Investimentos Oeste,Quimica,503,187,26,3.9,3.5
+Rota Investimentos Oeste,Bebidas,965,513,46,2.4,4.7
+Sigma Investimentos Oeste,Portos,481,261,76,3.6,2.0
+Terra Investimentos Oeste,Servicos Financeiros,670,294,67,4.0,3.4
+Urano Investimentos Oeste,Imoveis,468,225,57,2.5,2.9
+Vela Investimentos Oeste,Concessoes,178,90,19,3.6,2.7
+Wega Investimentos Oeste,Rodovias,252,208,44,2.5,2.2
+Xingu Investimentos Oeste,Plasticos,531,207,35,3.6,3.1
+Yara Investimentos Oeste,Farmaceutico,1038,415,60,3.0,4.7
+Zenit Investimentos Oeste,Energia,179,92,16,3.0,2.6
+Aurora Investimentos Oeste,Varejo,1089,376,49,4.1,3.6
+Brisa Investimentos Oeste,Infraestrutura,130,80,21,2.9,2.5
+Cobre Investimentos Oeste,Alimentos,758,407,47,3.1,4.9
+Diamante Investimentos Oeste,Tecnologia,400,182,39,3.3,2.2
+Elo Investimentos Oeste,Logistica,601,296,93,3.5,2.0
+Forma Investimentos Oeste,Saneamento,116,85,8,2.5,4.7
+Granito Investimentos Oeste,Mineracao,147,83,14,3.4,3.7
+Helio Investimentos Oeste,Papel e Celulose,128,112,13,2.3,4.9
+Indigo Investimentos Oeste,Saude,154,74,12,3.2,2.7
+Alfa Participacoes Central,Educacao,486,244,50,3.8,2.6
+Beta Participacoes Central,Telecom,1324,447,112,4.3,2.1
+Gamma Participacoes Central,Agronegocio,547,239,45,3.3,2.3
+Delta Participacoes Central,Construcao,836,409,50,3.9,4.3
+Epsilon Participacoes Central,Shopping Centers,252,171,15,2.5,4.9
+Zeta Participacoes Central,Metalurgia,465,258,33,2.8,4.0
+Ares Participacoes Central,Quimica,1061,419,54,3.7,4.1
+Boreal Participacoes Central,Bebidas,260,137,21,3.0,4.8
+Celta Participacoes Central,Portos,890,263,26,4.1,4.3
+Duna Participacoes Central,Servicos Financeiros,121,45,4,4.2,4.9
+Estrela Participacoes Central,Imoveis,1032,334,53,3.8,2.9
+Fenix Participacoes Central,Concessoes,644,356,68,2.9,3.8
+Horizonte Participacoes Central,Rodovias,310,198,36,3.0,4.0
+Icaro Participacoes Central,Plasticos,824,388,79,2.6,3.9
+Juno Participacoes Central,Farmaceutico,1125,427,76,4.3,3.4
+Kronos Participacoes Central,Energia,564,324,44,3.3,4.3
+Lumina Participacoes Central,Varejo,343,243,47,2.5,3.1
+Marfim Participacoes Central,Infraestrutura,992,412,126,3.5,2.1
+Nexo Participacoes Central,Alimentos,1202,461,148,4.3,2.5
+Orion Participacoes Central,Tecnologia,575,321,63,2.5,2.4
+Prisma Participacoes Central,Logistica,495,139,28,4.4,4.1
+Quasar Participacoes Central,Saneamento,655,388,38,2.3,4.5
+Rota Participacoes Central,Mineracao,245,95,13,4.2,3.2
+Sigma Participacoes Central,Papel e Celulose,580,423,79,3.0,3.2
+Terra Participacoes Central,Saude,809,490,104,3.5,2.6
+Urano Participacoes Central,Educacao,443,285,25,2.3,4.8
+Vela Participacoes Central,Telecom,378,175,21,4.3,4.0
+Wega Participacoes Central,Agronegocio,320,204,30,2.8,3.3
+Xingu Participacoes Central,Construcao,216,89,16,3.3,4.2
+Yara Participacoes Central,Shopping Centers,706,392,53,3.1,3.5
+Zenit Participacoes Central,Metalurgia,778,449,61,2.8,4.4
+Aurora Participacoes Central,Quimica,211,141,13,3.0,4.9
+Brisa Participacoes Central,Bebidas,488,210,40,3.6,3.2
+Cobre Participacoes Central,Portos,476,164,35,4.3,2.9
+Diamante Participacoes Central,Servicos Financeiros,619,483,123,2.6,3.2
+Elo Participacoes Central,Imoveis,640,372,35,3.3,4.7
+Forma Participacoes Central,Concessoes,576,358,33,2.3,4.7
+Granito Participacoes Central,Rodovias,147,57,10,3.9,3.8
+Helio Participacoes Central,Plasticos,327,186,31,2.5,3.1
+Indigo Participacoes Central,Farmaceutico,557,275,56,4.0,2.7
+Alfa Operacoes Prime,Energia,430,195,41,2.7,3.7
+Beta Operacoes Prime,Varejo,405,209,36,3.7,2.5
+Gamma Operacoes Prime,Infraestrutura,226,85,10,3.6,4.4
+Delta Operacoes Prime,Alimentos,206,150,35,3.0,2.3
+Epsilon Operacoes Prime,Tecnologia,829,312,33,4.1,4.1
+Zeta Operacoes Prime,Logistica,192,104,12,3.9,4.6
+Ares Operacoes Prime,Saneamento,399,206,23,4.3,4.0
+Boreal Operacoes Prime,Mineracao,978,474,91,3.7,2.4
+Celta Operacoes Prime,Papel e Celulose,468,295,63,3.5,3.3
+Duna Operacoes Prime,Saude,378,192,40,3.1,2.7
+Estrela Operacoes Prime,Educacao,1132,395,37,3.9,4.8
+Fenix Operacoes Prime,Telecom,766,519,54,2.5,4.4
+Horizonte Operacoes Prime,Agronegocio,327,109,15,3.9,4.4
+Icaro Operacoes Prime,Construcao,475,320,40,2.9,4.6
+Juno Operacoes Prime,Shopping Centers,140,50,13,3.9,3.1
+Kronos Operacoes Prime,Metalurgia,420,341,38,2.3,3.9
+Lumina Operacoes Prime,Quimica,156,53,14,4.2,2.9
+Marfim Operacoes Prime,Bebidas,201,127,22,2.2,2.4
+Nexo Operacoes Prime,Portos,678,357,32,3.7,4.9
+Orion Operacoes Prime,Servicos Financeiros,538,234,48,3.9,2.4
+Prisma Operacoes Prime,Imoveis,554,171,44,4.2,3.7
+Quasar Operacoes Prime,Concessoes,346,107,23,3.4,2.7
+Rota Operacoes Prime,Rodovias,180,82,16,3.1,4.9
+Sigma Operacoes Prime,Plasticos,1622,419,116,4.1,2.0
+Terra Operacoes Prime,Farmaceutico,1151,485,122,3.7,3.9
+Urano Operacoes Prime,Energia,1525,489,87,3.3,3.8
+Vela Operacoes Prime,Varejo,577,240,57,3.3,3.9
+Wega Operacoes Prime,Infraestrutura,1338,407,90,3.6,3.9
+Xingu Operacoes Prime,Alimentos,1052,509,108,2.5,4.6
+Yara Operacoes Prime,Tecnologia,719,208,64,3.5,2.3
+Zenit Operacoes Prime,Logistica,167,73,23,3.7,3.1
+Aurora Operacoes Prime,Saneamento,1312,389,70,3.5,3.5
+Brisa Operacoes Prime,Mineracao,726,333,131,2.5,2.5
+Cobre Operacoes Prime,Papel e Celulose,1417,473,74,3.1,4.2
+Diamante Operacoes Prime,Saude,813,483,152,2.8,3.1
+Elo Operacoes Prime,Educacao,328,154,30,2.3,3.2
+Forma Operacoes Prime,Telecom,1158,431,205,3.8,2.0
+Granito Operacoes Prime,Agronegocio,750,191,53,4.0,2.9
+Helio Operacoes Prime,Construcao,1006,400,134,2.9,2.9
+Indigo Operacoes Prime,Shopping Centers,990,471,109,2.3,2.6
+Alfa Industria Nova,Metalurgia,766,306,102,4.1,2.9
+Beta Industria Nova,Quimica,288,129,15,2.3,5.0
+Gamma Industria Nova,Bebidas,1162,366,72,3.9,4.7
+Delta Industria Nova,Portos,716,300,53,2.6,3.2
+Epsilon Industria Nova,Servicos Financeiros,225,82,16,4.4,4.8
+Zeta Industria Nova,Imoveis,1103,406,161,2.8,2.2
+Ares Industria Nova,Concessoes,1223,520,109,2.8,4.7
+Boreal Industria Nova,Rodovias,1064,396,62,2.8,4.9
+Celta Industria Nova,Plasticos,585,262,53,4.0,4.9
+Duna Industria Nova,Farmaceutico,1183,482,93,2.5,3.6
+Estrela Industria Nova,Energia,881,358,100,3.6,3.5
+Fenix Industria Nova,Varejo,223,80,10,3.0,4.4
+Horizonte Industria Nova,Infraestrutura,478,219,79,3.3,2.7
+Icaro Industria Nova,Alimentos,893,225,33,4.3,3.8
+Juno Industria Nova,Tecnologia,1642,502,147,3.8,3.3
+Kronos Industria Nova,Logistica,1056,305,55,3.6,3.3
+Lumina Industria Nova,Saneamento,1155,429,165,3.4,2.5
+Marfim Industria Nova,Mineracao,636,198,47,3.4,2.3
+Nexo Industria Nova,Papel e Celulose,1071,405,95,4.2,4.2
+Orion Industria Nova,Saude,1789,510,98,3.7,4.3
+Prisma Industria Nova,Educacao,765,339,66,4.1,4.8
+Quasar Industria Nova,Telecom,549,220,45,2.7,3.2
+Rota Industria Nova,Agronegocio,656,312,101,3.6,3.0
+Sigma Industria Nova,Construcao,314,105,16,3.2,4.4
+Terra Industria Nova,Shopping Centers,347,181,44,2.5,3.9
+Urano Industria Nova,Metalurgia,1371,519,197,2.8,2.1
+Vela Industria Nova,Quimica,521,197,47,3.7,4.1
+Wega Industria Nova,Bebidas,1424,369,66,4.0,4.2
+Xingu Industria Nova,Portos,372,243,83,2.3,2.7
+Yara Industria Nova,Servicos Financeiros,415,108,34,3.9,2.2
+Zenit Industria Nova,Imoveis,1134,468,168,3.3,2.7
+Aurora Industria Nova,Concessoes,843,357,94,2.5,2.2
+Brisa Industria Nova,Rodovias,424,250,66,2.7,3.6
+Cobre Industria Nova,Plasticos,500,203,32,2.5,4.8
+Diamante Industria Nova,Farmaceutico,631,173,35,4.2,4.6
+Elo Industria Nova,Energia,628,275,47,2.4,3.8
+Forma Industria Nova,Varejo,470,230,95,2.5,2.3
+Granito Industria Nova,Infraestrutura,1443,392,69,3.9,3.7
+Helio Industria Nova,Alimentos,862,475,105,2.2,4.3
+Indigo Industria Nova,Tecnologia,1145,447,130,2.6,2.7
+Alfa Comercial Alta,Logistica,1183,433,99,4.2,4.2
+Beta Comercial Alta,Saneamento,686,179,51,3.9,2.0
+Gamma Comercial Alta,Mineracao,731,393,99,3.0,3.8
+Delta Comercial Alta,Papel e Celulose,250,105,16,2.6,3.8
+Epsilon Comercial Alta,Saude,213,125,24,2.7,4.8
+Zeta Comercial Alta,Educacao,406,137,26,3.2,4.6
+Ares Comercial Alta,Telecom,904,498,183,3.1,2.6
+Boreal Comercial Alta,Agronegocio,798,318,61,2.6,4.0
+Celta Comercial Alta,Construcao,177,86,25,2.7,3.3
+Duna Comercial Alta,Shopping Centers,283,71,27,4.1,2.1
+Estrela Comercial Alta,Metalurgia,731,410,101,2.4,3.8
+Fenix Comercial Alta,Quimica,1098,354,39,3.3,4.9
+Horizonte Comercial Alta,Bebidas,1016,497,228,3.7,2.1
+Icaro Comercial Alta,Portos,1337,409,170,3.5,2.0
+Juno Comercial Alta,Servicos Financeiros,580,361,113,2.9,3.0
+Kronos Comercial Alta,Imoveis,1320,357,99,4.0,2.0
+Lumina Comercial Alta,Concessoes,666,466,146,2.3,3.1
+Marfim Comercial Alta,Rodovias,1826,458,101,4.3,2.4
+Nexo Comercial Alta,Plasticos,1006,412,175,3.4,2.3
+Orion Comercial Alta,Farmaceutico,823,255,69,3.4,3.0
+Prisma Comercial Alta,Energia,149,64,32,3.0,2.0
+Quasar Comercial Alta,Varejo,125,55,11,2.3,3.4
+Rota Comercial Alta,Infraestrutura,722,362,101,3.3,3.4
+Sigma Comercial Alta,Alimentos,1060,418,70,2.7,3.3
+Terra Comercial Alta,Tecnologia,733,297,80,2.9,3.5
+Urano Comercial Alta,Logistica,1389,397,71,3.6,4.3
+Vela Comercial Alta,Saneamento,613,341,67,2.9,4.9
+Wega Comercial Alta,Mineracao,672,265,64,2.7,2.9
+Xingu Comercial Alta,Papel e Celulose,1234,516,134,2.9,3.6
+Yara Comercial Alta,Saude,889,240,96,3.9,2.2
+Zenit Comercial Alta,Educacao,1176,443,159,3.2,2.6
+Aurora Comercial Alta,Telecom,1218,388,93,3.4,2.5
+Brisa Comercial Alta,Agronegocio,127,85,40,2.4,2.0
+Cobre Comercial Alta,Construcao,1885,436,56,4.4,4.7
+Diamante Comercial Alta,Shopping Centers,631,234,88,3.5,2.5
+Elo Comercial Alta,Metalurgia,1142,347,83,3.4,2.9
+Forma Comercial Alta,Quimica,1163,428,191,3.4,2.2
+Granito Comercial Alta,Bebidas,702,188,43,4.1,2.6
+Helio Comercial Alta,Portos,751,328,114,3.0,2.7
+Indigo Comercial Alta,Servicos Financeiros,734,280,50,2.8,4.0
+Alfa Digital Verde,Imoveis,870,405,128,3.3,3.0
+Beta Digital Verde,Concessoes,1531,387,77,4.3,3.1
+Gamma Digital Verde,Rodovias,234,123,32,2.7,3.6
+Delta Digital Verde,Plasticos,552,255,45,2.2,3.6
+Epsilon Digital Verde,Farmaceutico,1367,377,78,4.2,4.5
+Zeta Digital Verde,Energia,616,175,22,3.6,4.9
+Ares Digital Verde,Varejo,621,349,107,2.4,3.0
+Boreal Digital Verde,Infraestrutura,1388,347,76,4.3,2.9
+Celta Digital Verde,Alimentos,670,273,60,2.9,4.4
+Duna Digital Verde,Tecnologia,653,274,46,2.5,3.2
+Estrela Digital Verde,Logistica,1105,458,215,4.0,2.1
+Fenix Digital Verde,Saneamento,1384,400,54,3.8,4.1
+Horizonte Digital Verde,Mineracao,1260,458,99,3.9,4.6
+Icaro Digital Verde,Papel e Celulose,271,77,10,3.8,4.8
+Juno Digital Verde,Saude,469,308,135,2.3,2.2
+Kronos Digital Verde,Educacao,758,306,68,2.6,3.0
+Lumina Digital Verde,Telecom,489,268,54,3.0,4.9
+Marfim Digital Verde,Agronegocio,397,107,15,3.9,5.0
+Nexo Digital Verde,Construcao,832,430,193,2.9,2.2
+Orion Digital Verde,Shopping Centers,1599,402,88,4.3,2.5
+Prisma Digital Verde,Metalurgia,278,148,31,2.4,4.7
+Quasar Digital Verde,Quimica,1758,490,125,3.7,2.2
+Rota Digital Verde,Bebidas,140,52,16,4.1,3.1
+Sigma Digital Verde,Portos,330,88,12,3.9,4.1
+Terra Digital Verde,Servicos Financeiros,956,446,103,3.8,4.2
+Urano Digital Verde,Imoveis,1177,440,60,2.9,4.1
+Vela Digital Verde,Concessoes,306,114,28,4.1,3.9
+Wega Digital Verde,Rodovias,1627,464,78,3.6,4.4
+Xingu Digital Verde,Plasticos,550,302,140,2.4,2.0
+Yara Digital Verde,Farmaceutico,1006,468,60,2.2,4.6
+Zenit Digital Verde,Energia,291,100,20,3.6,4.5
+Aurora Digital Verde,Varejo,1248,317,45,4.3,4.8
+Brisa Digital Verde,Infraestrutura,1191,412,111,3.8,3.4
+Cobre Digital Verde,Alimentos,171,53,10,3.4,2.9
+Diamante Digital Verde,Tecnologia,971,391,90,4.4,4.1
+Elo Digital Verde,Logistica,894,265,36,3.6,4.0
+Forma Digital Verde,Saneamento,636,219,56,3.3,3.7
+Granito Digital Verde,Mineracao,466,131,26,3.9,3.7
+Helio Digital Verde,Papel e Celulose,382,242,66,2.7,3.6
+Indigo Digital Verde,Saude,634,155,32,4.3,3.3
+Alfa Servicos Azul,Educacao,1214,414,96,4.2,4.0
+Beta Servicos Azul,Telecom,997,365,81,2.8,3.7
+Gamma Servicos Azul,Agronegocio,181,71,19,4.0,3.4
+Delta Servicos Azul,Construcao,1512,364,65,4.2,3.9
+Epsilon Servicos Azul,Shopping Centers,263,144,66,2.9,2.0
+Zeta Servicos Azul,Metalurgia,649,239,72,2.8,2.2
+Ares Servicos Azul,Quimica,190,60,16,3.7,3.5
+Boreal Servicos Azul,Bebidas,229,89,15,2.6,3.4
+Celta Servicos Azul,Portos,1468,481,148,3.5,3.0
+Duna Servicos Azul,Servicos Financeiros,1373,331,125,4.2,2.2
+Estrela Servicos Azul,Imoveis,510,277,113,2.7,2.4
+Fenix Servicos Azul,Concessoes,594,220,56,2.8,2.1
+Horizonte Servicos Azul,Rodovias,621,309,71,2.5,4.2
+Icaro Servicos Azul,Plasticos,1855,444,103,4.3,3.0
+Juno Servicos Azul,Farmaceutico,489,187,39,3.9,4.6
+Kronos Servicos Azul,Energia,878,401,80,2.4,3.5
+Lumina Servicos Azul,Varejo,825,379,109,3.1,3.4
+Marfim Servicos Azul,Infraestrutura,1663,475,60,3.8,4.2
+Nexo Servicos Azul,Alimentos,177,88,23,3.5,3.7
+Orion Servicos Azul,Tecnologia,1670,486,120,3.7,2.4
+Prisma Servicos Azul,Logistica,595,357,90,2.3,3.7
+Quasar Servicos Azul,Saneamento,1111,390,48,2.9,4.7
+Rota Servicos Azul,Mineracao,463,264,82,2.3,3.0
+Sigma Servicos Azul,Papel e Celulose,1391,413,80,3.6,3.2
+Terra Servicos Azul,Saude,885,386,142,4.1,2.6
+Urano Servicos Azul,Educacao,755,333,37,2.4,4.8
+Vela Servicos Azul,Telecom,232,139,30,2.9,4.4
+Wega Servicos Azul,Agronegocio,1928,487,69,4.3,4.2
+Xingu Servicos Azul,Construcao,1031,389,98,4.1,3.7
+Yara Servicos Azul,Shopping Centers,392,163,31,2.5,3.8
+Zenit Servicos Azul,Metalurgia,178,110,34,2.8,3.2
+Aurora Servicos Azul,Quimica,1583,501,121,3.3,3.5
+Brisa Servicos Azul,Bebidas,310,211,56,2.2,3.7
+Cobre Servicos Azul,Portos,1570,452,78,3.7,4.8
+Diamante Servicos Azul,Servicos Financeiros,791,377,90,3.0,3.9
+Elo Servicos Azul,Imoveis,392,144,19,2.8,4.2
+Forma Servicos Azul,Concessoes,619,216,65,3.9,3.1
+Granito Servicos Azul,Rodovias,744,189,32,4.3,4.8
+Helio Servicos Azul,Plasticos,1046,395,95,3.1,4.1
+Indigo Servicos Azul,Farmaceutico,771,304,57,2.7,4.3
+Alfa Energia Solar,Energia,874,338,69,3.5,4.8
+Beta Energia Solar,Varejo,1368,513,108,2.9,3.4
+Gamma Energia Solar,Infraestrutura,1285,497,164,3.5,2.8
+Delta Energia Solar,Alimentos,1034,398,74,2.7,4.6
+Epsilon Energia Solar,Tecnologia,711,336,129,2.7,2.5
+Zeta Energia Solar,Logistica,258,71,14,3.8,3.9
+Ares Energia Solar,Saneamento,97,47,15,2.6,2.9
+Boreal Energia Solar,Mineracao,1355,377,135,3.8,2.0
+Celta Energia Solar,Papel e Celulose,676,303,69,3.3,4.1
+Duna Energia Solar,Saude,1618,423,79,4.1,3.6
+Estrela Energia Solar,Educacao,800,401,88,3.3,4.2
+Fenix Energia Solar,Telecom,670,187,46,3.7,3.5
+Horizonte Energia Solar,Agronegocio,919,296,68,3.8,4.1
+Icaro Energia Solar,Construcao,574,143,21,4.1,4.9
+Juno Energia Solar,Shopping Centers,660,271,56,3.1,4.5
+Kronos Energia Solar,Metalurgia,150,69,12,2.2,4.9
+Lumina Energia Solar,Quimica,563,166,55,3.9,2.9
+Marfim Energia Solar,Bebidas,922,324,82,3.0,3.0
+Nexo Energia Solar,Portos,756,420,182,2.8,2.2
+Orion Energia Solar,Servicos Financeiros,759,195,32,4.2,3.7
+Prisma Energia Solar,Imoveis,759,364,115,3.2,3.0
+Quasar Energia Solar,Concessoes,619,290,57,2.2,3.7
+Rota Energia Solar,Rodovias,1136,517,125,3.2,3.9
+Sigma Energia Solar,Plasticos,934,455,146,2.2,2.2
+Terra Energia Solar,Farmaceutico,704,265,106,3.4,2.3
+Urano Energia Solar,Energia,974,274,33,3.8,4.9
+Vela Energia Solar,Varejo,663,308,107,2.7,2.7
+Wega Energia Solar,Infraestrutura,162,47,19,3.7,2.1
+Xingu Energia Solar,Alimentos,650,453,199,2.3,2.1
+Yara Energia Solar,Tecnologia,862,375,135,2.5,2.4
+Zenit Energia Solar,Logistica,298,106,23,4.3,4.6
+Aurora Energia Solar,Saneamento,1161,470,94,2.6,3.0
+Brisa Energia Solar,Mineracao,799,424,85,2.7,4.9
+Cobre Energia Solar,Papel e Celulose,598,166,24,3.8,4.7
+Diamante Energia Solar,Saude,538,213,77,4.1,2.6
+Elo Energia Solar,Educacao,579,227,36,2.6,4.1
+Forma Energia Solar,Telecom,585,355,72,2.7,4.8
+Granito Energia Solar,Agronegocio,654,207,38,3.2,3.4
+Helio Energia Solar,Construcao,590,207,43,4.3,4.6
+Indigo Energia Solar,Shopping Centers,695,285,78,2.5,2.0
+Alfa Logistica Lunar,Metalurgia,1018,483,139,2.8,3.4
+Beta Logistica Lunar,Quimica,867,305,70,2.9,3.0
+Gamma Logistica Lunar,Bebidas,206,73,29,3.8,2.5
+Delta Logistica Lunar,Portos,927,415,119,2.4,2.7
+Epsilon Logistica Lunar,Servicos Financeiros,1132,470,104,4.2,4.4
+Zeta Logistica Lunar,Imoveis,1096,390,95,3.0,3.3
+Ares Logistica Lunar,Concessoes,405,179,71,3.5,2.4
+Boreal Logistica Lunar,Rodovias,1201,414,118,3.1,2.7
+Celta Logistica Lunar,Plasticos,236,114,33,2.5,3.2
+Duna Logistica Lunar,Farmaceutico,1051,306,81,3.5,2.3
+Estrela Logistica Lunar,Energia,873,346,106,4.1,3.2
+Fenix Logistica Lunar,Varejo,590,150,20,4.0,4.0
+Horizonte Logistica Lunar,Infraestrutura,899,340,149,3.3,2.2
+Icaro Logistica Lunar,Alimentos,1046,319,60,3.5,3.4
+Juno Logistica Lunar,Tecnologia,360,148,37,4.1,3.8
+Kronos Logistica Lunar,Logistica,283,86,20,3.6,2.4
+Lumina Logistica Lunar,Saneamento,760,519,114,2.4,4.3
+Marfim Logistica Lunar,Mineracao,1572,446,123,3.8,2.8
+Nexo Logistica Lunar,Papel e Celulose,213,102,23,2.6,4.0
+Orion Logistica Lunar,Saude,240,70,10,3.7,3.7
+Prisma Logistica Lunar,Educacao,636,251,73,3.0,3.3
+Quasar Logistica Lunar,Telecom,1413,504,83,3.0,4.9
+Rota Logistica Lunar,Agronegocio,1322,455,89,3.4,4.8
+Sigma Logistica Lunar,Construcao,404,141,30,3.1,3.4
+Terra Logistica Lunar,Shopping Centers,199,82,19,3.1,4.1
+Urano Logistica Lunar,Metalurgia,753,242,74,3.2,2.4
+Vela Logistica Lunar,Quimica,358,226,75,2.6,3.0
+Wega Logistica Lunar,Bebidas,1639,479,80,3.6,4.2
+Xingu Logistica Lunar,Portos,158,49,10,3.7,4.5
+Yara Logistica Lunar,Servicos Financeiros,994,377,74,2.8,2.7
+Zenit Logistica Lunar,Imoveis,420,151,48,4.2,3.1
+Aurora Logistica Lunar,Concessoes,1525,413,70,3.9,3.2
+Brisa Logistica Lunar,Rodovias,407,281,102,2.4,2.7
+Cobre Logistica Lunar,Plasticos,771,204,44,3.9,2.6
+Diamante Logistica Lunar,Farmaceutico,622,283,82,2.7,3.2
+Elo Logistica Lunar,Energia,805,250,71,3.3,3.1
+Forma Logistica Lunar,Varejo,409,143,28,4.1,4.8
+Granito Logistica Lunar,Infraestrutura,597,172,33,3.8,4.4
+Helio Logistica Lunar,Alimentos,1202,384,103,3.6,3.5
+Indigo Logistica Lunar,Tecnologia,233,97,12,2.6,4.4
+Alfa Infra Real,Logistica,160,71,24,3.0,2.7
+Beta Infra Real,Saneamento,1530,431,61,3.7,4.9
+Gamma Infra Real,Mineracao,1355,503,150,4.0,3.1
+Delta Infra Real,Papel e Celulose,540,141,32,4.2,3.7
+Epsilon Infra Real,Saude,1626,513,112,4.2,4.5
+Zeta Infra Real,Educacao,351,89,13,4.2,3.7
+Ares Infra Real,Telecom,373,146,41,3.0,3.4
+Boreal Infra Real,Agronegocio,1005,241,41,4.3,3.5
+Celta Infra Real,Construcao,382,171,84,3.8,2.0
+Duna Infra Real,Shopping Centers,727,205,52,3.7,2.7
+Estrela Infra Real,Metalurgia,1091,410,108,3.9,3.5
+Fenix Infra Real,Quimica,947,299,107,3.4,2.4
+Horizonte Infra Real,Bebidas,1236,468,185,3.3,2.4
+Icaro Infra Real,Portos,278,67,12,4.2,4.0
+Juno Infra Real,Servicos Financeiros,784,291,67,3.9,4.1
+Kronos Infra Real,Imoveis,864,311,54,3.0,3.8
+Lumina Infra Real,Concessoes,831,287,59,4.2,4.8
+Marfim Infra Real,Rodovias,1060,374,77,2.9,3.3
+Nexo Infra Real,Plasticos,280,198,64,2.3,2.9
+Orion Infra Real,Farmaceutico,1875,450,136,4.4,2.7
+Prisma Infra Real,Energia,838,390,209,2.3,3.1
+Quasar Infra Real,Varejo,2481,498,127,3.9,2.5
+Rota Infra Real,Infraestrutura,1570,515,219,4.3,2.5
+Sigma Infra Real,Alimentos,814,221,31,2.9,4.3
+Terra Infra Real,Tecnologia,1252,488,224,2.8,3.7
+Urano Infra Real,Logistica,367,77,16,4.1,3.4
+Vela Infra Real,Saneamento,269,101,41,4.3,2.9
+Wega Infra Real,Mineracao,1827,371,64,3.8,3.6
+Xingu Infra Real,Papel e Celulose,424,180,51,3.8,4.4
+Yara Infra Real,Saude,1569,509,98,2.7,3.5
+Zenit Infra Real,Educacao,957,334,170,3.3,3.5
+Aurora Infra Real,Telecom,1282,284,63,3.6,4.3
+Brisa Infra Real,Agronegocio,462,245,55,2.8,4.9
+Cobre Infra Real,Construcao,1221,297,94,3.6,2.3
+Diamante Infra Real,Shopping Centers,589,237,84,3.1,4.7
+Elo Infra Real,Metalurgia,1079,307,82,2.8,3.4
+Forma Infra Real,Quimica,1192,366,151,4.3,3.1
+Granito Infra Real,Bebidas,659,163,67,4.0,2.2
+Helio Infra Real,Portos,455,153,61,3.4,4.1
+Indigo Infra Real,Servicos Financeiros,618,113,17,4.1,5.0
+Alfa Foods Forte,Imoveis,704,488,193,2.2,3.0
+Beta Foods Forte,Concessoes,1735,322,44,4.3,4.3
+Gamma Foods Forte,Rodovias,134,64,26,3.1,4.1
+Delta Foods Forte,Plasticos,1666,421,81,3.0,3.1
+Epsilon Foods Forte,Farmaceutico,929,287,80,4.1,3.8
+Zeta Foods Forte,Energia,415,115,29,3.4,3.1
+Ares Foods Forte,Varejo,284,115,37,3.6,3.2
+Boreal Foods Forte,Infraestrutura,1531,402,82,3.3,3.1
+Celta Foods Forte,Alimentos,688,396,167,2.6,2.5
+Duna Foods Forte,Tecnologia,707,161,42,3.7,3.1
+Estrela Foods Forte,Logistica,708,320,139,2.5,3.3
+Fenix Foods Forte,Saneamento,2232,441,176,4.2,2.1
+Horizonte Foods Forte,Mineracao,1685,517,288,3.7,2.0
+Icaro Foods Forte,Papel e Celulose,224,64,13,3.3,3.5
+Juno Foods Forte,Saude,1129,386,203,3.8,2.1
+Kronos Foods Forte,Educacao,667,141,43,4.2,3.1
+Lumina Foods Forte,Telecom,1568,479,133,3.5,4.2
+Marfim Foods Forte,Agronegocio,1171,325,93,3.0,3.2
+Nexo Foods Forte,Construcao,1411,466,169,4.0,4.5
+Orion Foods Forte,Shopping Centers,593,125,36,4.1,2.1
+Prisma Foods Forte,Metalurgia,178,55,13,3.9,4.4
+Quasar Foods Forte,Quimica,1788,451,114,3.4,2.3
+Rota Foods Forte,Bebidas,604,264,72,2.9,4.9
+Sigma Foods Forte,Portos,1813,462,92,3.1,2.9
+Terra Foods Forte,Servicos Financeiros,712,392,209,2.7,2.0
+Urano Foods Forte,Imoveis,2006,487,104,3.3,2.8
+Vela Foods Forte,Concessoes,837,365,87,2.5,4.8
+Wega Foods Forte,Rodovias,1274,291,44,4.1,3.9
+Xingu Foods Forte,Plasticos,495,269,102,2.5,4.3
+Yara Foods Forte,Farmaceutico,1511,480,62,2.8,5.0
+Zenit Foods Forte,Energia,557,268,83,3.2,4.4
+Aurora Foods Forte,Varejo,625,234,39,2.4,4.1
+Brisa Foods Forte,Infraestrutura,1032,366,85,3.3,4.7
+Cobre Foods Forte,Alimentos,2016,418,121,4.0,2.1
+Diamante Foods Forte,Tecnologia,851,334,117,3.4,4.2
+Elo Foods Forte,Logistica,2402,511,88,4.3,5.0
+Forma Foods Forte,Saneamento,953,442,178,2.5,2.9
+Granito Foods Forte,Mineracao,451,191,34,2.3,3.9
+Helio Foods Forte,Papel e Celulose,572,242,69,3.9,4.5
+Indigo Foods Forte,Saude,1271,444,141,2.4,2.3
+Alfa Tech Clara,Educacao,912,344,108,3.9,3.9
+Beta Tech Clara,Telecom,282,96,22,2.3,3.0
+Gamma Tech Clara,Agronegocio,797,397,183,2.6,2.9
+Delta Tech Clara,Construcao,355,128,20,2.4,4.8
+Epsilon Tech Clara,Shopping Centers,315,87,26,3.9,4.5
+Zeta Tech Clara,Metalurgia,513,212,47,2.3,3.1
+Ares Tech Clara,Quimica,141,47,20,3.4,2.6
+Boreal Tech Clara,Bebidas,1324,517,118,2.3,3.3
+Celta Tech Clara,Portos,590,309,103,2.6,3.3
+Duna Tech Clara,Servicos Financeiros,1302,298,49,3.5,5.0
+Estrela Tech Clara,Imoveis,1500,514,213,4.1,2.8
+Fenix Tech Clara,Concessoes,373,72,14,4.4,4.1
+Horizonte Tech Clara,Rodovias,624,205,71,3.7,3.2
+Icaro Tech Clara,Plasticos,2535,469,64,4.4,4.9
+Juno Tech Clara,Farmaceutico,282,148,51,2.5,3.4
+Kronos Tech Clara,Energia,1337,348,60,3.5,4.2
+Lumina Tech Clara,Varejo,637,175,75,4.3,3.0
+Marfim Tech Clara,Infraestrutura,1067,284,64,3.7,3.5
+Nexo Tech Clara,Alimentos,1529,381,230,4.4,2.9
+Orion Tech Clara,Tecnologia,218,49,10,3.7,3.2
+Prisma Tech Clara,Logistica,487,139,50,3.8,3.4
+Quasar Tech Clara,Saneamento,2006,508,99,3.4,2.9
+Rota Tech Clara,Mineracao,232,61,21,4.4,4.4
+Sigma Tech Clara,Papel e Celulose,1019,328,47,2.4,4.0
+Terra Tech Clara,Saude,183,88,40,2.5,3.3
+Urano Tech Clara,Educacao,1768,396,85,4.3,3.3
+Vela Tech Clara,Telecom,1159,444,247,2.9,2.3
+Wega Tech Clara,Agronegocio,978,232,65,4.1,2.3
+Xingu Tech Clara,Construcao,467,194,58,3.4,3.7
+Yara Tech Clara,Shopping Centers,835,282,34,2.7,4.7
+Zenit Tech Clara,Metalurgia,141,90,38,2.5,3.2
+Aurora Tech Clara,Quimica,2047,509,98,3.3,2.9
+Brisa Tech Clara,Bebidas,1167,410,171,4.4,3.0
+Cobre Tech Clara,Portos,1866,449,73,3.5,3.9
+Diamante Tech Clara,Servicos Financeiros,471,180,54,4.3,4.9
+Elo Tech Clara,Imoveis,2000,464,83,3.9,3.1
+Forma Tech Clara,Concessoes,380,180,64,2.9,3.1
+Granito Tech Clara,Rodovias,984,331,42,2.5,4.8
+Helio Tech Clara,Plasticos,407,200,89,2.8,3.6
+Indigo Tech Clara,Farmaceutico,613,146,31,3.3,3.7
+Alfa Capital Serra,Energia,904,360,152,2.8,3.4
+Beta Capital Serra,Varejo,2280,486,87,3.6,4.8
+Gamma Capital Serra,Infraestrutura,669,335,115,3.0,3.2
+Delta Capital Serra,Alimentos,540,134,28,3.7,4.2
+Epsilon Capital Serra,Tecnologia,771,297,133,4.1,3.4
+Zeta Capital Serra,Logistica,1924,384,56,3.8,4.7
+Ares Capital Serra,Saneamento,307,86,44,4.1,2.9
+Boreal Capital Serra,Mineracao,781,298,59,2.4,4.5
+Celta Capital Serra,Papel e Celulose,885,436,100,2.6,4.7
+Duna Capital Serra,Saude,150,46,17,3.2,2.4
+Estrela Capital Serra,Educacao,886,282,110,4.1,4.1
+Fenix Capital Serra,Telecom,141,59,10,2.2,4.3
+Horizonte Capital Serra,Agronegocio,109,54,19,3.3,3.2
+Icaro Capital Serra,Construcao,748,149,35,4.1,3.8
+Juno Capital Serra,Shopping Centers,906,360,125,3.2,3.0
+Kronos Capital Serra,Metalurgia,1277,371,83,3.3,3.6
+Lumina Capital Serra,Quimica,748,238,73,3.5,3.7
+Marfim Capital Serra,Bebidas,966,274,67,3.3,2.7
+Nexo Capital Serra,Portos,152,53,14,4.0,4.3
+Orion Capital Serra,Servicos Financeiros,847,275,84,2.8,2.5
+Prisma Capital Serra,Imoveis,950,489,166,2.3,3.9
+Quasar Capital Serra,Concessoes,1276,320,105,3.6,2.6
+Rota Capital Serra,Rodovias,676,256,99,3.0,3.1
+Sigma Capital Serra,Plasticos,190,74,22,2.3,2.4
+Terra Capital Serra,Farmaceutico,713,245,58,4.1,4.9
+Urano Capital Serra,Energia,968,248,57,3.1,2.7
+Vela Capital Serra,Varejo,864,482,206,2.9,3.6
+Wega Capital Serra,Infraestrutura,1487,290,65,3.8,3.1
+Xingu Capital Serra,Alimentos,561,173,64,4.4,4.0
+Yara Capital Serra,Tecnologia,1443,443,54,3.1,4.7
+Zenit Capital Serra,Logistica,792,212,82,4.3,4.1
+Aurora Capital Serra,Saneamento,1701,401,92,3.6,2.9
+Brisa Capital Serra,Mineracao,711,314,160,3.1,2.4
+Cobre Capital Serra,Papel e Celulose,1423,349,77,3.9,4.1
+Diamante Capital Serra,Saude,1010,272,78,4.1,3.7
+Elo Capital Serra,Educacao,1015,298,56,2.8,3.6
+Forma Capital Serra,Telecom,795,311,88,3.9,4.4
+Granito Capital Serra,Agronegocio,954,302,77,2.8,2.8
+Helio Capital Serra,Construcao,570,285,108,2.8,4.3
+Indigo Capital Serra,Shopping Centers,1554,310,44,4.1,5.0
+Alfa Holding Vale,Metalurgia,504,309,177,2.3,2.8
+Beta Holding Vale,Quimica,961,241,44,3.5,4.0
+Gamma Holding Vale,Bebidas,421,239,91,2.8,4.6
+Delta Holding Vale,Portos,974,227,28,3.6,4.9
+Epsilon Holding Vale,Servicos Financeiros,1254,392,217,3.5,3.0
+Zeta Holding Vale,Imoveis,1292,342,75,3.0,4.2
+Ares Holding Vale,Concessoes,689,295,96,3.3,3.3
+Boreal Holding Vale,Rodovias,1355,388,93,3.2,2.5
+Celta Holding Vale,Plasticos,844,421,167,3.1,3.1
+Duna Holding Vale,Farmaceutico,1491,299,57,3.9,4.5
+Estrela Holding Vale,Energia,1264,452,157,3.8,3.3
+Fenix Holding Vale,Varejo,1436,429,131,2.7,2.2
+Horizonte Holding Vale,Infraestrutura,690,268,101,2.9,2.7
+Icaro Holding Vale,Alimentos,1391,300,59,3.6,3.9
+Juno Holding Vale,Tecnologia,1035,397,158,4.3,4.3
+Kronos Holding Vale,Logistica,926,181,28,3.9,4.5
+Lumina Holding Vale,Saneamento,765,326,177,2.6,3.1
+Marfim Holding Vale,Mineracao,1518,506,151,2.5,2.8
+Nexo Holding Vale,Papel e Celulose,211,108,62,2.4,2.4
+Orion Holding Vale,Saude,1163,296,103,3.4,2.5
+Prisma Holding Vale,Educacao,953,339,121,3.4,3.1
+Quasar Holding Vale,Telecom,535,154,64,3.4,2.2
+Rota Holding Vale,Agronegocio,1015,354,90,3.3,4.4
+Sigma Holding Vale,Construcao,1371,466,71,2.5,4.4
+Terra Holding Vale,Shopping Centers,190,122,49,2.2,2.6
+Urano Holding Vale,Metalurgia,2217,484,85,3.6,4.5
+Vela Holding Vale,Quimica,834,471,184,2.8,4.1
+Wega Holding Vale,Bebidas,677,191,37,2.8,4.4
+Xingu Holding Vale,Portos,156,74,22,2.5,4.9
+Yara Holding Vale,Servicos Financeiros,722,290,71,2.4,2.7
+Zenit Holding Vale,Imoveis,385,107,41,4.2,2.7
+Aurora Holding Vale,Concessoes,820,209,46,3.1,3.6
+Brisa Holding Vale,Rodovias,466,171,78,3.6,3.4
+Cobre Holding Vale,Plasticos,169,67,12,2.4,3.2
+Diamante Holding Vale,Farmaceutico,947,355,74,3.7,5.0
+Elo Holding Vale,Energia,1895,400,78,3.8,3.1
+Forma Holding Vale,Varejo,610,250,93,2.8,3.2
+Granito Holding Vale,Infraestrutura,1399,362,84,3.6,3.8
+Helio Holding Vale,Alimentos,930,404,156,2.8,3.1
+Indigo Holding Vale,Tecnologia,2298,476,93,4.2,3.4
+Alfa Brasil Costa,Logistica,719,472,360,2.4,2.3
+Beta Brasil Costa,Saneamento,751,156,33,3.9,3.2
+Gamma Brasil Costa,Mineracao,674,287,82,3.7,3.7
+Delta Brasil Costa,Papel e Celulose,1528,302,106,4.2,2.3
+Epsilon Brasil Costa,Saude,1068,301,89,3.8,4.3
+Zeta Brasil Costa,Educacao,1178,294,42,3.0,4.2
+Ares Brasil Costa,Telecom,1095,370,135,3.9,4.3
+Boreal Brasil Costa,Agronegocio,852,318,60,2.3,3.8
+Celta Brasil Costa,Construcao,575,177,56,3.6,3.9
+Duna Brasil Costa,Shopping Centers,1575,356,65,3.3,4.1
+Estrela Brasil Costa,Metalurgia,307,90,39,4.3,2.5
+Fenix Brasil Costa,Quimica,1451,467,67,2.4,3.9
+Horizonte Brasil Costa,Bebidas,783,370,216,2.6,2.2
+Icaro Brasil Costa,Portos,260,70,19,3.3,2.5
+Juno Brasil Costa,Servicos Financeiros,123,51,12,3.9,4.4
+Kronos Brasil Costa,Imoveis,841,295,68,2.4,3.9
+Lumina Brasil Costa,Concessoes,1188,334,150,4.3,2.3
+Marfim Brasil Costa,Rodovias,1210,407,67,2.6,3.5
+Nexo Brasil Costa,Plasticos,1043,413,149,3.5,3.2
+Orion Brasil Costa,Farmaceutico,1738,440,125,3.9,2.2
+Prisma Brasil Costa,Energia,584,162,66,4.2,4.4
+Quasar Brasil Costa,Varejo,1495,301,47,4.2,3.7
+Rota Brasil Costa,Infraestrutura,180,57,20,4.3,4.0
+Sigma Brasil Costa,Alimentos,304,107,18,2.7,4.4
+Terra Brasil Costa,Tecnologia,820,285,87,3.3,3.6
+Urano Brasil Costa,Logistica,876,283,59,2.3,3.8
+Vela Brasil Costa,Saneamento,331,185,77,2.6,2.8
+Wega Brasil Costa,Mineracao,2008,360,103,4.4,2.4
+Xingu Brasil Costa,Papel e Celulose,318,183,49,2.4,4.2
+Yara Brasil Costa,Saude,1154,298,53,3.7,3.8
+Zenit Brasil Costa,Educacao,1486,456,211,4.3,3.7
+Aurora Brasil Costa,Telecom,1411,358,54,3.0,4.2
+Brisa Brasil Costa,Agronegocio,118,65,20,2.3,4.5
+Cobre Brasil Costa,Construcao,2270,476,99,3.7,2.7
+Diamante Brasil Costa,Shopping Centers,663,275,107,3.4,3.7
+Elo Brasil Costa,Metalurgia,446,100,19,3.6,4.3
+Forma Brasil Costa,Quimica,555,218,59,2.8,4.5
+Granito Brasil Costa,Bebidas,203,87,12,2.2,4.2
+Helio Brasil Costa,Portos,216,64,20,3.8,5.0
+Indigo Brasil Costa,Servicos Financeiros,1240,340,62,3.3,3.8
+Alfa Sul Rio,Imoveis,223,131,39,2.3,3.6
+Beta Sul Rio,Concessoes,1284,310,54,3.5,3.5
+Gamma Sul Rio,Rodovias,741,293,183,2.8,2.6
+Delta Sul Rio,Plasticos,354,127,23,2.5,3.9
+Epsilon Sul Rio,Farmaceutico,679,374,211,3.0,2.1
+Zeta Sul Rio,Energia,1472,406,53,3.3,4.6
+Ares Sul Rio,Varejo,802,373,138,3.1,4.3
+Boreal Sul Rio,Infraestrutura,1400,318,126,4.1,2.3
+Celta Sul Rio,Alimentos,1148,319,161,3.9,3.4
+Duna Sul Rio,Tecnologia,705,276,42,2.3,4.5
+Estrela Sul Rio,Logistica,747,255,192,3.2,2.0
+Fenix Sul Rio,Saneamento,2561,477,126,4.2,2.5
+Horizonte Sul Rio,Mineracao,978,277,102,4.0,3.6
+Icaro Sul Rio,Papel e Celulose,1515,481,77,3.0,4.5
+Juno Sul Rio,Saude,240,87,32,3.4,3.8
+Kronos Sul Rio,Educacao,1859,493,113,3.0,2.5
+Lumina Sul Rio,Telecom,1231,340,130,4.3,3.0
+Marfim Sul Rio,Agronegocio,1557,431,116,3.0,2.3
+Nexo Sul Rio,Construcao,475,229,123,2.9,2.3
+Orion Sul Rio,Shopping Centers,757,136,21,4.3,5.0
+Prisma Sul Rio,Metalurgia,594,351,119,2.7,3.6
+Quasar Sul Rio,Quimica,2088,453,67,4.1,4.9
+Rota Sul Rio,Bebidas,124,59,35,2.9,2.2
+Sigma Sul Rio,Portos,1509,447,78,3.2,4.7
+Terra Sul Rio,Servicos Financeiros,881,472,253,2.5,2.2
+Urano Sul Rio,Imoveis,2073,360,72,4.3,4.2
+Vela Sul Rio,Concessoes,482,196,97,3.0,2.7
+Wega Sul Rio,Rodovias,249,54,14,4.2,2.8
+Xingu Sul Rio,Plasticos,223,73,17,4.3,4.5
+Yara Sul Rio,Farmaceutico,1310,387,104,2.6,2.2
+Zenit Sul Rio,Energia,496,205,68,3.4,3.8
+Aurora Sul Rio,Varejo,315,81,14,3.5,3.9
+Brisa Sul Rio,Infraestrutura,1057,323,78,4.0,4.8
+Cobre Sul Rio,Alimentos,787,260,30,2.7,4.9
+Diamante Sul Rio,Tecnologia,151,72,20,2.9,4.5
+Elo Sul Rio,Logistica,764,147,25,3.9,3.7
+Forma Sul Rio,Saneamento,1309,367,89,4.1,4.3
+Granito Sul Rio,Mineracao,797,341,63,2.3,4.0
+Helio Sul Rio,Papel e Celulose,879,328,181,3.4,2.6
+Indigo Sul Rio,Saude,1282,401,83,2.6,4.1
+Alfa Norte Campo,Educacao,929,338,158,4.1,3.6
+Beta Norte Campo,Telecom,949,231,42,3.7,3.8
+Gamma Norte Campo,Agronegocio,443,259,119,2.7,3.9
+Delta Norte Campo,Construcao,296,72,11,3.9,3.7
+Epsilon Norte Campo,Shopping Centers,251,172,87,2.2,3.3
+Zeta Norte Campo,Metalurgia,303,62,11,4.0,4.5
+Ares Norte Campo,Quimica,432,246,111,2.5,2.5
+Boreal Norte Campo,Bebidas,537,125,43,4.2,2.0
+Celta Norte Campo,Portos,333,143,63,3.2,2.3
+Duna Norte Campo,Servicos Financeiros,1486,314,98,4.3,2.8
+Estrela Norte Campo,Imoveis,246,156,48,2.4,3.8
+Fenix Norte Campo,Concessoes,2186,454,99,3.8,3.7
+Horizonte Norte Campo,Rodovias,514,318,160,2.3,2.5
+Icaro Norte Campo,Plasticos,1157,285,75,3.1,3.2
+Juno Norte Campo,Farmaceutico,1410,447,102,3.5,4.7
+Kronos Norte Campo,Energia,383,122,25,3.1,3.2
+Lumina Norte Campo,Varejo,672,342,137,2.6,3.0
+Marfim Norte Campo,Infraestrutura,969,180,46,4.3,3.2
+Nexo Norte Campo,Alimentos,209,67,21,4.3,3.2
+Orion Norte Campo,Tecnologia,845,343,90,2.4,2.9
+Prisma Norte Campo,Logistica,1081,471,153,2.6,4.4
+Quasar Norte Campo,Saneamento,2572,465,134,4.4,3.1
+Rota Norte Campo,Mineracao,617,463,119,2.2,4.2
+Sigma Norte Campo,Papel e Celulose,2074,496,78,4.0,4.3
+Terra Norte Campo,Saude,814,436,118,2.8,4.9
+Urano Norte Campo,Educacao,491,131,25,2.9,3.1
+Vela Norte Campo,Telecom,531,332,99,2.6,3.9
+Wega Norte Campo,Agronegocio,1123,276,56,3.4,3.2
+Xingu Norte Campo,Construcao,1369,422,149,3.6,3.2
+Yara Norte Campo,Shopping Centers,606,164,19,3.2,4.9
+Zenit Norte Campo,Metalurgia,1257,435,116,4.3,4.1
+Aurora Norte Campo,Quimica,2240,441,58,3.9,4.4
+Brisa Norte Campo,Bebidas,548,242,57,3.4,4.6
+Cobre Norte Campo,Portos,1193,233,45,4.0,3.4
+Diamante Norte Campo,Servicos Financeiros,141,52,20,3.2,3.7
+Elo Norte Campo,Imoveis,938,196,43,4.2,3.0
+Forma Norte Campo,Concessoes,822,466,127,2.8,4.3
+Granito Norte Campo,Rodovias,908,273,54,2.6,3.7
+Helio Norte Campo,Plasticos,694,211,134,3.8,2.1
+Indigo Norte Campo,Farmaceutico,1269,247,32,4.0,4.4

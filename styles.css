@@ -399,6 +399,20 @@
   padding-right: 0.32rem;
 }
 
+.reveal .product-table.rule-of-thumb-table {
+  max-width: 100%;
+  width: 100%;
+}
+
+.reveal .product-table.rule-of-thumb-table table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.reveal .product-table.rule-of-thumb-table th {
+  color: #A31229;
+}
+
 .reveal .product-table td,
 .reveal .product-table th {
   padding: 0.38rem 0.5rem;
