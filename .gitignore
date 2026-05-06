@@ -63,6 +63,7 @@ data/processed/
 *.csv
 !dia2/demo/microdemo6/dados_covenants.csv
 *.xlsx
+backup/
 
 ##############################
 # Logs

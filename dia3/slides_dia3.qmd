@@ -1,0 +1,422 @@
+---
+title: "IA Aplicada a Finanças: Módulo 3"
+subtitle: "Agentes, contexto persistente e skills"
+author: "Raul Riva"
+date: 2026-05-06
+date-format: "[Maio], YYYY"
+lang: pt-BR
+---
+
+# Dia 3
+
+## Hoje: agentes com mais contexto
+
+- Usar agentes em demonstrações ao vivo
+- Criar contexto *persistente* com `AGENTS.md`
+- Extensões dos agentes através de skills
+- Criar uma skill local ao vivo e usá-la
+
+::: {.callout-tip title="Ideia central"}
+Agente bom não é agente solto. É agente com tarefa, contexto, limites e verificação.
+:::
+
+---
+
+## Do prompt para o projeto
+
+- Prompt resolve uma tarefa
+- `AGENTS.md` orienta um projeto
+- Skill orienta um tipo recorrente de tarefa
+
+:::: {.agent-flow .agent-flow-3}
+
+::: {.agent-step}
+**Prompt**
+
+o que fazer agora
+:::
+
+::: {.agent-step}
+**AGENTS.md**
+
+como trabalhar aqui nesta pasta
+:::
+
+::: {.agent-step}
+**Skill**
+
+como executar este tipo de trabalho específico
+:::
+
+::::
+
+---
+
+## O que agentes fazem bem
+
+:::: {.workflow-grid}
+
+::: {.workflow-card}
+**Ler contexto**
+
+arquivos, instruções, dados, erros e histórico da tarefa
+:::
+
+::: {.workflow-card}
+**Executar**
+
+criar arquivos, rodar scripts, ajustar código e repetir
+:::
+
+::: {.workflow-card}
+**Explicar**
+
+resumir escolhas, limitações, riscos e próximos passos
+:::
+
+::::
+
+
+O ganho vem do ciclo completo e da interação, não só da resposta final.
+
+---
+
+## O que agentes fazem mal
+
+- Resolver tarefa vaga com objetivo implícito
+- Adivinhar padrão visual, financeiro ou metodológico
+- Saber o que não pode alterar
+- Separar resultado bonito de resultado correto
+- Perceber que a demonstração ao vivo precisa ser robusta
+
+. . .
+
+::: {.callout-warning title="Risco prático"}
+Sem limites, o agente pode trabalhar muito e ainda resolver o problema errado.
+:::
+
+---
+
+## Três camadas de instrução {.vcenter-slide}
+
+:::: {.vcenter-body .product-table-body}
+::: {.product-table .product-table-large}
+| Camada | Duração | Melhor uso |
+|---|---|---|
+| Prompt | uma tarefa | objetivo, escopo e output imediato |
+| `AGENTS.md` | projeto inteiro| padrões, comandos, limites e organização |
+| Skill local | tarefa recorrente | workflow especializado repetido no projeto |
+| Skill global | tarefa recorrente | workflow especializado repetido em todos os seus projetos |
+:::
+::::
+
+
+Comece simples. Só transforme em regra aquilo que você quer repetir.
+
+# AGENTS.md
+
+## `AGENTS.md` em uma frase
+
+É um arquivo de instruções para agentes que trabalham naquele projeto.
+
+. . .
+
+Use para registrar:
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- objetivo do projeto
+- estrutura de pastas
+- comandos preferidos
+:::
+
+::: {.column width="50%"}
+- dependências e ambiente
+- arquivos que podem ou não podem mudar
+- padrões de qualidade e validação
+:::
+
+::::
+
+## O que colocar
+
+:::: {.workflow-grid}
+
+::: {.workflow-card}
+**Contexto**
+
+qual é o projeto, quem usa e qual é o resultado esperado
+:::
+
+::: {.workflow-card}
+**Restrições**
+
+dependências, pastas permitidas, estilo, dados e internet
+:::
+
+::: {.workflow-card}
+**Verificação**
+
+comandos, checks visuais, testes e critérios de aceite
+:::
+
+::::
+
+---
+
+## O que não colocar
+
+- Texto longo que ninguém vai manter
+- Explicações genéricas sobre IA
+- Regras contraditórias
+- Preferências de uma tarefa única
+- Segredos, senhas ou credenciais
+- Instruções que impedem validação real
+
+. . .
+
+::: {.callout-tip title="Regra de bolso"}
+Se a regra não ajuda o próximo agente a trabalhar melhor, ela provavelmente não pertence ao `AGENTS.md`.
+:::
+
+---
+
+## Demo 1: projeto de investimento
+
+- Criar uma pasta de projeto do zero
+- Usar premissas financeiras pequenas
+- Pedir dashboard HTML interativo
+- Observar o que ficou implícito
+- Criar `AGENTS.md` ao vivo
+- Repetir a tarefa com contexto persistente
+
+. . .
+
+Material de apoio:
+
+`dia3/demo/projeto_investimento/`
+
+---
+
+## Premissas da demo 1
+
+:::: {.product-table-body .premissas-demo-table-body}
+::: {.product-table .product-table-large .premissas-demo-table}
+| Premissa | Valor | Leitura |
+|---|---|
+| CAPEX inicial | R$ 12,5 mi | investimento no ano 0 |
+| Vida útil | 8 anos | horizonte explícito |
+| Receita ano 1 | R$ 4,2 mi | primeiro ano de operação |
+| Custo variável | 48% da receita | custo proporcional |
+| Custo fixo anual | R$ 950 mil | custo recorrente |
+| Crescimento da receita | 3,5% a.a. | cenário base |
+| Imposto | 25% | sobre lucro positivo |
+| WACC | 11,5% a.a. | taxa de desconto |
+| Valor residual | R$ 1,8 mi | último ano |
+| Pessimista | receita -12%, custo +8% | stress simples |
+| Otimista | receita +10%, custo -5% | upside simples |
+:::
+::::
+
+---
+
+## Prompt inicial da demo 1 {.wrap-code}
+
+::: {.prompt-box}
+Crie nesta pasta um pequeno projeto para analisar uma decisão de investimento de uma firma.
+
+Use o arquivo `premissas_projeto_investimento.csv` como ponto de partida.
+
+Quero um dashboard HTML autocontido que permita alterar premissas e mostre como a decisão muda.
+:::
+
+## O que observar na demo 1
+
+- O agente escolheu premissas sem avisar?
+- O dashboard é autocontido?
+- Os controles realmente mudam a decisão?
+- O VPL está coerente com os fluxos?
+- Há recomendação excessivamente confiante?
+- A verificação foi evidência ou só afirmação?
+
+::: {.callout-tip title="O que deveríamos colocar num ```AGENTS.md?```"}
+Que tal refazermos o exemplo com contexto persistente?
+:::
+
+# Skills
+
+## Skill em uma frase
+
+É uma instrução reutilizável para um tipo de trabalho que você quer repetir.
+
+. . .
+
+Exemplos:
+
+- gerar gráficos financeiros com determinado estilo
+- preparar relatórios
+- trabalhar com um formato de arquivo muito específico
+- seguir um padrão interno de análise
+
+. . .
+
+::: {.callout-tip title="Regra de bolso"}
+Se você se pegou dando as mesmas instruções para o agente mais de uma vez, talvez
+valha a pena criar uma skill.
+:::
+
+## Skills locais vs. globais
+- **Skills globais** estão disponíveis para todos os projetos 
+- Use para padrões que você quer manter em toda a sua produção
+- **Skills locais** estão disponíveis só para um projeto específico
+- Use para padrões que só fazem sentido naquele projeto ou tipo de tarefa
+- Importante: skills podem ser reutilizadas!
+
+## Onde Codex procura skills locais {.vcenter-slide .big-table-slide}
+
+:::: {.vcenter-body .product-table-body}
+::: {.product-table .product-table-large}
+| Escopo | Local |
+|---|---|
+| pasta atual | `$CWD/.agents/skills` |
+| pasta acima | `$CWD/../.agents/skills` |
+| raiz do repositório | `$REPO_ROOT/.agents/skills` |
+:::
+::::
+
+::: {.source-note}
+Fonte: [OpenAI Codex Skills](https://developers.openai.com/codex/skills). A documentação indica que Codex escaneia `.agents/skills` do diretório atual até a raiz do repositório.
+:::
+
+---
+
+## Anatomia mínima
+
+```text
+.agents/
+  skills/
+    plot-financeiro/
+      SKILL.md
+```
+
+```text
+---
+name: plot-financeiro
+description: Use para gráficos financeiros, retornos e séries temporais.
+---
+
+Instruções curtas para Codex seguir.
+```
+
+. . .
+
+O `description` é importante: ele ajuda Codex a decidir quando usar a skill.
+
+
+## Demo 2: futuros + skill local
+
+- Criar projeto do zero
+- Baixar dois futuros com `yfinance`
+- Gerar gráfico inicial
+- Criar skill local de Codex
+- Repetir o gráfico usando a skill
+- Comparar antes e depois
+
+. . .
+
+Material de apoio:
+
+`dia3/demo/skill_plot_financeiro/`
+
+## Prompt de dados da demo 2 {.wrap-code}
+
+::: {.prompt-box}
+Use `yfinance` para baixar dados diários de dois contratos futuros. Comece com CL=F e GC=F.
+
+Baixe 5 anos de dados, valide falhas e salve os fechamentos em `dados_futuros.csv` dentro de `dia3/demo/skill_plot_financeiro`
+:::
+
+
+## Pares para variar ao vivo {.vcenter-slide .big-table-slide}
+
+:::: {.vcenter-body .product-table-body}
+::: {.product-table .product-table-large}
+| Tickers | Ideia |
+|---|---|
+| `CL=F`, `GC=F` | petróleo e ouro |
+| `CL=F`, `BZ=F` | WTI e Brent |
+| `GC=F`, `SI=F` | ouro e prata |
+| `ZC=F`, `ZW=F` | milho e trigo |
+| `ZS=F`, `ZM=F` | soja e farelo de soja |
+:::
+::::
+
+## O que entra na skill da demo
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- `matplotlib`
+- fonte Arial
+- paleta FURG
+- títulos curtos
+- legenda clara
+:::
+
+::: {.column width="50%"}
+- grade discreta
+- validação de dados vazios
+- exportação em pdf
+- barras e linhas sempre atrás do grid
+:::
+
+::::
+
+
+## Criar a skill ao vivo {.wrap-code}
+
+::: {.prompt-box}
+Crie uma skill local de Codex neste projeto.
+
+O caminho deve ser exatamente:
+`.agents/skills/plot-financeiro/SKILL.md`
+
+Não instale nada em `~/.codex/skills`.
+Não crie plugin.
+
+A skill deve padronizar gráficos financeiros com Arial, paleta FURG, legenda limpa, grade discreta, validações e exportação em PDF.
+:::
+
+---
+
+## Usar a skill explicitamente {.wrap-code}
+
+::: {.prompt-box}
+Use `plot-financeiro` e me mostre a evolução dos preços em `dados_futuros.csv`.
+:::
+
+---
+
+## O que observar na demo 2
+
+- A skill foi encontrada localmente?
+- O estilo mudou de forma visível?
+- O agente validou dados vazios?
+- O gráfico ficou legível em tela?
+- O padrão funcionaria para outro par de ativos?
+- A skill ficou curta o bastante para ser mantida?
+
+## O que fica dos três dias
+
+- IA em Finanças é mais útil quando conectada a uma pergunta bem definida
+- Ferramentas importam, mas o workflow importa mais: contexto, iteração e revisão
+- Código gerado por IA precisa de dados pequenos, validação simples e leitura crítica
+- Agentes ganham força quando têm projeto, limites e memória de trabalho
+- Prompt bom não é mágica: é especificação, evidência e responsabilidade
+
+---
+
+<div style="display: flex; align-items: center; justify-content: center; min-height: 560px; color: #A31229; font-size: 5.8em; font-weight: 700;">
+Obrigado!
+</div>
