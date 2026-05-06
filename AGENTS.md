@@ -23,12 +23,11 @@ Estrutura esperada:
     slides_dia2.html
     demo/              # a criar se necessário
   dia3/
-    slides_dia3.qmd    # a criar
-    slides_dia3.html   # a criar
+    slides_dia3.qmd
+    slides_dia3.html
     demo/
-      materiais_dados_financeiros/
-      materiais_sentimento/
-      materiais_valuation/
+      projeto_investimento/
+      skill_plot_financeiro/
 ```
 
 Cada dia deve conter:
@@ -58,7 +57,11 @@ Em 2026-04-30:
 - `requirements.txt` contém dependências Python mínimas
 - o dia 2 está implementado em `dia2/slides_dia2.qmd`
 - o HTML renderizado do dia 2 está em `dia2/slides_dia2.html`
-- `dia3/` existe, mas ainda está vazio
+- o dia 3 está implementado em `dia3/slides_dia3.qmd`
+- o HTML renderizado do dia 3 está em `dia3/slides_dia3.html`
+- há materiais auxiliares para o dia 3 em `dia3/demo/`:
+  - `dia3/demo/projeto_investimento/premissas_projeto_investimento.csv`
+  - `dia3/demo/skill_plot_financeiro/AGENTS.md`
 
 Conteúdo já construído no dia 1:
 - introdução do instrutor e contato
@@ -89,6 +92,7 @@ Arquivos gerados/cache:
 - regenerar esses arquivos com Quarto quando necessário
 - tratar `.qmd` e `styles.css` como fontes principais
 - atualizar `dia1/slides_dia1.html` após mudanças substantivas no deck, se o HTML renderizado precisar acompanhar o fonte
+- atualizar `dia3/slides_dia3.html` após mudanças substantivas no deck, se o HTML renderizado precisar acompanhar o fonte
 - `dia1/precos_acoes_brasil.csv`, `dia1/dashboard_acoes_brasil.html` e figuras em `dia1/images/` são artefatos de execução de scripts e podem ser regenerados
 
 ---

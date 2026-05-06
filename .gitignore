@@ -50,6 +50,8 @@ _site/
 !dia1/slides_dia1_files/**
 !dia2/slides_dia2_files/
 !dia2/slides_dia2_files/**
+!dia3/slides_dia3_files/
+!dia3/slides_dia3_files/**
 *.quarto_ipynb*
 
 # Rendered outputs (opcional — veja nota abaixo)
@@ -62,6 +64,8 @@ data/raw/
 data/processed/
 *.csv
 !dia2/demo/microdemo6/dados_covenants.csv
+!dia3/demo/projeto_investimento/
+!dia3/demo/projeto_investimento/premissas_projeto_investimento.csv
 *.xlsx
 backup/
 

@@ -2,7 +2,7 @@
 
 Este arquivo é o mapa de continuidade do projeto. `AGENTS.md` contém as regras permanentes; este plano registra o estado atual, decisões tomadas e próximos passos.
 
-Última atualização: 2026-05-01.
+Última atualização: 2026-05-06.
 
 ---
 
@@ -11,8 +11,10 @@ Este arquivo é o mapa de continuidade do projeto. `AGENTS.md` contém as regras
 - Projeto: minicurso de Inteligência Artificial aplicada a Finanças, FURG / Escola SBFin
 - Fonte principal do dia 1: `dia1/slides_dia1.qmd`
 - Fonte principal do dia 2: `dia2/slides_dia2.qmd`
+- Fonte principal do dia 3: `dia3/slides_dia3.qmd`
 - HTML renderizado do dia 1: `dia1/slides_dia1.html`
 - HTML renderizado do dia 2: `dia2/slides_dia2.html`
+- HTML renderizado do dia 3: `dia3/slides_dia3.html`
 - Estilo global: `styles.css`
 - Configuração Quarto: `_quarto.yml`
 - Ambiente local esperado: conda `FURG`
@@ -21,6 +23,7 @@ Este arquivo é o mapa de continuidade do projeto. `AGENTS.md` contém as regras
 ```bash
 conda run -n FURG quarto render dia1/slides_dia1.qmd
 conda run -n FURG quarto render dia2/slides_dia2.qmd
+conda run -n FURG quarto render dia3/slides_dia3.qmd
 ```
 
 Ponto crítico para nuvem:
@@ -67,12 +70,21 @@ Ponto crítico para nuvem:
     slides_dia2.html
     slides_dia2_files/                                 # render/cache RevealJS
   dia3/
+    slides_dia3.qmd
+    slides_dia3.html
+    demo/
+      projeto_investimento/
+        premissas_projeto_investimento.csv
+      skill_plot_financeiro/
+        AGENTS.md
+    slides_dia3_files/                                 # render/cache RevealJS
 ```
 
 Arquivos gerados ou cache que não devem ser editados manualmente:
 - `.quarto/`
 - `dia1/slides_dia1_files/`
 - `dia2/slides_dia2_files/`
+- `dia3/slides_dia3_files/`
 - `*.quarto_ipynb*`
 
 ---
@@ -164,92 +176,68 @@ Direção de estilo:
 
 ## Dia 3 -- Demos com Agents
 
-Status: ainda não construído.
+Status: deck construído e renderizado em `dia3/slides_dia3.html`.
 
 Objetivo:
 - conduzir três exemplos completos usando agents, com material de apoio nas pastas `demo/`
 - não criar scripts prontos que substituam a demonstração
 - criar materiais curtos que orientem o que o agent deve fazer ao vivo
 
-Estrutura planejada:
+Estrutura atual:
 
 ```text
 dia3/
   slides_dia3.qmd
   slides_dia3.html
   demo/
-    materiais_dados_financeiros/
-    materiais_sentimento/
-    materiais_valuation/
+    projeto_investimento/
+      premissas_projeto_investimento.csv
+    skill_plot_financeiro/
+      AGENTS.md
 ```
 
-### Demo 1 -- Análise de Dados Financeiros
+### Demo 1 -- Projeto de Investimento
 
 Material:
-- `dia3/demo/materiais_dados_financeiros/`
+- `dia3/demo/projeto_investimento/`
 
 Função:
-- baixar dados de múltiplas empresas de um setor
-- calcular retornos
-- plotar gráfico comparativo
-- demonstrar o fluxo com apoio de agents, sem script pronto
+- criar uma análise de decisão de investimento a partir de premissas pequenas
+- pedir um dashboard HTML autocontido
+- observar o que o agente assume sem contexto
+- criar `AGENTS.md` ao vivo e repetir a tarefa com contexto persistente
 
 Inputs:
-- lista pequena de tickers
+- `premissas_projeto_investimento.csv`
 
 Outputs esperados:
-- gráfico de preços
-- gráfico de retornos
-- interpretação curta
+- dashboard HTML autocontido
+- VPL, cenários e recomendação com ressalvas
 
 Observações:
-- usar `yfinance` ou equivalente simples
-- tratar falha de download ou retorno vazio
-- manter tempo de execução curto
+- o material de apoio deve continuar pequeno e versionável
+- não substituir a demonstração ao vivo por um script pronto
 
-### Demo 2 -- Sentimento em Texto Financeiro
+### Demo 2 -- Futuros + Skill Local
 
 Material:
-- `dia3/demo/materiais_sentimento/`
+- `dia3/demo/skill_plot_financeiro/`
 
 Função:
-- analisar texto, preferencialmente ata do COPOM, notícia de mercado ou trecho de relatório
-- demonstrar resumo, classificação e pontos principais com apoio de agents
+- baixar dois futuros com `yfinance`
+- gerar gráfico inicial
+- criar uma skill local de Codex
+- repetir o gráfico usando a skill e comparar o resultado
 
 Outputs esperados:
-- resumo curto
-- classificação de tom/sentimento
-- principais evidências textuais
-- ressalvas de validação humana
+- `dados_futuros.csv`
+- gráfico legível, preferencialmente também em PDF
+- comparação antes/depois do uso da skill
 
 Observações:
-- evitar depender de API paga ou autenticada
-- se usar texto externo, salvar trecho curto e versionável como material de apoio
-
-### Demo 3 -- Valuation / Projeto Agro
-
-Material:
-- `dia3/demo/materiais_valuation/`
-
-Problema:
-- decidir entre plantar soja ou milho
-
-Inputs:
-- investimento inicial
-- preço esperado
-- custo
-- produtividade
-- cenários otimista, base e pessimista
-
-Outputs esperados:
-- tabela de cenários
-- lucro esperado por cultura
-- recomendação simples
-- lista curta de riscos e hipóteses
-
-Observações:
-- manter a matemática transparente
-- preferir tabela pequena a modelo sofisticado
+- usar Arial e paleta FURG nos gráficos
+- validar dados vazios e falhas de download
+- manter a skill curta e fácil de manter
 
 ---
 

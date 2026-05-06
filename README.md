@@ -9,7 +9,9 @@ em maio de 2026.
 - **Landing page:** <https://rgriva.github.io/minicurso_FURG_SBFin/>
 - **Slides — Dia 1:** <https://rgriva.github.io/minicurso_FURG_SBFin/dia1/slides_dia1.html>
 - **Slides — Dia 2:** <https://rgriva.github.io/minicurso_FURG_SBFin/dia2/slides_dia2.html>
-- **Slides — Dia 3:** em construção
+- **Slides — Dia 3:** <https://rgriva.github.io/minicurso_FURG_SBFin/dia3/slides_dia3.html>
+- **Material de apoio — Dia 3 / projeto de investimento:** <https://rgriva.github.io/minicurso_FURG_SBFin/dia3/demo/projeto_investimento/premissas_projeto_investimento.csv>
+- **Material de apoio — Dia 3 / skill de gráficos:** <https://rgriva.github.io/minicurso_FURG_SBFin/dia3/demo/skill_plot_financeiro/AGENTS.md>
 
 ## Ementa
 
@@ -44,7 +46,7 @@ em maio de 2026.
   requirements.txt    # dependências Python dos exemplos
   dia1/               # slides e materiais do Dia 1
   dia2/               # slides e materiais do Dia 2
-  dia3/               # materiais do Dia 3, em construção
+  dia3/               # slides e materiais do Dia 3
   AGENTS.md           # notas de manutenção para uso com agents
 ```
 

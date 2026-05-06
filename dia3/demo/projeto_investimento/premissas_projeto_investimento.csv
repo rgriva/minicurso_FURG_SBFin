@@ -1,0 +1,14 @@
+parametro,valor,unidade,observacao
+capex_inicial,12500000,BRL,investimento inicial no ano 0
+vida_util,8,anos,horizonte explicito do projeto
+receita_ano1,4200000,BRL,receita esperada no primeiro ano de operacao
+custo_variavel_pct,0.48,proporcao_da_receita,custos variaveis como percentual da receita
+custo_fixo_anual,950000,BRL,custos fixos anuais
+crescimento_receita,0.035,ao_ano,crescimento real esperado da receita
+aliquota_imposto,0.25,proporcao_do_lucro,imposto simplificado sobre lucro operacional positivo
+wacc,0.115,ao_ano,taxa de desconto base
+valor_residual,1800000,BRL,valor de revenda ou residual no ultimo ano
+choque_receita_pessimista,-0.12,proporcao,queda de receita no cenario pessimista
+choque_custo_pessimista,0.08,proporcao,aumento de custos no cenario pessimista
+choque_receita_otimista,0.10,proporcao,aumento de receita no cenario otimista
+choque_custo_otimista,-0.05,proporcao,queda de custos no cenario otimista
